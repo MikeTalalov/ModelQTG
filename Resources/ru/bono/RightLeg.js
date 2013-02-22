@@ -5,7 +5,7 @@ var thighRot = 0;
 var shinRot = 0;
 var frameCount = 0;
 
-var assets=[[50, 25, 16, 65, 50, 16],
+var assets=[[30, 15, 16, -30, -15, 16],
 			[90, 45, 16, 120, 20, 16],
 			[0, 25, 8, -20, 20, 8]]
 
