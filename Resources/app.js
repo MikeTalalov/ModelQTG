@@ -1,7 +1,11 @@
 var functions = require('ru/bono/functions');
 var qtg = require('com.googlecode.quicktigame2d');
 
-var head, neck, body, rightHand1, rightHand2, leftHand1, leftHand2, leftLeg1, leftLeg2, rightLeg;
+var head, neck, body,
+	rightHand1, rightHand2,
+	leftHand1, leftHand2,
+	leftLeg1, leftLeg2,
+	rightLeg1, rightLeg2;
 
 var handArrowLeft, handArrowRight;
 
@@ -28,6 +32,7 @@ game.addEventListener('onload', function(e){
 	createLeftHand();
 	createHandArrows();
 	createLeftLeg();
+	createRightLeg();
 	
 	addElementsToStage();
 	
@@ -99,6 +104,16 @@ function createLeftLeg(){
 	leftLeg2.move(leftLeg1.x, leftLeg1.y+leftLeg1.height*0.95);
 }
 
+function createRightLeg(){
+	var RightLeg = require('ru/bono/RightLeg');
+	var leg = new RightLeg();
+	rightLeg1 = leg.thigh;
+	rightLeg2 = leg.shin;
+	rightLeg1.x = game.screen.width/2-body.width/3 - rightLeg1.width/2;
+	rightLeg1.y = body.y+body.height*0.92;
+	rightLeg2.move(rightLeg1.x, rightLeg1.y+rightLeg1.height*0.95);
+}
+
 function addElementsToStage(){
 	scene.add(neck);
 	scene.add(head);
@@ -112,6 +127,8 @@ function addElementsToStage(){
 	scene.add(handArrowRight);
 	scene.add(leftLeg1);
 	scene.add(leftLeg2);
+	scene.add(rightLeg1);
+	scene.add(rightLeg2);
 }
 
 function clickEvent(e) {
