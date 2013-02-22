@@ -17,6 +17,7 @@ function LeftHand() {
 
 	setInterval(movement, 30);
 }
+
 function movement(){
 	shoulderRot = assets[Ti.App.currentAssert][0]+assets[Ti.App.currentAssert][1]*Math.sin(frameCount/assets[Ti.App.currentAssert][2]);
 	forearmRot = assets[Ti.App.currentAssert][3]+assets[Ti.App.currentAssert][4]*Math.sin(frameCount/assets[Ti.App.currentAssert][5]);
@@ -32,6 +33,6 @@ function movement(){
 	forearmTransform.rotateFrom(forearmRot, 0.5*ob.forearm.width, 0.1*ob.forearm.height);
 	forearmTransform.move(ob.hand.x - ob.hand.height*Math.sin(shoulderRot*Math.PI/180)*0.8, ob.hand.y+ob.hand.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
 	ob.forearm.transform(forearmTransform);
-	
 }
+
 module.exports = LeftHand;
