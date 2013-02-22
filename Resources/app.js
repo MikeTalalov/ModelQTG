@@ -1,20 +1,11 @@
 var functions = require('ru/bono/functions');
 var qtg = require('com.googlecode.quicktigame2d');
 
-var head;
-var neck;
-var body;
-var rightHand1;
-var rightHand2;
-var leftHand1;
-var leftHand2
-var rightLeg;
-var leftLeg;
+var head, neck, body, rightHand1, rightHand2, leftHand1, leftHand2, rightLeg, leftLeg;
 
-var handArrowLeft;
-var handArrowRight
+var handArrowLeft, handArrowRight;
 
-Ti.App.currentAssert=0;
+Ti.App.currentAssert = 0;
 
 Ti.UI.orientation = Ti.UI.PORTRAIT;
 
@@ -25,7 +16,7 @@ Ti.App.window = Ti.UI.createWindow({
 var game = qtg.createGameView();
 var scene = qtg.createScene();
 
-game.addEventListener('onload', function(e) {
+game.addEventListener('onload', function(e){
 	functions.setResolution(game);
 	game.pushScene(scene);
 	game.start();
