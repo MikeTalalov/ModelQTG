@@ -25,14 +25,14 @@ function movement(){
 	
 	var legTransform  = qtg.createTransform();
 	legTransform.duration = 30;
-	legTransform.rotateFrom(thighRot, 0.5*ob.leg.width, 0.1*ob.leg.height);
-	ob.leg.transform(legTransform);
+	legTransform.rotateFrom(thighRot, 0.5*ob.thigh.width, 0.1*ob.thigh.height);
+	ob.thigh.transform(legTransform);
 	
 	var shinTransform  = qtg.createTransform();
 	shinTransform.duration = 30;
 	shinTransform.rotateFrom(shinRot, 0.5*ob.shin.width, 0.1*ob.shin.height);
-	shinTransform.move(ob.leg.x - ob.leg.height*Math.sin(thighRot*Math.PI/180)*0.8, ob.leg.y+ob.leg.height*Math.cos(thighRot*Math.PI/180)*0.8);
-	ob.shin.transform(shin.Transform);
+	shinTransform.move(ob.thigh.x - ob.thigh.height*Math.sin(thighRot*Math.PI/180)*0.8, ob.thigh.y+ob.thigh.height*Math.cos(thighRot*Math.PI/180)*0.8);
+	ob.shin.transform(shinTransform);
 }
 
 module.exports = LeftLeg;

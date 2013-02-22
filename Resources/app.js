@@ -91,11 +91,11 @@ function createHandArrows(){
 
 function createLeftLeg(){
 	var LeftLeg = require('ru/bono/LeftLeg');
-	var leg = new LefLeg();
+	var leg = new LeftLeg();
 	leftLeg1 = leg.thigh;
 	leftLeg2 = leg.shin;
-	leftLeg1.x = game.screen.width/2+body.width/5 - leftLeg1.width/2;
-	leftLeg1.y = body.y+leftLeg1.width/2;
+	leftLeg1.x = game.screen.width/2+body.width/3 - leftLeg1.width/2;
+	leftLeg1.y = body.y+body.height*0.92;
 	leftLeg2.move(leftLeg1.x, leftLeg1.y+leftLeg1.height*0.95);
 }
 
