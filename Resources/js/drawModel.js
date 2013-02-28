@@ -3,12 +3,13 @@
  */
 var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
+var importAsset = require('js/importAsset');
 var utils = require('js/utils');
 
-var assetLH = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
-var assetRH = [30, 30, 10, -20, 20, 16, 10, 10, 16];
-var assetLL = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
-var assetRL = [30, 30, 10, -20, 20, 16, 10, 10, 16];
+var assetLH = importAsset.leftHandAsset();
+var assetRH = importAsset.rightHandAsset();
+var assetLL = importAsset.leftLegAsset();
+var assetRL = importAsset.rightLegAsset();
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
@@ -103,11 +104,11 @@ var drawModel = function(toGame, toScene){
 	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH);
 	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL);
 	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL);
-	var tf = qtg.createTransform();
-	tf.duration = 8000;
-	tf.x = 230;
-	tf.y = 200;
-	bodySpr.transform(tf);
+	//var tf = qtg.createTransform();
+	//tf.duration = 8000;
+	//tf.x = 230;
+	//tf.y = 200;
+	//bodySpr.transform(tf);
 //=========================================	
 };
 
