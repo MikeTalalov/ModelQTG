@@ -41,169 +41,36 @@ var animateHead = function(neck, head){
 	setInterval(movement, 30);
 };
 
-var animateLeftHand = function(shoulder, forearm, palm){
+var animateLimb = function(p1, p2, p3, assets){
 	
-	var assets=[[-20, 20, 20, 20, -10, 10, 10, 10, 10], //assets=[[0, 45, 20, 20, 20, 16, 10, 10, 16],
-				[0, 25, 8, -20, 40, 8],
-				[90, 45, 16, 120, 20, 16]]
-	var shoulderRot = 0;
-	var headRot = 0;
-	var palmRot = 0;
+	var p1Rot = 0;
+	var p2Rot = 0;
+	var p3Rot = 0;
 	var frameCount = 0;
 	
 	var movement = function(){
-		shoulderRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
-		forearmRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
-		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
-		
-		//alert(shoulderRot+'; '+assets[0][0]+'; '+assets[0][1]*Math.sin(frameCount/assets[0][2]));
+		p1Rot = assets[0]+assets[1]*Math.sin(frameCount/assets[2]);
+		p2Rot = assets[3]+assets[4]*Math.sin(frameCount/assets[5]);
+		p3Rot = assets[6]+assets[7]*Math.sin(frameCount/assets[8]);
 		frameCount++;
 		
-		var shoulderTransform = qtg.createTransform({duration:30});
-		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
-		shoulder.transform(shoulderTransform);
+		var p1Transform = qtg.createTransform({duration:30});
+		p1Transform.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
+		p1.transform(p1Transform);
 		
-		var forearmTransform = qtg.createTransform({duration:30});
-		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*0.8*xR(shoulderRot), shoulder.y+shoulder.height*0.8*yR(shoulderRot));
-		forearm.transform(forearmTransform);
+		var p2Transform = qtg.createTransform({duration:30});
+		p2Transform.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
+		p2Transform.move(p1.x - p1.height*0.8*xR(p1Rot), p1.y+p1.height*0.8*yR(p1Rot));
+		p2.transform(p2Transform);
 		
-		var palmTransform = qtg.createTransform({duration:30});
-		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*0.9*xR(forearmRot), forearm.y+forearm.height*0.9*yR(forearmRot));
-		palm.transform(palmTransform);
-	};
-	
-	setInterval(movement, 30);
-};
-
-var animateRightHand = function(shoulder, forearm, palm){
-	
-	var assets=[[30, 30, 10, -20, 20, 16, 10, 10, 16],
-				[0, 25, 8, -20, 40, 8],
-				[90, 45, 16, 120, 20, 16]]
-	var shoulderRot = 0;
-	var headRot = 0;
-	var palmRot = 0;
-	var frameCount = 0;
-	
-	var movement = function(){
-		shoulderRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
-		forearmRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
-		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
-		frameCount++;
-		
-		var shoulderTransform = qtg.createTransform({duration:30});
-		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
-		shoulder.transform(shoulderTransform);
-		
-		var forearmTransform = qtg.createTransform({duration:30});
-		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*0.8*xR(shoulderRot), shoulder.y+shoulder.height*0.8*yR(shoulderRot));
-		forearm.transform(forearmTransform);
-		
-		var palmTransform = qtg.createTransform({duration:30});
-		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*0.9*xR(forearmRot), forearm.y+shoulder.height*0.9*yR(forearmRot));
-		palm.transform(palmTransform);
-	};
-	
-	setInterval(movement, 30);
-};
-
-var animateLeftLeg = function(shoulder, forearm, palm){
-	
-	var assets=[[-30, 10, 10, 20, 20, 16, 10, 10, 16],
-				[0, 25, 8, -20, 40, 8],
-				[90, 45, 16, 120, 20, 16]]
-	var shoulderRot = 0;
-	var headRot = 0;
-	var palmRot = 0;
-	var frameCount = 0;
-	
-	var movement = function(){
-		shoulderRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
-		forearmRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
-		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
-		frameCount++;
-		
-		var shoulderTransform = qtg.createTransform();
-		shoulderTransform.duration = 30;
-		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
-		shoulder.transform(shoulderTransform);
-		
-		var forearmTransform = qtg.createTransform();
-		forearmTransform.duration = 30;
-		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*Math.sin(shoulderRot*Math.PI/180)*0.8, shoulder.y+shoulder.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
-		forearm.transform(forearmTransform);
-		
-		var palmTransform = qtg.createTransform();
-		palmTransform.duration = 30;
-		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*Math.sin(forearmRot*Math.PI/180)*0.92, forearm.y+shoulder.height*Math.cos(forearmRot*Math.PI/180)*0.92);
-		palm.transform(palmTransform);
-	};
-	
-	setInterval(movement, 30);
-};
-
-var animateRightLeg = function(shoulder, forearm, palm){
-	
-	var assets=[[-30, 10, 10, 20, 20, 16, 10, 10, 16],
-				[0, 25, 8, -20, 40, 8],
-				[90, 45, 16, 120, 20, 16]]
-	var shoulderRot = 0;
-	var headRot = 0;
-	var palmRot = 0;
-	var frameCount = 0;
-	
-	var movement = function(){
-		shoulderRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
-		forearmRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
-		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
-		frameCount++;
-		
-		var shoulderTransform = qtg.createTransform();
-		shoulderTransform.duration = 30;
-		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
-		shoulder.transform(shoulderTransform);
-		
-		var forearmTransform = qtg.createTransform();
-		forearmTransform.duration = 30;
-		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*Math.sin(shoulderRot*Math.PI/180)*0.8, shoulder.y+shoulder.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
-		forearm.transform(forearmTransform);
-		
-		var palmTransform = qtg.createTransform();
-		palmTransform.duration = 30;
-		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*Math.sin(forearmRot*Math.PI/180)*0.92, forearm.y+shoulder.height*Math.cos(forearmRot*Math.PI/180)*0.92);
-		palm.transform(palmTransform);
+		var p3Transform = qtg.createTransform({duration:30});
+		p3Transform.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.1);
+		p3Transform.move(p2.x - p2.height*0.9*xR(p2Rot), p2.y+p2.height*0.9*yR(p2Rot));
+		p3.transform(p3Transform);
 	};
 	
 	setInterval(movement, 30);
 };
 
 exports.animateHead = animateHead;
-exports.animateLeftHand = animateLeftHand;
-exports.animateRightHand = animateRightHand;
-
-//==========
-/*
-function movement(){
-
-	var handTransform  = qtg.createTransform();
-	handTransform.duration = 30;
-	handTransform.rotateFrom(shoulderRot, 0.5*ob.hand.width, 0.1*ob.hand.height);
-	ob.hand.transform(handTransform);
-	
-	var forearmTransform  = qtg.createTransform();
-	forearmTransform.duration = 30;
-	forearmTransform.rotateFrom(forearmRot, 0.5*ob.forearm.width, 0.1*ob.forearm.height);
-	forearmTransform.move(ob.hand.x - ob.hand.height*Math.sin(shoulderRot*Math.PI/180)*0.8, ob.hand.y+ob.hand.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
-	ob.forearm.transform(forearmTransform);
-}
-
-module.exports = LeftHand;
-*/
+exports.animateLimb = animateLimb;

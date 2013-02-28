@@ -5,6 +5,9 @@ var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
 var utils = require('js/utils');
 
+var assetLH = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
+var assetRH = [30, 30, 10, -20, 20, 16, 10, 10, 16];
+
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
 	var gameCenterY = tG.screen.height*0.82/2;
@@ -17,7 +20,6 @@ var placeToCenter = function(sO, tG, tS){
 var drawModel = function(toGame, toScene){
 //=========================================
 	var res = utils.setResolution(toGame);
-
 	var bodySpr = qtg.createSprite({image:'images/body_'+res+'.png'});
 	var neckSpr = qtg.createSprite({image:'images/neck_'+res+'.png'});
 	var headSpr = qtg.createSpriteSheet({image:'images/headsheet_'+res+'.xml'});
@@ -95,8 +97,8 @@ var drawModel = function(toGame, toScene){
 	
 //=========================================
 	myAnimatedModel.animateHead(neckSpr, headSpr);
-	myAnimatedModel.animateLeftHand(leftShoulderSpr, leftForearmSpr, leftPalmSpr);
-	myAnimatedModel.animateRightHand(rightShoulderSpr, rightForearmSpr, rightPalmSpr);
+	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH);
+	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH);
 //=========================================	
 };
 
