@@ -20,7 +20,7 @@ var drawModel = function(toGame, toScene){
 
 	var bodySpr = qtg.createSprite({image:'images/body_'+res+'.png'});
 	var neckSpr = qtg.createSprite({image:'images/neck_'+res+'.png'});
-	var headSpr = qtg.createSprite({image:'images/headSheet_'+res+'.png'});
+	var headSpr = qtg.createSpriteSheet({image:'images/headsheet_'+res+'.xml'});
 	//left leg
 	var leftThighSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
 	var leftShinSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
