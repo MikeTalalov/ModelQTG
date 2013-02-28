@@ -3,6 +3,15 @@
  */
 var qtg = require('com.googlecode.quicktigame2d');
 
+var rad = Math.PI/180;
+var xR = function(part){
+	return Math.sin(part*rad);
+};
+
+var yR = function(part){
+	return Math.cos(part*rad);
+};
+
 var animateHead = function(neck, head){
 	
 	var assets=[[0, 10, 16, 0, 20, 16],
@@ -34,7 +43,7 @@ var animateHead = function(neck, head){
 
 var animateLeftHand = function(shoulder, forearm, palm){
 	
-	var assets=[[-30, 10, 10, 20, 20, 16, 10, 10, 16],
+	var assets=[[-20, 20, 20, 20, -10, 10, 10, 10, 10], //assets=[[0, 45, 20, 20, 20, 16, 10, 10, 16],
 				[0, 25, 8, -20, 40, 8],
 				[90, 45, 16, 120, 20, 16]]
 	var shoulderRot = 0;
@@ -46,23 +55,22 @@ var animateLeftHand = function(shoulder, forearm, palm){
 		shoulderRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
 		forearmRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
 		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
+		
+		//alert(shoulderRot+'; '+assets[0][0]+'; '+assets[0][1]*Math.sin(frameCount/assets[0][2]));
 		frameCount++;
 		
-		var shoulderTransform = qtg.createTransform();
-		shoulderTransform.duration = 30;
+		var shoulderTransform = qtg.createTransform({duration:30});
 		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
 		shoulder.transform(shoulderTransform);
 		
-		var forearmTransform = qtg.createTransform();
-		forearmTransform.duration = 30;
+		var forearmTransform = qtg.createTransform({duration:30});
 		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*Math.sin(shoulderRot*Math.PI/180)*0.8, shoulder.y+shoulder.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
+		forearmTransform.move(shoulder.x - shoulder.height*0.8*xR(shoulderRot), shoulder.y+shoulder.height*0.8*yR(shoulderRot));
 		forearm.transform(forearmTransform);
 		
-		var palmTransform = qtg.createTransform();
-		palmTransform.duration = 30;
+		var palmTransform = qtg.createTransform({duration:30});
 		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*Math.sin(forearmRot*Math.PI/180)*0.92, forearm.y+shoulder.height*Math.cos(forearmRot*Math.PI/180)*0.92);
+		palmTransform.move(forearm.x - forearm.height*0.9*xR(forearmRot), forearm.y+forearm.height*0.9*yR(forearmRot));
 		palm.transform(palmTransform);
 	};
 	
@@ -71,7 +79,7 @@ var animateLeftHand = function(shoulder, forearm, palm){
 
 var animateRightHand = function(shoulder, forearm, palm){
 	
-	var assets=[[-30, 10, 10, 20, 20, 16, 10, 10, 16],
+	var assets=[[30, 30, 10, -20, 20, 16, 10, 10, 16],
 				[0, 25, 8, -20, 40, 8],
 				[90, 45, 16, 120, 20, 16]]
 	var shoulderRot = 0;
@@ -85,21 +93,18 @@ var animateRightHand = function(shoulder, forearm, palm){
 		palmRot = assets[0][6]+assets[0][7]*Math.sin(frameCount/assets[0][8]);
 		frameCount++;
 		
-		var shoulderTransform = qtg.createTransform();
-		shoulderTransform.duration = 30;
+		var shoulderTransform = qtg.createTransform({duration:30});
 		shoulderTransform.rotateFrom(shoulderRot, shoulder.width*0.5, shoulder.height*0.1);
 		shoulder.transform(shoulderTransform);
 		
-		var forearmTransform = qtg.createTransform();
-		forearmTransform.duration = 30;
+		var forearmTransform = qtg.createTransform({duration:30});
 		forearmTransform.rotateFrom(forearmRot, forearm.width*0.5, forearm.height*0.1);
-		forearmTransform.move(shoulder.x - shoulder.height*Math.sin(shoulderRot*Math.PI/180)*0.8, shoulder.y+shoulder.height*Math.cos(shoulderRot*Math.PI/180)*0.8);
+		forearmTransform.move(shoulder.x - shoulder.height*0.8*xR(shoulderRot), shoulder.y+shoulder.height*0.8*yR(shoulderRot));
 		forearm.transform(forearmTransform);
 		
-		var palmTransform = qtg.createTransform();
-		palmTransform.duration = 30;
+		var palmTransform = qtg.createTransform({duration:30});
 		palmTransform.rotateFrom(palmRot, palm.width*0.5, palm.height*0.1);
-		palmTransform.move(forearm.x - forearm.height*Math.sin(forearmRot*Math.PI/180)*0.92, forearm.y+shoulder.height*Math.cos(forearmRot*Math.PI/180)*0.92);
+		palmTransform.move(forearm.x - forearm.height*0.9*xR(forearmRot), forearm.y+shoulder.height*0.9*yR(forearmRot));
 		palm.transform(palmTransform);
 	};
 	
@@ -182,6 +187,7 @@ var animateRightLeg = function(shoulder, forearm, palm){
 
 exports.animateHead = animateHead;
 exports.animateLeftHand = animateLeftHand;
+exports.animateRightHand = animateRightHand;
 
 //==========
 /*

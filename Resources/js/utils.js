@@ -22,16 +22,15 @@ var mNow = +new Date();
 
 exports.updateFPS = function(label) {
   mFrameCount++;
-  
   if (+new Date() - mNow > 5000) {
     var fps = mFrameCount / 5.0;
-
     label.text = fps + " FPS";
     mFrameCount = 0;
     mNow = +new Date();
   }
 }
 
+//set resolution for sprite loading
 exports.setResolution = function(game){
 	resolution = '320';
 	if(game.screen.width>360){resolution = '480'};
@@ -39,4 +38,9 @@ exports.setResolution = function(game){
 	if(game.screen.width>660){resolution = '768'};
 	if(game.screen.width>1500){resolution = '1536'};
 	return resolution;
+}
+
+exports.loadAsset = function(part){
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, 'tmp.json');
+	var arr = [];
 }

@@ -96,6 +96,7 @@ var drawModel = function(toGame, toScene){
 //=========================================
 	myAnimatedModel.animateHead(neckSpr, headSpr);
 	myAnimatedModel.animateLeftHand(leftShoulderSpr, leftForearmSpr, leftPalmSpr);
+	myAnimatedModel.animateRightHand(rightShoulderSpr, rightForearmSpr, rightPalmSpr);
 //=========================================	
 };
 
