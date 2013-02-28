@@ -14,16 +14,14 @@ var yR = function(part){
 
 var animateHead = function(neck, head){
 	
-	var assets=[[0, 10, 16, 0, 20, 16],
-				[0, 25, 8, -20, 40, 8],
-				[90, 45, 16, 120, 20, 16]]
+	var assets=[0, 10, 16, 0, 20, 16];
 	var neckRot = 0;
 	var headRot = 0;
 	var frameCount = 0;
 	
 	var movement = function(){
-		neckRot = assets[0][0]+assets[0][1]*Math.sin(frameCount/assets[0][2]);
-		headRot = assets[0][3]+assets[0][4]*Math.sin(frameCount/assets[0][5]);
+		neckRot = assets[0]+assets[1]*Math.sin(frameCount/assets[2]);
+		headRot = assets[3]+assets[4]*Math.sin(frameCount/assets[5]);
 		frameCount++;
 		
 		var neckTransform = qtg.createTransform();

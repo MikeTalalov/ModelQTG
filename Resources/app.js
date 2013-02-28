@@ -16,9 +16,9 @@ var fpsLabel = utils.createLabel();
 Ti.UI.orientation = Ti.UI.PORTRAIT; 
 var winMain = Ti.UI.createWindow({
 	title: 'Super Game',
-	backgroundColor:'#d9ccb9',
-	fullscreen:true,
-	navBarHidden:true
+	backgroundColor: '#d9ccb9',
+	fullscreen: true,
+	navBarHidden: true
 });
 
 var game = qtg.createGameView();
@@ -40,13 +40,13 @@ game.addEventListener('onload', function(e){
 
 game.addEventListener('enterframe', function(e) {
     //nothing to do
-    //utils.updateFPS(fpsLabel);
+    utils.updateFPS(fpsLabel);
 });
 
 // ------------------------------
 // run section
 // ------------------------------
-//winMain.add(fpsLabel);
+winMain.add(fpsLabel);
 winMain.add(game);
 winMain.open();
 

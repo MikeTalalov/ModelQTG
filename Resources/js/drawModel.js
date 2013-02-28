@@ -7,6 +7,8 @@ var utils = require('js/utils');
 
 var assetLH = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
 var assetRH = [30, 30, 10, -20, 20, 16, 10, 10, 16];
+var assetLL = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
+var assetRL = [30, 30, 10, -20, 20, 16, 10, 10, 16];
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
@@ -99,6 +101,13 @@ var drawModel = function(toGame, toScene){
 	myAnimatedModel.animateHead(neckSpr, headSpr);
 	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH);
 	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH);
+	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL);
+	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL);
+	var tf = qtg.createTransform();
+	tf.duration = 8000;
+	tf.x = 230;
+	tf.y = 200;
+	bodySpr.transform(tf);
 //=========================================	
 };
 
