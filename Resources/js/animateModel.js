@@ -1,5 +1,5 @@
 /**
- * @author am
+ * @author bonovisio
  */
 var qtg = require('com.googlecode.quicktigame2d');
 

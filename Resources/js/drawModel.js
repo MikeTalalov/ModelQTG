@@ -1,5 +1,5 @@
 /**
- * @author am@bonovisio.ru
+ * @author bonovisio
  */
 var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');

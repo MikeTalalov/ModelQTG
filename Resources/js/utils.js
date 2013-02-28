@@ -1,5 +1,5 @@
 /**
- * @author am@bonovisio.ru
+ * @author bonovisio
  */
 //fps label
 exports.createLabel = function(){
