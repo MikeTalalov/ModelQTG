@@ -1,6 +1,7 @@
 /**
  * @author bonovisio
  */
+
 var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
 var importAsset = require('js/importAsset');

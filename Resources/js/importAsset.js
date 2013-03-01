@@ -1,9 +1,10 @@
+/**
+ * @author bonovisio
+ */
+
 var f = Ti.Filesystem.getFile('js/asset.json');
 var contents = f.read().text;
 var json = JSON.parse(contents);
-//Ti.API.info(json.length);
-
-
 
 var leftHandAsset = function(){
 	var asset = [];

@@ -1,6 +1,7 @@
 /**
  * @author bonovisio
  */
+
 //fps label
 exports.createLabel = function(){
   return Titanium.UI.createLabel({
@@ -20,9 +21,9 @@ exports.createLabel = function(){
 var mFrameCount = 0;
 var mNow = +new Date();
 
-exports.updateFPS = function(label) {
+exports.updateFPS = function(label){
   mFrameCount++;
-  if (+new Date() - mNow > 5000) {
+  if (+new Date() - mNow > 5000){
     var fps = mFrameCount / 5.0;
     label.text = fps + " FPS";
     mFrameCount = 0;
@@ -38,9 +39,4 @@ exports.setResolution = function(game){
 	if(game.screen.width>660){resolution = '768'};
 	if(game.screen.width>1500){resolution = '1536'};
 	return resolution;
-}
-
-exports.loadAsset = function(part){
-	var file = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, 'tmp.json');
-	var arr = [];
 }

@@ -1,16 +1,12 @@
 /**
  * @author bonovisio
  */
-// ------------------------------
-// modules import section
-// ------------------------------
+
 var qtg = require('com.googlecode.quicktigame2d');
 var utils = require('js/utils');
 var myModel = require('js/drawModel');
 
-// ------------------------------
-// init section
-// ------------------------------
+//init section
 var fpsLabel = utils.createLabel();
 
 Ti.UI.orientation = Ti.UI.PORTRAIT; 
@@ -43,9 +39,7 @@ game.addEventListener('enterframe', function(e) {
     utils.updateFPS(fpsLabel);
 });
 
-// ------------------------------
-// run section
-// ------------------------------
+//run section
 winMain.add(fpsLabel);
 winMain.add(game);
 winMain.open();

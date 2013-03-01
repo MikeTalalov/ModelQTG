@@ -1,6 +1,7 @@
 /**
  * @author bonovisio
  */
+
 var qtg = require('com.googlecode.quicktigame2d');
 
 var rad = Math.PI/180;
@@ -38,7 +39,7 @@ var animateHead = function(neck, head){
 	
 	setInterval(movement, 30);
 };
-//myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, asset[]);
+
 var animateLimb = function(p1, p2, p3, asset){
 
 	var p1Rot = 0;
@@ -70,39 +71,6 @@ var animateLimb = function(p1, p2, p3, asset){
 	
 	setInterval(movement, 30);
 };
-
-/*
-var animateLimb = function(p1, p2, p3, assets){
-	
-	var p1Rot = 0;
-	var p2Rot = 0;
-	var p3Rot = 0;
-	var frameCount = 0;
-	
-	var movement = function(){
-		p1Rot = assets[0]+assets[1]*Math.sin(frameCount/assets[2]);
-		p2Rot = assets[3]+assets[4]*Math.sin(frameCount/assets[5]);
-		p3Rot = assets[6]+assets[7]*Math.sin(frameCount/assets[8]);
-		frameCount++;
-		
-		var p1Transform = qtg.createTransform({duration:30});
-		p1Transform.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
-		p1.transform(p1Transform);
-		
-		var p2Transform = qtg.createTransform({duration:30});
-		p2Transform.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
-		p2Transform.move(p1.x - p1.height*0.8*xR(p1Rot), p1.y+p1.height*0.8*yR(p1Rot));
-		p2.transform(p2Transform);
-		
-		var p3Transform = qtg.createTransform({duration:30});
-		p3Transform.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.1);
-		p3Transform.move(p2.x - p2.height*0.9*xR(p2Rot), p2.y+p2.height*0.9*yR(p2Rot));
-		p3.transform(p3Transform);
-	};
-	
-	setInterval(movement, 30);
-};
-*/
 
 exports.animateHead = animateHead;
 exports.animateLimb = animateLimb;
