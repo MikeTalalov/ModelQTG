@@ -36,6 +36,13 @@ game.addEventListener('onload', function(e){
 	myModel.drawModel(game, scene);
 	game.pushScene(scene);
 	game.start();
+	
+	
+	var f = Ti.Filesystem.getFile('js/asset.json');
+	var contents = f.read().text;
+	var json = JSON.parse(contents);
+	Ti.API.info(json[0].body.rotation);
+	
 });
 
 game.addEventListener('enterframe', function(e) {

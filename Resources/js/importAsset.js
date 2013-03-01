@@ -1,3 +1,16 @@
+var url = 'js/asset.json';
+var json;
+  
+var xhr = Ti.Network.createHTTPClient({
+    onload: function() {
+        
+        json = JSON.parse(this.responseText);
+        Ti.API.info(json.length);
+    }
+});
+
+
+
 var leftHandAsset = function(){
 	var asset = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
 	
