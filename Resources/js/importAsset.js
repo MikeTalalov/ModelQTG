@@ -1,34 +1,36 @@
-var url = 'js/asset.json';
-var json;
-  
-var xhr = Ti.Network.createHTTPClient({
-    onload: function() {
-        
-        json = JSON.parse(this.responseText);
-        Ti.API.info(json.length);
-    }
-});
+var f = Ti.Filesystem.getFile('js/asset.json');
+var contents = f.read().text;
+var json = JSON.parse(contents);
+//Ti.API.info(json.length);
 
 
 
 var leftHandAsset = function(){
-	var asset = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
-	
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({p1: json[i].leftHand.shoulder.rotation, p2: json[i].leftHand.forearm.rotation, p3: json[i].leftHand.palm.rotation});
+	};
 	return asset;
 };
 var rightHandAsset = function(){
-	var asset = [30, 30, 10, -20, 20, 16, 10, 10, 16];
-	
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({p1: json[i].rightHand.shoulder.rotation, p2: json[i].rightHand.forearm.rotation, p3: json[i].rightHand.palm.rotation});
+	};
 	return asset;
 };
 var leftLegAsset = function(){
-	var asset = [-20, 20, 20, 20, -10, 10, 10, 10, 10];
-	
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({p1: json[i].leftLeg.thigh.rotation, p2: json[i].leftLeg.shin.rotation, p3: json[i].leftLeg.foot.rotation});
+	};
 	return asset;
 };
 var rightLegAsset = function(){
-	var asset = [30, 30, 10, -20, 20, 16, 10, 10, 16];
-	
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({p1: json[i].rightLeg.thigh.rotation, p2: json[i].rightLeg.shin.rotation, p3: json[i].rightLeg.foot.rotation});
+	};
 	return asset;
 };
 
