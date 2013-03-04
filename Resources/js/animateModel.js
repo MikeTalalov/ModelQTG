@@ -40,7 +40,7 @@ var animateHead = function(neck, head){
 	setInterval(movement, 40);
 };
 
-var animateLimb = function(p1, p2, p3, asset){
+var animateLimb = function(p1, p2, p3, asset, _toTrace){
 	var p1Rot = 0;
 	var p2Rot = 0;
 	var p3Rot = 0;
@@ -52,15 +52,10 @@ var animateLimb = function(p1, p2, p3, asset){
 		p3Rot = asset[frame].p2;
 		
 		(frame<(asset.length-1))? frame++ : frame = 0;
-<<<<<<< HEAD
-=======
-		
->>>>>>> am_branch
 		p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
 		
 
 		p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
-<<<<<<< HEAD
 		var x1 = Math.round( p1.x- p1.height*0.8*xR(p1Rot) );
 		var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot));
 		p2.move(x1, y1);
@@ -72,19 +67,6 @@ var animateLimb = function(p1, p2, p3, asset){
 	};
 	
 	setInterval(movement, 500);
-=======
-		var x1 = p1.x - p1.height*0.8*xR(p1Rot);
-		var y1 = p1.y + p1.height*0.8*yR(p1Rot);
-		p2.move(x1, y1);
-		
-		p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.1);
-		var x2 = p2.x - p2.height*0.9*xR(p2Rot);
-		var y2 = p2.y + p2.height*0.9*yR(p2Rot);
-		p3.move(x2,y2);
-	};
-	
-	setInterval(movement, 40);
->>>>>>> am_branch
 };
 
 exports.animateHead = animateHead;
