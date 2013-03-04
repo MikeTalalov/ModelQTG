@@ -14,7 +14,7 @@ var assetRL = importAsset.rightLegAsset();
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
-	var gameCenterY = tG.screen.height*0.82/2;
+	var gameCenterY = tG.screen.height*0.56;
 	var sCenterX = sO.width/2;
 	var sCenterY = sO.height/2;
 	
@@ -102,9 +102,9 @@ var drawModel = function(toGame, toScene){
 //=========================================
 	myAnimatedModel.animateHead(neckSpr, headSpr);
 	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH);
-	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH);
+	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH, true);
 	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL);
-	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL, true);
+	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL);
 	//var tf = qtg.createTransform();
 	//tf.duration = 8000;
 	//tf.x = 230;

@@ -19,11 +19,12 @@ var winMain = Ti.UI.createWindow({
 
 var game = qtg.createGameView();
 var scene = qtg.createScene();
+game.color(0.8, 1, 0.7)
 game.opaque = false;
-game.fps = 30;
+game.fps = 25;
 game.debug = true;
-scene.alpha = 0.0; //for iOS
-
+//scene.alpha = 0.0; //for iOS
+scene.color(0.8, 1, 0.7);
 winMain.addEventListener('open', function(e) {
 	//nothing to do
 });
@@ -34,13 +35,13 @@ game.addEventListener('onload', function(e){
 	game.start();
 });
 
-game.addEventListener('enterframe', function(e) {
+/*game.addEventListener('enterframe', function(e) {
     //nothing to do
     utils.updateFPS(fpsLabel);
-});
+});*/
 
 //run section
-winMain.add(fpsLabel);
+//winMain.add(fpsLabel);
 winMain.add(game);
 winMain.open();
 
