@@ -66,11 +66,7 @@ var animateLimb = function(p1, p2, p3, asset, _toTrace){
 		p3.move(x2,y2);
 	};
 	
-<<<<<<< HEAD
-	setInterval(movement, 200);
-=======
 	setInterval(movement, 800);
->>>>>>> f746604e50aef9f920983dcd0a6d856e5e78c28d
 };
 
 exports.animateHead = animateHead;
