@@ -40,8 +40,7 @@ var animateHead = function(neck, head){
 	setInterval(movement, 30);
 };
 
-var animateLimb = function(p1, p2, p3, asset){
-
+var animateLimb = function(p1, p2, p3, asset, _toTrace){
 	var p1Rot = 0;
 	var p2Rot = 0;
 	var p3Rot = 0;
@@ -53,20 +52,39 @@ var animateLimb = function(p1, p2, p3, asset){
 		p3Rot = asset[frame].p2;
 		
 		(frame<(asset.length-1))? frame++ : frame = 0;
-		
-		var p1Transform = qtg.createTransform({duration:30});
+		/*
+		var p1Transform = qtg.createTransform({duration:28});
 		p1Transform.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
 		p1.transform(p1Transform);
 		
-		var p2Transform = qtg.createTransform({duration:30});
+		var p2Transform = qtg.createTransform({duration:28});
 		p2Transform.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
-		p2Transform.move(p1.x - p1.height*0.8*xR(p1Rot), p1.y+p1.height*0.8*yR(p1Rot));
+		var x1 = Math.round( p1.x - p1.height*0.8*xR(p1Rot) );
+		var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot) );
+		p2Transform.move(x1, y1);
+		
+		if(_toTrace) Ti.API.info('rotation: '+p2Rot+' x: '+x1+' y '+y1);
 		p2.transform(p2Transform);
 		
 		var p3Transform = qtg.createTransform({duration:30});
 		p3Transform.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.1);
-		p3Transform.move(p2.x - p2.height*0.9*xR(p2Rot), p2.y+p2.height*0.9*yR(p2Rot));
-		p3.transform(p3Transform);
+		var x2 = Math.round(p2.x - p2.height*0.9*xR(p2Rot));
+		var y2 = math.round(p2.y + p2.height*0.9*yR(p2Rot))
+		p3Transform.move(x2,y2);
+		p3.transform(p3Transform);*/
+		
+		
+		p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
+		
+		p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
+		var x1 = /*Math.round( */p1.x - p1.height*0.8*xR(p1Rot)// );
+		var y1 = /*Math.round( */p1.y + p1.height*0.8*yR(p1Rot)// );
+		p2.move(x1, y1);
+		
+		p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.1);
+		var x2 = Math.round(p2.x - p2.height*0.9*xR(p2Rot));
+		var y2 = Math.round(p2.y + p2.height*0.9*yR(p2Rot))
+		p3.move(x2,y2);
 	};
 	
 	setInterval(movement, 30);

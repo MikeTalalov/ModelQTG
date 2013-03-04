@@ -104,7 +104,7 @@ var drawModel = function(toGame, toScene){
 	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH);
 	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH);
 	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL);
-	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL);
+	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL, true);
 	//var tf = qtg.createTransform();
 	//tf.duration = 8000;
 	//tf.x = 230;

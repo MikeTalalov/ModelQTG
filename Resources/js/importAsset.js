@@ -2,7 +2,10 @@
  * @author bonovisio
  */
 
-var f = Ti.Filesystem.getFile('js/asset.json');
+alert(Ti.Filesystem.getResourcesDirectory());
+Ti.include('js/asset.json');
+var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(),'js/asset.json'); 
+//var f = Ti.Filesystem.getFile('js/asset.json');
 var contents = f.read().text;
 var json = JSON.parse(contents);
 
