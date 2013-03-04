@@ -2,7 +2,6 @@
  * @author bonovisio
  */
 
-alert(Ti.Filesystem.getResourcesDirectory());
 Ti.include('js/asset.json');
 var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(),'js/asset.json'); 
 //var f = Ti.Filesystem.getFile('js/asset.json');
