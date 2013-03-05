@@ -7,6 +7,8 @@ var myAnimatedModel = require('js/animateModel');
 var importAsset = require('js/importAsset');
 var utils = require('js/utils');
 
+var assetBody = importAsset.bodyAsset();
+var assetHead = importAsset.headAsset();
 var assetLH = importAsset.leftHandAsset();
 var assetRH = importAsset.rightHandAsset();
 var assetLL = importAsset.leftLegAsset();
@@ -20,11 +22,13 @@ var placeToCenter = function(sO, tG, tS){
 	
 	sO.move(gameCenterX-sCenterX, gameCenterY-sCenterY);
 };
-
 var drawModel = function(toGame, toScene){
 //=========================================
 	var res = utils.setResolution(toGame);
-	var bodySpr = qtg.createSprite({image:'images/body_'+res+'.png'});
+	var bodySprInner = qtg.createSprite({image:'images/body_'+res+'.png'});
+	
+	var heart = qtg.createSprite({image:'images/heart.png'});
+	Ti.App.heart = heart;
 	var neckSpr = qtg.createSprite({image:'images/neck_'+res+'.png'});
 	var headSpr = qtg.createSpriteSheet({image:'images/headsheet_'+res+'.xml'});
 	//left leg
@@ -68,6 +72,18 @@ var drawModel = function(toGame, toScene){
 		placeToCenter(bodySpr, toGame, toScene);
 		bodySpr.z = 80;
 		toScene.add(bodySpr);
+		Ti.App.bodyX = bodySpr.center.x;
+		Ti.App.bodyY = bodySpr.center.y;
+		Ti.App.body = bodySpr;
+		Ti.App.D = Math.sqrt(Math.pow(bodySpr.width/2, 2) + Math.pow(bodySpr.height/2, 2));
+		Ti.App.a = Math.asin( (bodySpr.width/2)/Ti.App.D) * 180/Math.PI;
+		Ti.App.D *= 0.9;
+		Ti.API.info(Ti.App.a)
+	};
+	
+	var drawHeart = function(){
+		toScene.add(Ti.App.heart);
+		Ti.App.heart.z = 150;
 	};
 	
 	var drawPart = function(childSpr, parentSpr, attachPoint, zIndex){
@@ -98,18 +114,16 @@ var drawModel = function(toGame, toScene){
 	drawPart(rightForearmSpr, rightShoulderSpr, rightForearmPoint, 80);
 	drawPart(rightPalmSpr, rightForearmSpr, rightPalmPoint, 90);
 	
+	//drawHeart();
+	
 	
 //=========================================
-	myAnimatedModel.animateHead(neckSpr, headSpr);
-	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH);
-	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH, true);
-	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL);
-	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL);
-	//var tf = qtg.createTransform();
-	//tf.duration = 8000;
-	//tf.x = 230;
-	//tf.y = 200;
-	//bodySpr.transform(tf);
+	myAnimatedModel.animateBody(bodySpr, assetBody);
+	myAnimatedModel.animateHead(neckSpr, headSpr, assetHead);
+	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH, 'LT');
+	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH, 'RT');
+	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL, 'LB');
+	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL, 'RB');
 //=========================================	
 };
 

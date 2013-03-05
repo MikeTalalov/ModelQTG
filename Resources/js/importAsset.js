@@ -36,8 +36,25 @@ var rightLegAsset = function(){
 	};
 	return asset;
 };
+var headAsset = function(){
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({headRotation: json[i].head.rotation, neckRotation: json[i].neck.rotation});
+	};
+	return asset;
+};
+var bodyAsset = function(){
+	var asset = [];
+	for (var i = 0; i < (json.length-1); i++){
+		asset.push({rotation: json[i].body.rotation, deltaX: json[i].body.x, deltaY: json[i].body.y});
+	};
+	return asset;
+};
+
 
 exports.leftHandAsset = leftHandAsset;
 exports.rightHandAsset = rightHandAsset;
 exports.leftLegAsset = leftLegAsset;
 exports.rightLegAsset = rightLegAsset;
+exports.headAsset = headAsset;
+exports.bodyAsset = bodyAsset;

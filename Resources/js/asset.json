@@ -1,6 +1,5 @@
-[
-{ 
-	"body":{"x":361.4,"y":603.6,"rotation":1},
+[{ 
+	"body":{"x":-0.1500000000000341,"y":-0.39999999999997726,"rotation":1},
 	"neck":{"x":362.25,"y":444.8,"rotation":3},
 	"head":{"x":368.3,"y":374.2,"rotation":1},
 	"rightHand":{
@@ -11,7 +10,7 @@
 	"leftHand":{
 		"shoulder":{"x":439.8,"y":555.6,"rotation":-4},
 		"forearm":{"x":451.45,"y":702.2,"rotation":-5},
-		"palm":{"x":457,"y":780.3,"rotation":-8}
+		"palm":{"x":457.05,"y":780.3,"rotation":-8}
 	},
 	"rightLeg":{
 		"thigh":{"x":291.7,"y":798,"rotation":10},
@@ -19,13 +18,13 @@
 		"foot":{"x":250.2,"y":1005.05,"rotation":-1}
 	},
 	"leftLeg":{
-		"thigh":{"x":417.95,"y":801.6,
-		"rotation":-1},"shin":{"x":419.9,"y":931.3,"rotation":0},
+		"thigh":{"x":417.95,"y":801.6,"rotation":-1},
+		"shin":{"x":419.9,"y":931.3,"rotation":0},
 		"foot":{"x":442.25,"y":1008.25,"rotation":0}
 	}
 },
 { 
-	"body":{"x":361.2,"y":603.25,"rotation":2},
+	"body":{"x":-0.35000000000002274,"y":-0.75,"rotation":2},
 	"neck":{"x":365.15,"y":444.45,"rotation":5},
 	"head":{"x":375.3,"y":376.15,"rotation":2},
 	"rightHand":{
@@ -50,7 +49,7 @@
 	}
 },
 { 
-	"body":{"x":361.2,"y":602.9,"rotation":3},
+	"body":{"x":-0.35000000000002274,"y":-1.1000000000000227,"rotation":3},
 	"neck":{"x":368.05,"y":444.15,"rotation":8},
 	"head":{"x":382.1,"y":378.5,"rotation":3},
 	"rightHand":{
@@ -75,7 +74,7 @@
 	}
 },
 { 
-	"body":{"x":360.95,"y":602.55,"rotation":4},
+	"body":{"x":-0.6000000000000227,"y":-1.4500000000000455,"rotation":4},
 	"neck":{"x":370.9,"y":443.95,"rotation":11},
 	"head":{"x":388.6,"y":381.1,"rotation":4},
 	"rightHand":{
@@ -86,7 +85,7 @@
 	"leftHand":{
 		"shoulder":{"x":463.25,"y":555.7,"rotation":-16},
 		"forearm":{"x":509.4,"y":695.15,"rotation":-21},
-		"palm":{"x":537.6,"y":768.05,"rotation":-33}
+		"palm":{"x":537.65,"y":768.05,"rotation":-33}
 	},
 	"rightLeg":{
 		"thigh":{"x":255.55,"y":780.3,"rotation":39},
@@ -100,7 +99,7 @@
 	}
 },
 { 
-	"body":{"x":360.9,"y":602.2,"rotation":6},
+	"body":{"x":-0.6500000000000341,"y":-1.7999999999999545,"rotation":6},
 	"neck":{"x":373.85,"y":443.75,"rotation":14},
 	"head":{"x":395,"y":384,"rotation":5},
 	"rightHand":{
@@ -125,7 +124,7 @@
 	}
 },
 { 
-	"body":{"x":360.8,"y":601.8,"rotation":7},
+	"body":{"x":-0.75,"y":-2.2000000000000455,"rotation":7},
 	"neck":{"x":376.7,"y":443.7,"rotation":16},
 	"head":{"x":401.05,"y":387.15,"rotation":6},
 	"rightHand":{
@@ -150,7 +149,7 @@
 	}
 },
 { 
-	"body":{"x":360.6,"y":601.5,"rotation":8},
+	"body":{"x":-0.9499999999999886,"y":-2.5,"rotation":8},
 	"neck":{"x":379.65,"y":443.6,"rotation":19},
 	"head":{"x":406.85,"y":390.45,"rotation":7},
 	"rightHand":{
@@ -175,7 +174,7 @@
 	}
 },
 { 
-	"body":{"x":360.55,"y":601.15,"rotation":9},
+	"body":{"x":-1,"y":-2.8500000000000227,"rotation":9},
 	"neck":{"x":382.45,"y":443.6,"rotation":22},
 	"head":{"x":412.4,"y":394.15,"rotation":8},
 	"rightHand":{
@@ -200,7 +199,7 @@
 	}
 },
 { 
-	"body":{"x":360.4,"y":600.85,"rotation":10},
+	"body":{"x":-1.150000000000034,"y":-3.1499999999999773,"rotation":10},
 	"neck":{"x":385.35,"y":443.6,"rotation":24},
 	"head":{"x":417.55,"y":397.95,"rotation":9},
 	"rightHand":{
@@ -225,7 +224,7 @@
 	}
 },
 { 
-	"body":{"x":360.5,"y":601.1,"rotation":9},
+	"body":{"x":-1.0500000000000114,"y":-2.8999999999999773,"rotation":9},
 	"neck":{"x":382.75,"y":443.6,"rotation":22},
 	"head":{"x":412.85,"y":394.4,"rotation":9},
 	"rightHand":{
@@ -250,7 +249,7 @@
 	}
 },
 { 
-	"body":{"x":360.6,"y":601.4,"rotation":8},
+	"body":{"x":-0.9499999999999886,"y":-2.6000000000000227,"rotation":8},
 	"neck":{"x":380.1,"y":443.6,"rotation":20},
 	"head":{"x":407.95,"y":391.2,"rotation":8},
 	"rightHand":{
@@ -275,7 +274,7 @@
 	}
 },
 { 
-	"body":{"x":360.75,"y":601.75,"rotation":7},
+	"body":{"x":-0.8000000000000114,"y":-2.25,"rotation":7},
 	"neck":{"x":377.6,"y":443.6,"rotation":17},
 	"head":{"x":402.8,"y":388.1,"rotation":7},
 	"rightHand":{
@@ -300,7 +299,7 @@
 	}
 },
 { 
-	"body":{"x":360.8,"y":602.1,"rotation":6},
+	"body":{"x":-0.75,"y":-1.8999999999999773,"rotation":6},
 	"neck":{"x":375,"y":443.75,"rotation":15},
 	"head":{"x":397.45,"y":385.2,"rotation":6},
 	"rightHand":{
@@ -325,7 +324,7 @@
 	}
 },
 { 
-	"body":{"x":360.9,"y":602.4,"rotation":5},
+	"body":{"x":-0.6500000000000341,"y":-1.6000000000000227,"rotation":5},
 	"neck":{"x":372.45,"y":443.85,"rotation":12},
 	"head":{"x":391.85,"y":382.6,"rotation":5},
 	"rightHand":{
@@ -350,7 +349,7 @@
 	}
 },
 { 
-	"body":{"x":361,"y":602.65,"rotation":4},
+	"body":{"x":-0.5500000000000114,"y":-1.3500000000000227,"rotation":4},
 	"neck":{"x":369.75,"y":444,"rotation":10},
 	"head":{"x":386.05,"y":380.1,"rotation":4},
 	"rightHand":{
@@ -375,7 +374,7 @@
 	}
 },
 { 
-	"body":{"x":361.25,"y":602.95,"rotation":3},
+	"body":{"x":-0.30000000000001137,"y":-1.0499999999999545,"rotation":3},
 	"neck":{"x":367.2,"y":444.25,"rotation":7},
 	"head":{"x":380.1,"y":377.85,"rotation":3},
 	"rightHand":{
@@ -400,7 +399,7 @@
 	}
 },
 { 
-	"body":{"x":361.3,"y":603.4,"rotation":2},
+	"body":{"x":-0.25,"y":-0.6000000000000227,"rotation":2},
 	"neck":{"x":364.6,"y":444.5,"rotation":5},
 	"head":{"x":373.9,"y":375.7,"rotation":2},
 	"rightHand":{
@@ -425,7 +424,7 @@
 	}
 },
 { 
-	"body":{"x":361.4,"y":603.65,"rotation":1},
+	"body":{"x":-0.1500000000000341,"y":-0.35000000000002274,"rotation":1},
 	"neck":{"x":362,"y":444.8,"rotation":2},
 	"head":{"x":367.6,"y":374,"rotation":1},
 	"rightHand":{
@@ -450,7 +449,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":604,"rotation":0},
+	"body":{"x":0,"y":0,"rotation":0},
 	"neck":{"x":359.4,"y":445.2,"rotation":0},
 	"head":{"x":361.1,"y":372.45,"rotation":0},
 	"rightHand":{
@@ -475,7 +474,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":610.6,"rotation":0},
+	"body":{"x":0,"y":6.600000000000023,"rotation":0},
 	"neck":{"x":359.3,"y":451.8,"rotation":2},
 	"head":{"x":364,"y":379.15,"rotation":3},
 	"rightHand":{
@@ -500,7 +499,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":617.2,"rotation":0},
+	"body":{"x":0,"y":13.200000000000045,"rotation":0},
 	"neck":{"x":359.25,"y":458.35,"rotation":5},
 	"head":{"x":367.05,"y":386,"rotation":5},
 	"rightHand":{
@@ -525,7 +524,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":623.8,"rotation":0},
+	"body":{"x":0,"y":19.799999999999955,"rotation":0},
 	"neck":{"x":359.15,"y":464.95,"rotation":7},
 	"head":{"x":370,"y":393,"rotation":8},
 	"rightHand":{
@@ -536,7 +535,7 @@
 	"leftHand":{
 		"shoulder":{"x":412.3,"y":572.4,"rotation":14},
 		"forearm":{"x":377.5,"y":715.75,"rotation":14},
-		"palm":{"x":354.65,"y":789.7,"rotation":32}
+		"palm":{"x":354.7,"y":789.7,"rotation":32}
 	},
 	"rightLeg":{
 		"thigh":{"x":289.65,"y":818.05,"rotation":15},
@@ -550,7 +549,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":630.4,"rotation":0},
+	"body":{"x":0,"y":26.399999999999977,"rotation":0},
 	"neck":{"x":359.15,"y":471.45,"rotation":10},
 	"head":{"x":373,"y":400,"rotation":10},
 	"rightHand":{
@@ -575,7 +574,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":637,"rotation":0},
+	"body":{"x":0,"y":33,"rotation":0},
 	"neck":{"x":359.1,"y":478.1,"rotation":12},
 	"head":{"x":375.9,"y":407.2,"rotation":13},
 	"rightHand":{
@@ -600,7 +599,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":643.6,"rotation":0},
+	"body":{"x":0,"y":39.60000000000002,"rotation":0},
 	"neck":{"x":359,"y":484.65,"rotation":14},
 	"head":{"x":378.8,"y":414.55,"rotation":16},
 	"rightHand":{
@@ -625,7 +624,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":650.2,"rotation":0},
+	"body":{"x":0,"y":46.200000000000045,"rotation":0},
 	"neck":{"x":358.95,"y":491.2,"rotation":17},
 	"head":{"x":381.75,"y":422,"rotation":18},
 	"rightHand":{
@@ -650,7 +649,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":656.8,"rotation":0},
+	"body":{"x":0,"y":52.799999999999955,"rotation":0},
 	"neck":{"x":358.9,"y":497.85,"rotation":19},
 	"head":{"x":384.55,"y":429.5,"rotation":21},
 	"rightHand":{
@@ -675,7 +674,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":663.4,"rotation":0},
+	"body":{"x":0,"y":59.39999999999998,"rotation":0},
 	"neck":{"x":358.9,"y":504.45,"rotation":22},
 	"head":{"x":387.35,"y":437.2,"rotation":23},
 	"rightHand":{
@@ -686,7 +685,7 @@
 	"leftHand":{
 		"shoulder":{"x":377.6,"y":594.25,"rotation":41},
 		"forearm":{"x":280.7,"y":706.35,"rotation":41},
-		"palm":{"x":226,"y":755.8,"rotation":95}
+		"palm":{"x":226,"y":755.85,"rotation":95}
 	},
 	"rightLeg":{
 		"thigh":{"x":263.5,"y":842.4,"rotation":44},
@@ -700,7 +699,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":670,"rotation":0},
+	"body":{"x":0,"y":66,"rotation":0},
 	"neck":{"x":358.8,"y":511,"rotation":24},
 	"head":{"x":390.1,"y":445.05,"rotation":26},
 	"rightHand":{
@@ -725,7 +724,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":663.4,"rotation":0},
+	"body":{"x":0,"y":59.39999999999998,"rotation":0},
 	"neck":{"x":358.9,"y":504.45,"rotation":22},
 	"head":{"x":387.35,"y":437.2,"rotation":23},
 	"rightHand":{
@@ -750,7 +749,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":656.8,"rotation":0},
+	"body":{"x":0,"y":52.799999999999955,"rotation":0},
 	"neck":{"x":358.9,"y":497.85,"rotation":19},
 	"head":{"x":384.55,"y":429.5,"rotation":21},
 	"rightHand":{
@@ -775,7 +774,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":650.2,"rotation":0},
+	"body":{"x":0,"y":46.200000000000045,"rotation":0},
 	"neck":{"x":358.95,"y":491.2,"rotation":17},
 	"head":{"x":381.75,"y":422,"rotation":18},
 	"rightHand":{
@@ -800,7 +799,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":643.6,"rotation":0},
+	"body":{"x":0,"y":39.60000000000002,"rotation":0},
 	"neck":{"x":359,"y":484.65,"rotation":14},
 	"head":{"x":378.8,"y":414.55,"rotation":16},
 	"rightHand":{
@@ -811,7 +810,7 @@
 	"leftHand":{
 		"shoulder":{"x":376.7,"y":573.95,"rotation":42},
 		"forearm":{"x":259.1,"y":654.85,"rotation":75},
-		"palm":{"x":184.4,"y":667.9,"rotation":111}
+		"palm":{"x":184.35,"y":667.95,"rotation":111}
 	},
 	"rightLeg":{
 		"thigh":{"x":263.65,"y":823.05,"rotation":43},
@@ -825,7 +824,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":637,"rotation":0},
+	"body":{"x":0,"y":33,"rotation":0},
 	"neck":{"x":359.1,"y":478.1,"rotation":12},
 	"head":{"x":375.9,"y":407.2,"rotation":13},
 	"rightHand":{
@@ -850,7 +849,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":630.4,"rotation":0},
+	"body":{"x":0,"y":26.399999999999977,"rotation":0},
 	"neck":{"x":359.15,"y":471.45,"rotation":10},
 	"head":{"x":373,"y":400,"rotation":10},
 	"rightHand":{
@@ -875,7 +874,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":623.8,"rotation":0},
+	"body":{"x":0,"y":19.799999999999955,"rotation":0},
 	"neck":{"x":359.15,"y":464.95,"rotation":7},
 	"head":{"x":370,"y":393,"rotation":8},
 	"rightHand":{
@@ -900,7 +899,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":617.2,"rotation":0},
+	"body":{"x":0,"y":13.200000000000045,"rotation":0},
 	"neck":{"x":359.25,"y":458.35,"rotation":5},
 	"head":{"x":367.05,"y":386,"rotation":5},
 	"rightHand":{
@@ -925,7 +924,7 @@
 	}
 },
 { 
-	"body":{"x":361.55,"y":610.6,"rotation":0},
+	"body":{"x":0,"y":6.600000000000023,"rotation":0},
 	"neck":{"x":359.3,"y":451.8,"rotation":2},
 	"head":{"x":364,"y":379.15,"rotation":3},
 	"rightHand":{
@@ -936,7 +935,7 @@
 	"leftHand":{
 		"shoulder":{"x":382,"y":545.4,"rotation":37},
 		"forearm":{"x":270.65,"y":591.55,"rotation":111},
-		"palm":{"x":199.15,"y":560.55,"rotation":119}
+		"palm":{"x":199.1,"y":560.55,"rotation":119}
 	},
 	"rightLeg":{
 		"thigh":{"x":268.65,"y":794.8,"rotation":37},
@@ -948,5 +947,554 @@
 		"shin":{"x":434.3,"y":936.5,"rotation":-2},
 		"foot":{"x":459.2,"y":1013.6,"rotation":0}
 	}
-}
-]
+},
+{ 
+	"body":{"x":0,"y":0,"rotation":0},
+	"neck":{"x":359.4,"y":445.2,"rotation":0},
+	"head":{"x":361.1,"y":372.45,"rotation":0},
+	"rightHand":{
+		"shoulder":{"x":280.1,"y":392.1,"rotation":173},
+		"forearm":{"x":328.7,"y":327.65,"rotation":-70},
+		"palm":{"x":399.9,"y":355.95,"rotation":-51}
+	},
+	"leftHand":{
+		"shoulder":{"x":383.05,"y":539.65,"rotation":36},
+		"forearm":{"x":275.95,"y":579.25,"rotation":118},
+		"palm":{"x":208.3,"y":540.2,"rotation":120}
+	},
+	"rightLeg":{
+		"thigh":{"x":269.85,"y":789.05,"rotation":35},
+		"shin":{"x":191.85,"y":896.65,"rotation":37},
+		"foot":{"x":137.1,"y":978.55,"rotation":-51}
+	},
+	"leftLeg":{
+		"thigh":{"x":419.05,"y":801,"rotation":0},
+		"shin":{"x":419.4,"y":930.6,"rotation":0},
+		"foot":{"x":441.7,"y":1007.6,"rotation":0}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":7.0499999999999545,"rotation":1},
+	"neck":{"x":362.15,"y":452.1,"rotation":1},
+	"head":{"x":365.05,"y":379.4,"rotation":1},
+	"rightHand":{
+		"shoulder":{"x":232.55,"y":424.7,"rotation":132},
+		"forearm":{"x":205.6,"y":316.1,"rotation":-144},
+		"palm":{"x":251.2,"y":254.4,"rotation":-137}
+	},
+	"leftHand":{
+		"shoulder":{"x":405.55,"y":558.45,"rotation":20},
+		"forearm":{"x":313.05,"y":630.15,"rotation":98},
+		"palm":{"x":235.8,"y":618.05,"rotation":90}
+	},
+	"rightLeg":{
+		"thigh":{"x":268.5,"y":795.7,"rotation":34},
+		"shin":{"x":196.5,"y":907.25,"rotation":31},
+		"foot":{"x":143.25,"y":988.75,"rotation":-38}
+	},
+	"leftLeg":{
+		"thigh":{"x":425.55,"y":808.15,"rotation":-8},
+		"shin":{"x":429.8,"y":936.9,"rotation":5},
+		"foot":{"x":446.05,"y":1013.1,"rotation":-1}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":14.149999999999977,"rotation":2},
+	"neck":{"x":364.85,"y":459.15,"rotation":2},
+	"head":{"x":369,"y":386.4,"rotation":2},
+	"rightHand":{
+		"shoulder":{"x":214.4,"y":483.3,"rotation":92},
+		"forearm":{"x":90.2,"y":431.5,"rotation":142},
+		"palm":{"x":42.25,"y":371.95,"rotation":137}
+	},
+	"leftHand":{
+		"shoulder":{"x":430.1,"y":571.15,"rotation":4},
+		"forearm":{"x":361.9,"y":669.9,"rotation":78},
+		"palm":{"x":285.65,"y":686.15,"rotation":61}
+	},
+	"rightLeg":{
+		"thigh":{"x":267.15,"y":802.25,"rotation":33},
+		"shin":{"x":201.4,"y":917.4,"rotation":26},
+		"foot":{"x":151.05,"y":997.1,"rotation":-25}
+	},
+	"leftLeg":{
+		"thigh":{"x":431.9,"y":814.1,"rotation":-16},
+		"shin":{"x":440,"y":940.3,"rotation":10},
+		"foot":{"x":450.05,"y":1015.15,"rotation":-1}
+	}
+},
+{ 
+	"body":{"x":0,"y":21.149999999999977,"rotation":3},
+	"neck":{"x":367.55,"y":466.2,"rotation":3},
+	"head":{"x":373,"y":393.5,"rotation":3},
+	"rightHand":{
+		"shoulder":{"x":235.4,"y":542.45,"rotation":51},
+		"forearm":{"x":111.15,"y":619.25,"rotation":68},
+		"palm":{"x":41.75,"y":650.25,"rotation":51}
+	},
+	"leftHand":{
+		"shoulder":{"x":455,"y":577.65,"rotation":-12},
+		"forearm":{"x":419.05,"y":694.9,"rotation":59},
+		"palm":{"x":353.95,"y":737.15,"rotation":31}
+	},
+	"rightLeg":{
+		"thigh":{"x":265.9,"y":808.85,"rotation":32},
+		"shin":{"x":206.55,"y":927,"rotation":21},
+		"foot":{"x":160.6,"y":1003.5,"rotation":-11}
+	},
+	"leftLeg":{
+		"thigh":{"x":437.8,"y":818.7,"rotation":-24},
+		"shin":{"x":449.5,"y":940.75,"rotation":14},
+		"foot":{"x":453.55,"y":1013.75,"rotation":-2}
+	}
+},
+{ 
+	"body":{"x":-0.10000000000002274,"y":28.200000000000045,"rotation":4},
+	"neck":{"x":370.25,"y":473.25,"rotation":4},
+	"head":{"x":376.95,"y":400.6,"rotation":4},
+	"rightHand":{
+		"shoulder":{"x":286.5,"y":576.85,"rotation":11},
+		"forearm":{"x":277.1,"y":721.95,"rotation":-6},
+		"palm":{"x":289.15,"y":796.2,"rotation":-35}
+	},
+	"leftHand":{
+		"shoulder":{"x":478.55,"y":578,"rotation":-28},
+		"forearm":{"x":479.65,"y":703.2,"rotation":39},
+		"palm":{"x":434.35,"y":765.4,"rotation":1}
+	},
+	"rightLeg":{
+		"thigh":{"x":264.65,"y":815.3,"rotation":31},
+		"shin":{"x":212.05,"y":935.9,"rotation":15},
+		"foot":{"x":171.9,"y":1008.5,"rotation":2}
+	},
+	"leftLeg":{
+		"thigh":{"x":443.2,"y":822.25,"rotation":-32},
+		"shin":{"x":458.05,"y":938.4,"rotation":19},
+		"foot":{"x":456.25,"y":1009.1,"rotation":-2}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":2.7999999999999545,"rotation":6},
+	"neck":{"x":375.4,"y":448.35,"rotation":6},
+	"head":{"x":384.45,"y":376,"rotation":6},
+	"rightHand":{
+		"shoulder":{"x":254.4,"y":533.2,"rotation":39},
+		"forearm":{"x":172.7,"y":654.5,"rotation":27},
+		"palm":{"x":139.75,"y":723.35,"rotation":18}
+	},
+	"leftHand":{
+		"shoulder":{"x":493.7,"y":547.85,"rotation":-37},
+		"forearm":{"x":508.4,"y":667.35,"rotation":36},
+		"palm":{"x":464.5,"y":731.15,"rotation":6}
+	},
+	"rightLeg":{
+		"thigh":{"x":255.35,"y":784.3,"rotation":37},
+		"shin":{"x":217.15,"y":903.05,"rotation":-4},
+		"foot":{"x":201.95,"y":982.1,"rotation":-11}
+	},
+	"leftLeg":{
+		"thigh":{"x":442.75,"y":795.55,"rotation":-36},
+		"shin":{"x":452.4,"y":904.7,"rotation":28},
+		"foot":{"x":434.6,"y":984.05,"rotation":31}
+	}
+},
+{ 
+	"body":{"x":0,"y":-18,"rotation":7},
+	"neck":{"x":379.6,"y":428,"rotation":7},
+	"head":{"x":390.55,"y":356,"rotation":7},
+	"rightHand":{
+		"shoulder":{"x":237,"y":485.85,"rotation":62},
+		"forearm":{"x":111.6,"y":562.05,"rotation":53},
+		"palm":{"x":49.35,"y":606.85,"rotation":61}
+	},
+	"leftHand":{
+		"shoulder":{"x":505.05,"y":522.1,"rotation":-45},
+		"forearm":{"x":529.95,"y":635.55,"rotation":35},
+		"palm":{"x":487.3,"y":700.45,"rotation":10}
+	},
+	"rightLeg":{
+		"thigh":{"x":248.2,"y":758.55,"rotation":42},
+		"shin":{"x":221.9,"y":870.25,"rotation":-19},
+		"foot":{"x":227.25,"y":948.5,"rotation":-21}
+	},
+	"leftLeg":{
+		"thigh":{"x":442.25,"y":773.45,"rotation":-40},
+		"shin":{"x":447.9,"y":875.45,"rotation":36},
+		"foot":{"x":412.5,"y":957.05,"rotation":59}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-34.14999999999998,"rotation":8},
+	"neck":{"x":382.85,"y":412.25,"rotation":8},
+	"head":{"x":395.25,"y":340.5,"rotation":8},
+	"rightHand":{
+		"shoulder":{"x":231.3,"y":444.55,"rotation":80},
+		"forearm":{"x":87.5,"y":475.1,"rotation":74},
+		"palm":{"x":13.2,"y":493.1,"rotation":94}
+	},
+	"leftHand":{
+		"shoulder":{"x":513.15,"y":501.4,"rotation":-51},
+		"forearm":{"x":545.3,"y":609.45,"rotation":33},
+		"palm":{"x":503.6,"y":675.15,"rotation":13}
+	},
+	"rightLeg":{
+		"thigh":{"x":242.8,"y":738.15,"rotation":45},
+		"shin":{"x":225.1,"y":841.25,"rotation":-31},
+		"foot":{"x":245.6,"y":915.25,"rotation":-29}
+	},
+	"leftLeg":{
+		"thigh":{"x":441.65,"y":756.05,"rotation":-43},
+		"shin":{"x":444.7,"y":851.75,"rotation":42},
+		"foot":{"x":394.2,"y":930.85,"rotation":80}
+	}
+},
+{ 
+	"body":{"x":-0.10000000000002274,"y":-45.75,"rotation":9},
+	"neck":{"x":385.1,"y":401.1,"rotation":9},
+	"head":{"x":398.6,"y":329.6,"rotation":9},
+	"rightHand":{
+		"shoulder":{"x":232.1,"y":414.05,"rotation":93},
+		"forearm":{"x":85.05,"y":409.55,"rotation":89},
+		"palm":{"x":8.9,"y":406.5,"rotation":118}
+	},
+	"leftHand":{
+		"shoulder":{"x":518.5,"y":486.3,"rotation":-55},
+		"forearm":{"x":555.35,"y":590,"rotation":32},
+		"palm":{"x":514.5,"y":656.35,"rotation":15}
+	},
+	"rightLeg":{
+		"thigh":{"x":239.1,"y":723.5,"rotation":48},
+		"shin":{"x":226.75,"y":818.8,"rotation":-40},
+		"foot":{"x":257.3,"y":887.9,"rotation":-35}
+	},
+	"leftLeg":{
+		"thigh":{"x":441.1,"y":743.55,"rotation":-45},
+		"shin":{"x":442.4,"y":834.3,"rotation":46},
+		"foot":{"x":381.2,"y":908.95,"rotation":95}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-52.75,"rotation":10},
+	"neck":{"x":386.55,"y":394.4,"rotation":10},
+	"head":{"x":400.6,"y":323.05,"rotation":10},
+	"rightHand":{
+		"shoulder":{"x":234.6,"y":395.8,"rotation":101},
+		"forearm":{"x":89.6,"y":370.15,"rotation":98},
+		"palm":{"x":15.35,"y":354.7,"rotation":132}
+	},
+	"leftHand":{
+		"shoulder":{"x":521.5,"y":477.15,"rotation":-57},
+		"forearm":{"x":561.1,"y":578.15,"rotation":32},
+		"palm":{"x":520.65,"y":644.75,"rotation":16}
+	},
+	"rightLeg":{
+		"thigh":{"x":236.85,"y":714.55,"rotation":50},
+		"shin":{"x":227.45,"y":804.7,"rotation":-45},
+		"foot":{"x":263.6,"y":870.2,"rotation":-38}
+	},
+	"leftLeg":{
+		"thigh":{"x":440.85,"y":735.95,"rotation":-46},
+		"shin":{"x":441.2,"y":823.6,"rotation":49},
+		"foot":{"x":373.8,"y":894.65,"rotation":104}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-54.950000000000045,"rotation":10},
+	"neck":{"x":387,"y":392.15,"rotation":10},
+	"head":{"x":401.3,"y":320.85,"rotation":10},
+	"rightHand":{
+		"shoulder":{"x":235.7,"y":389.7,"rotation":103},
+		"forearm":{"x":92.1,"y":357.2,"rotation":101},
+		"palm":{"x":18.95,"y":337.65,"rotation":137}
+	},
+	"leftHand":{
+		"shoulder":{"x":522.5,"y":474.05,"rotation":-58},
+		"forearm":{"x":562.95,"y":574.15,"rotation":31},
+		"palm":{"x":522.65,"y":640.85,"rotation":17}
+	},
+	"rightLeg":{
+		"thigh":{"x":236.15,"y":711.6,"rotation":50},
+		"shin":{"x":227.65,"y":799.9,"rotation":-46},
+		"foot":{"x":265.5,"y":864.1,"rotation":-39}
+	},
+	"leftLeg":{
+		"thigh":{"x":440.7,"y":733.4,"rotation":-46},
+		"shin":{"x":440.8,"y":820.05,"rotation":50},
+		"foot":{"x":371.4,"y":889.8,"rotation":107}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-50,"rotation":9},
+	"neck":{"x":384.5,"y":396.75,"rotation":9},
+	"head":{"x":397.65,"y":325.2,"rotation":9},
+	"rightHand":{
+		"shoulder":{"x":231.55,"y":408.75,"rotation":94},
+		"forearm":{"x":84.65,"y":399.85,"rotation":92},
+		"palm":{"x":9,"y":392.75,"rotation":124}
+	},
+	"leftHand":{
+		"shoulder":{"x":516.45,"y":483.95,"rotation":-53},
+		"forearm":{"x":555.05,"y":591.85,"rotation":29},
+		"palm":{"x":517.85,"y":660.5,"rotation":15}
+	},
+	"rightLeg":{
+		"thigh":{"x":241.2,"y":721.4,"rotation":46},
+		"shin":{"x":233.3,"y":817,"rotation":-42},
+		"foot":{"x":266.45,"y":884.1,"rotation":-36}
+	},
+	"leftLeg":{
+		"thigh":{"x":439.7,"y":741.2,"rotation":-42},
+		"shin":{"x":439.65,"y":834.9,"rotation":45},
+		"foot":{"x":378.25,"y":910.5,"rotation":98}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-44.950000000000045,"rotation":8},
+	"neck":{"x":382,"y":401.4,"rotation":8},
+	"head":{"x":394.05,"y":329.7,"rotation":8},
+	"rightHand":{
+		"shoulder":{"x":229.65,"y":427.85,"rotation":85},
+		"forearm":{"x":83.25,"y":442.95,"rotation":83},
+		"palm":{"x":7.3,"y":448.45,"rotation":112}
+	},
+	"leftHand":{
+		"shoulder":{"x":509.85,"y":493.5,"rotation":-48},
+		"forearm":{"x":546.05,"y":608.65,"rotation":26},
+		"palm":{"x":512.2,"y":678.95,"rotation":14}
+	},
+	"rightLeg":{
+		"thigh":{"x":246.7,"y":730.9,"rotation":41},
+		"shin":{"x":239.2,"y":833.35,"rotation":-38},
+		"foot":{"x":267.6,"y":902.85,"rotation":-32}
+	},
+	"leftLeg":{
+		"thigh":{"x":438.35,"y":748.65,"rotation":-38},
+		"shin":{"x":438.25,"y":848.95,"rotation":41},
+		"foot":{"x":385.45,"y":929.4,"rotation":88}
+	}
+},
+{ 
+	"body":{"x":0,"y":-40,"rotation":7},
+	"neck":{"x":379.5,"y":406.15,"rotation":7},
+	"head":{"x":390.4,"y":334.2,"rotation":7},
+	"rightHand":{
+		"shoulder":{"x":229.95,"y":446.95,"rotation":75},
+		"forearm":{"x":87.9,"y":485.5,"rotation":74},
+		"palm":{"x":13.8,"y":503.5,"rotation":99}
+	},
+	"leftHand":{
+		"shoulder":{"x":502.65,"y":502.5,"rotation":-42},
+		"forearm":{"x":536.05,"y":624.35,"rotation":23},
+		"palm":{"x":505.45,"y":696.15,"rotation":12}
+	},
+	"rightLeg":{
+		"thigh":{"x":252.45,"y":740.05,"rotation":36},
+		"shin":{"x":245.5,"y":848.7,"rotation":-34},
+		"foot":{"x":268.85,"y":920.5,"rotation":-29}
+	},
+	"leftLeg":{
+		"thigh":{"x":436.8,"y":755.95,"rotation":-34},
+		"shin":{"x":436.7,"y":862.1,"rotation":36},
+		"foot":{"x":392.7,"y":946.25,"rotation":78}
+	}
+},
+{ 
+	"body":{"x":-0.10000000000002274,"y":-35,"rotation":6},
+	"neck":{"x":377,"y":410.85,"rotation":6},
+	"head":{"x":386.75,"y":338.8,"rotation":6},
+	"rightHand":{
+		"shoulder":{"x":232.4,"y":465.35,"rotation":66},
+		"forearm":{"x":98.4,"y":526.45,"rotation":64},
+		"palm":{"x":28.25,"y":556.55,"rotation":87}
+	},
+	"leftHand":{
+		"shoulder":{"x":494.95,"y":511.1,"rotation":-37},
+		"forearm":{"x":525.15,"y":638.8,"rotation":20},
+		"palm":{"x":497.95,"y":712.1,"rotation":11}
+	},
+	"rightLeg":{
+		"thigh":{"x":258.4,"y":749,"rotation":32},
+		"shin":{"x":252.15,"y":863.15,"rotation":-29},
+		"foot":{"x":270.3,"y":936.6,"rotation":-25}
+	},
+	"leftLeg":{
+		"thigh":{"x":435.1,"y":762.75,"rotation":-30},
+		"shin":{"x":435,"y":874.35,"rotation":32},
+		"foot":{"x":400.05,"y":961.05,"rotation":68}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-30.049999999999955,"rotation":5},
+	"neck":{"x":374.5,"y":415.65,"rotation":5},
+	"head":{"x":383.05,"y":343.45,"rotation":5},
+	"rightHand":{
+		"shoulder":{"x":236.8,"y":482.9,"rotation":56},
+		"forearm":{"x":114.5,"y":564.85,"rotation":55},
+		"palm":{"x":50.2,"y":606.2,"rotation":75}
+	},
+	"leftHand":{
+		"shoulder":{"x":486.8,"y":519.1,"rotation":-32},
+		"forearm":{"x":513.35,"y":652.15,"rotation":17},
+		"palm":{"x":489.65,"y":726.55,"rotation":9}
+	},
+	"rightLeg":{
+		"thigh":{"x":264.55,"y":757.5,"rotation":27},
+		"shin":{"x":259.1,"y":876.6,"rotation":-25},
+		"foot":{"x":271.9,"y":951.4,"rotation":-21}
+	},
+	"leftLeg":{
+		"thigh":{"x":433.15,"y":769.3,"rotation":-25},
+		"shin":{"x":433.05,"y":885.55,"rotation":27},
+		"foot":{"x":407.35,"y":973.8,"rotation":59}
+	}
+},
+{ 
+	"body":{"x":0,"y":-24.950000000000045,"rotation":5},
+	"neck":{"x":371.95,"y":420.45,"rotation":5},
+	"head":{"x":379.45,"y":348.05,"rotation":5},
+	"rightHand":{
+		"shoulder":{"x":243.1,"y":499.25,"rotation":47},
+		"forearm":{"x":135.65,"y":599.95,"rotation":46},
+		"palm":{"x":79,"y":651.5,"rotation":62}
+	},
+	"leftHand":{
+		"shoulder":{"x":478.3,"y":526.6,"rotation":-26},
+		"forearm":{"x":500.9,"y":664,"rotation":14},
+		"palm":{"x":480.65,"y":739.55,"rotation":8}
+	},
+	"rightLeg":{
+		"thigh":{"x":271,"y":765.65,"rotation":23},
+		"shin":{"x":266.3,"y":888.9,"rotation":-21},
+		"foot":{"x":273.65,"y":964.65,"rotation":-18}
+	},
+	"leftLeg":{
+		"thigh":{"x":431.1,"y":775.5,"rotation":-21},
+		"shin":{"x":431,"y":895.8,"rotation":23},
+		"foot":{"x":414.35,"y":984.4,"rotation":49}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-20.049999999999955,"rotation":4},
+	"neck":{"x":369.45,"y":425.25,"rotation":4},
+	"head":{"x":375.75,"y":352.85,"rotation":4},
+	"rightHand":{
+		"shoulder":{"x":250.9,"y":514.15,"rotation":38},
+		"forearm":{"x":161.2,"y":630.9,"rotation":37},
+		"palm":{"x":113.9,"y":691.15,"rotation":50}
+	},
+	"leftHand":{
+		"shoulder":{"x":469.4,"y":533.5,"rotation":-21},
+		"forearm":{"x":487.75,"y":674.55,"rotation":11},
+		"palm":{"x":471.2,"y":750.95,"rotation":6}
+	},
+	"rightLeg":{
+		"thigh":{"x":277.5,"y":773.35,"rotation":18},
+		"shin":{"x":273.7,"y":900.05,"rotation":-17},
+		"foot":{"x":275.55,"y":976.55,"rotation":-14}
+	},
+	"leftLeg":{
+		"thigh":{"x":428.9,"y":781.35,"rotation":-17},
+		"shin":{"x":428.9,"y":905,"rotation":18},
+		"foot":{"x":420.9,"y":992.9,"rotation":39}
+	}
+},
+{ 
+	"body":{"x":0,"y":-15,"rotation":3},
+	"neck":{"x":366.95,"y":430.2,"rotation":3},
+	"head":{"x":372.1,"y":357.6,"rotation":3},
+	"rightHand":{
+		"shoulder":{"x":260.05,"y":527.3,"rotation":28},
+		"forearm":{"x":190.55,"y":657,"rotation":28},
+		"palm":{"x":153.9,"y":724.4,"rotation":37}
+	},
+	"leftHand":{
+		"shoulder":{"x":460.3,"y":539.8,"rotation":-16},
+		"forearm":{"x":474.2,"y":683.65,"rotation":9},
+		"palm":{"x":461.15,"y":760.75,"rotation":5}
+	},
+	"rightLeg":{
+		"thigh":{"x":284.25,"y":780.75,"rotation":14},
+		"shin":{"x":281.3,"y":910.15,"rotation":-13},
+		"foot":{"x":277.65,"y":986.65,"rotation":-11}
+	},
+	"leftLeg":{
+		"thigh":{"x":426.5,"y":786.75,"rotation":-13},
+		"shin":{"x":426.6,"y":913.05,"rotation":14},
+		"foot":{"x":427.05,"y":999.45,"rotation":29}
+	}
+},
+{ 
+	"body":{"x":0,"y":-10.049999999999955,"rotation":2},
+	"neck":{"x":364.35,"y":435.15,"rotation":2},
+	"head":{"x":368.4,"y":362.55,"rotation":2},
+	"rightHand":{
+		"shoulder":{"x":270.35,"y":538.55,"rotation":19},
+		"forearm":{"x":222.7,"y":677.8,"rotation":18},
+		"palm":{"x":197.65,"y":750.3,"rotation":25}
+	},
+	"leftHand":{
+		"shoulder":{"x":450.85,"y":545.5,"rotation":-11},
+		"forearm":{"x":460.15,"y":691.35,"rotation":6},
+		"palm":{"x":450.85,"y":768.95,"rotation":3}
+	},
+	"rightLeg":{
+		"thigh":{"x":291,"y":787.6,"rotation":9},
+		"shin":{"x":289.05,"y":918.95,"rotation":-8},
+		"foot":{"x":279.8,"y":995.4,"rotation":-7}
+	},
+	"leftLeg":{
+		"thigh":{"x":424.05,"y":791.9,"rotation":-8},
+		"shin":{"x":424.3,"y":920.05,"rotation":9},
+		"foot":{"x":432.65,"y":1004.05,"rotation":20}
+	}
+},
+{ 
+	"body":{"x":-0.05000000000001137,"y":-5,"rotation":1},
+	"neck":{"x":361.9,"y":440.1,"rotation":1},
+	"head":{"x":364.75,"y":367.45,"rotation":1},
+	"rightHand":{
+		"shoulder":{"x":281.2,"y":547.7,"rotation":9},
+		"forearm":{"x":256.75,"y":692.95,"rotation":9},
+		"palm":{"x":244.2,"y":768.45,"rotation":12}
+	},
+	"leftHand":{
+		"shoulder":{"x":441.45,"y":550.45,"rotation":-5},
+		"forearm":{"x":445.95,"y":697.45,"rotation":3},
+		"palm":{"x":440.25,"y":775.4,"rotation":2}
+	},
+	"rightLeg":{
+		"thigh":{"x":297.9,"y":794.2,"rotation":5},
+		"shin":{"x":296.9,"y":926.65,"rotation":-4},
+		"foot":{"x":282.1,"y":1002.45,"rotation":-4}
+	},
+	"leftLeg":{
+		"thigh":{"x":421.55,"y":796.5,"rotation":-4},
+		"shin":{"x":421.85,"y":925.9,"rotation":5},
+		"foot":{"x":437.5,"y":1006.7,"rotation":10}
+	}
+},
+{ 
+	"body":{"x":0,"y":0,"rotation":0},
+	"neck":{"x":359.4,"y":445.15,"rotation":0},
+	"head":{"x":361.1,"y":372.45,"rotation":0},
+	"rightHand":{
+		"shoulder":{"x":292.45,"y":554.75,"rotation":0},
+		"forearm":{"x":291.95,"y":701.95,"rotation":0},
+		"palm":{"x":291.95,"y":778.55,"rotation":0}
+	},
+	"leftHand":{
+		"shoulder":{"x":431.8,"y":554.8,"rotation":0},
+		"forearm":{"x":431.6,"y":702,"rotation":0},
+		"palm":{"x":429.55,"y":780.1,"rotation":0}
+	},
+	"rightLeg":{
+		"thigh":{"x":304.8,"y":800.3,"rotation":0},
+		"shin":{"x":304.75,"y":933.1,"rotation":0},
+		"foot":{"x":284.45,"y":1007.9,"rotation":0}
+	},
+	"leftLeg":{
+		"thigh":{"x":419.05,"y":800.95,"rotation":0},
+		"shin":{"x":419.4,"y":930.6,"rotation":0},
+		"foot":{"x":441.7,"y":1007.55,"rotation":0}
+	}
+}]
