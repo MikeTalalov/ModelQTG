@@ -5,6 +5,7 @@
 var qtg = require('com.googlecode.quicktigame2d');
 var utils = require('js/utils');
 var myModel = require('js/drawModel');
+var gameMenu = require('js/drawGameMenu');
 
 //init section
 var fpsLabel = utils.createLabel();
@@ -23,7 +24,6 @@ game.color(0.8, 1, 0.7)
 game.opaque = false;
 game.fps = 25;
 game.debug = true;
-//scene.alpha = 0.0; //for iOS
 scene.color(0.8, 1, 0.7);
 
 winMain.addEventListener('open', function(e) {
@@ -32,10 +32,15 @@ winMain.addEventListener('open', function(e) {
 
 game.addEventListener('onload', function(e){
 	myModel.drawModel(game, scene);
+	gameMenu.drawGameMenu(winMain, game);
 	game.pushScene(scene);
 	game.start();
 });
 
+game.addEventListener('swipe', function(e){
+	(e.y>game.size.height*0.8)&&(e.direction == 'up')? gameMenu.moveUp() : 
+	(e.y>game.size.height*0.7)&&(e.direction == 'down')? gameMenu.moveDown() : Ti.API.info(e.direction);
+});
+
 winMain.add(game);
 winMain.open();
-
