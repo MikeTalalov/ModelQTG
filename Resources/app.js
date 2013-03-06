@@ -25,6 +25,7 @@ game.fps = 25;
 game.debug = true;
 //scene.alpha = 0.0; //for iOS
 scene.color(0.8, 1, 0.7);
+
 winMain.addEventListener('open', function(e) {
 	//nothing to do
 });
@@ -35,48 +36,6 @@ game.addEventListener('onload', function(e){
 	game.start();
 });
 
-/*game.addEventListener('enterframe', function(e) {
-    //nothing to do
-    utils.updateFPS(fpsLabel);
-});*/
-
-//run section
-//winMain.add(fpsLabel);
 winMain.add(game);
 winMain.open();
 
-/*
-var handArrowLeft, handArrowRight;
-
-Ti.App.currentAssert = 0;
-
-game.addEventListener('onload', function(e){
-	functions.setResolution(game);
-//---arrows click
-	addElementsToStage();
-	game.addEventListener('click', clickEvent);
-});
-
-//==============================================================================
-
-function addElementsToStage(){
-	scene.add(handArrowLeft);
-	scene.add(handArrowRight);
-}
-
-function clickEvent(e) {
-  var scaleX = game.screen.width   / game.size.width;
-  var scaleY = game.screen.height  / game.size.height;
-    
-  var x = e.x * scaleX;
-  var y = e.y * scaleY;
-    
-  if (handArrowLeft.contains(x, y)) {
-    Ti.App.currentAssert--;
-    if(Ti.App.currentAssert<0) Ti.App.currentAssert=2;
-  } else if (handArrowRight.contains(x, y)) {
-    Ti.App.currentAssert++;
-    if(Ti.App.currentAssert>2) Ti.App.currentAssert=0;
-  }
-}
-*/

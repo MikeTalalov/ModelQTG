@@ -2,116 +2,190 @@
  * @author bonovisio
  */
 
+// CONSTANTS
+
+const RIGHT_HAND = 'rightHand';
+const LEFT_HAND = 'leftHand';
+const RIGHT_LEG = 'rightLeg';
+const LEFT_LEG = 'leftLeg';
+const HEAD = 'head';
+
+// VARS
+
 var qtg = require('com.googlecode.quicktigame2d');
+var importAsset = require('js/importAsset');
 var rad = Math.PI/180;
-var speed = 30;
-var xR = function(part){
-	return Math.sin(part*rad);
-};
+var speed = Math.round(1000/30);
 
-var yR = function(part){
-	return Math.cos(part*rad);
-};
+var assetBody = importAsset.bodyAsset();
+var assetHead = importAsset.headAsset();
+var assetLH = importAsset.leftHandAsset();
+var assetRH = importAsset.rightHandAsset();
+var assetLL = importAsset.leftLegAsset();
+var assetRL = importAsset.rightLegAsset();
 
-exports.animateBody = function(body, asset){
+var deltaX;
+var deltaY;
+var body;
+
+var leftHand={p1:null, p2:null, p3:null};
+var rightHand={p1:null, p2:null, p3:null};
+var leftLeg={p1:null, p2:null, p3:null};
+var rightLeg={p1:null, p2:null, p3:null};
+var head={neck:null, head:null};
+
+// EXPORTS
+
+exports.setLimbParts = function(type, p1, p2, p3){
+	Ti.API.info(type);
+	switch(type){
+		case LEFT_HAND:
+			leftHand.p1 = p1;
+			leftHand.p2 = p2;
+			leftHand.p3 = p3;
+		break;
+		
+		case RIGHT_HAND:
+			rightHand.p1 = p1;
+			rightHand.p2 = p2;
+			rightHand.p3 = p3;
+		break;
+		
+		case LEFT_LEG:
+			leftLeg.p1 = p1;
+			leftLeg.p2 = p2;
+			leftLeg.p3 = p3;
+		break;
+		
+		case RIGHT_LEG:
+			rightLeg.p1 = p1;
+			rightLeg.p2 = p2;
+			rightLeg.p3 = p3;
+		break;
+		
+		case HEAD:
+			head.neck = p1;
+			head.head = p2;
+		break;
+	}
+}
+
+exports.animateBody = function(_body){
 	
 	var bodyRot = 0;
 	var frame = 0;
+	body = _body;
+	
 	var movement = function(){
-		(frame<(asset.length-1))? frame++ : frame = 0;
+		(frame<(assetBody.length-1))? frame++ : frame = 0;
 		
-		bodyRot = asset[frame].rotation;
-		deltaX = asset[frame].deltaX;
-		deltaY = asset[frame].deltaY;
-		Ti.App.deltaX = deltaX;
-		Ti.App.deltaY = deltaY;
+		bodyRot = assetBody[frame].rotation;
+		deltaX = assetBody[frame].deltaX;
+		deltaY = assetBody[frame].deltaY;
 		
 		body.setCenter({'x':Ti.App.bodyX+deltaX, 'y':Ti.App.bodyY+deltaY});
 		body.rotateFrom(bodyRot, body.width*0.5, body.height*0.5);
-		//body.move(Ti.App.bodyX+deltaX, Ti.App.bodyY+deltaY);
+		
+		animateHead(frame);
+		animateLimb(RIGHT_HAND, frame);
+		animateLimb(LEFT_HAND, frame);
+		animateLimb(RIGHT_LEG, frame);
+		animateLimb(LEFT_LEG, frame);
 	};
 	
 	setInterval(movement, speed);
 };
 
-exports.animateHead = function(neck, head,  asset){
+// FUNCTIONS
+
+function animateHead(frame){
 	
-	var neckRot = 0;
-	var headRot = 0;
-	var frame = 0;
-	var movement = function(){
-		(frame<(asset.length-1))? frame++ : frame = 0;
-		
-		neckRot = asset[frame].neckRotation;
-		headRot = asset[frame].headRotation;
-		
-		neck.rotateFrom(neckRot+Ti.App.body.angle, neck.width*0.5, neck.height*0.9);
-		neck.move(Ti.App.body.x + xR(Ti.App.body.angle)*Ti.App.body.height*0.5, Ti.App.body.y-yR(Ti.App.body.angle)*Ti.App.body.height*0.5)
-		
-		head.rotateFrom(headRot, head.width*0.5, head.height*0.5);
-		var x1 = Math.round( neck.x - head.width*0.5 + neck.width*0.5 + neck.height*xR(neckRot) );
-		var y1 = Math.round( neck.y - head.height*0.5 - neck.height*yR(neckRot));
-		head.move(x1, y1);
-	};
+	var neckRot = assetHead[frame].neckRotation;
+	var headRot = assetHead[frame].headRotation;
 	
-	setInterval(movement, speed);
+	head.neck.setCenter({
+		x:body.center.x + xR(body.angle)*body.height*0.5,
+		y:body.center.y - yR(body.angle)*body.height*0.5
+	})
+	head.neck.rotateFrom(neckRot+body.angle, head.neck.width*0.5, head.neck.height*0.9);
+	
+	head.head.rotate(headRot+body.angle);
+	head.head.setCenter({
+		x: head.neck.center.x + xR(neckRot+body.angle)*(head.head.height/2+head.neck.height/4), 
+		y: head.neck.center.y - yR(neckRot+body.angle)*(head.head.height/2+head.neck.height/4)
+	});
 };
 
-exports.animateLimb = function(p1, p2, p3, asset, type){
-	var p1Rot = 0;
-	var p2Rot = 0;
-	var p3Rot = 0;
-	var frame = 0;
+function animateLimb(type, frame){
+	var limb;
+	var asset;
 	
-	var movement = function(){
-		p1Rot = asset[frame].p1+Ti.App.body.angle;
-		p2Rot = asset[frame].p2+Ti.App.body.angle;
-		p3Rot = asset[frame].p2+Ti.App.body.angle;
-		
-		(frame<(asset.length-1))? frame++ : frame = 0;
-		
-		p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
-		
-		var ang;
-		var ds = Math.sqrt( Math.pow(p1.width*0.5, 2) + Math.pow(p1.height*0.1, 2) );
-		var as = Math.asin( (p1.width*0.5)/ds ) * 180/Math.PI;
-		var ang2 = 270+(p1Rot-as);
-		
-		switch(type){
-			case 'LT':
-				ang = 270+(Ti.App.body.angle+Ti.App.a);	
-			break;
-			case 'RT':
-				ang = 270+(Ti.App.body.angle-Ti.App.a);
-			break;
-			case 'LB':
-				ang = 90+(Ti.App.body.angle-Ti.App.a);	
-			break;
-			case 'RB':
-				ang = 90+(Ti.App.body.angle+Ti.App.a);
-			break;
-		}
-		
-		var dX = Ti.App.body.center.x+Ti.App.D*yR(ang);
-		var dY = Ti.App.body.center.y+Ti.App.D*xR(ang);
-		
-		var dXs = ds*Math.cos( (ang2)*Math.PI/180 );
-		var dYs = ds*Math.sin( (ang2)*Math.PI/180 );
-		
-		p1.move(dX+dXs, dY+dYs);
-		//p1.move(dX, dY);
-		//Ti.App.heart.setCenter({x:45+dXs, y:45+dYs});
-		
-		p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
-		var x1 = Math.round( p1.x- p1.height*0.8*xR(p1Rot) );
-		var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot));
-		p2.move(x1, y1);
-		
-		p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.5);
-		var x2 = Math.round(x1 - p2.height*0.9*xR(p2Rot));
-		var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot))
-		p3.move(x2,y2);
-	};
+	var angle;
 	
-	setInterval(movement, speed);
+	switch(type){
+		case RIGHT_HAND:
+			limb = rightHand;
+			asset = assetRH;
+			angle = 270+(body.angle-Ti.App.a);
+		break;
+		case LEFT_HAND:
+			limb = leftHand;
+			asset = assetLH;
+			angle = 270+(body.angle+Ti.App.a);
+		break;
+		case RIGHT_LEG:
+			limb = rightLeg;
+			asset = assetRL;
+			angle = 90+(body.angle+Ti.App.a);
+		break;
+		case LEFT_LEG:
+			limb = leftLeg;
+			asset = assetLL;
+			angle = 90+(body.angle-Ti.App.a);	
+		break;
+	}
+	var p1Rot = asset[frame].p1+body.angle;
+	var p2Rot = asset[frame].p2+body.angle;
+	var p3Rot = asset[frame].p2+body.angle;
+	
+	var p1 = limb.p1;
+	var p2 = limb.p2;
+	var p3 = limb.p3;
+	
+	p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
+	
+	var dX = body.center.x+Ti.App.D*yR(angle);
+	var dY = body.center.y+Ti.App.D*xR(angle);
+	
+	var determ;
+	switch(type){
+		case RIGHT_HAND: case LEFT_HAND:
+			determ = -p1.width/2;
+		break;
+		case RIGHT_LEG:
+			determ = 0;
+		break;
+		case LEFT_LEG:
+			determ = -p1.width;	
+		break;
+	}
+	p1.move(dX+determ, dY);
+	
+	p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
+	var x1 = Math.round( p1.x- p1.height*0.8*xR(p1Rot) );
+	var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot));
+	p2.move(x1, y1);
+	
+	p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.5);
+	var x2 = Math.round(x1 - p2.height*0.9*xR(p2Rot));
+	var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot))
+	p3.move(x2,y2);
+};
+
+function xR(part){
+	return Math.sin(part*rad);
+};
+
+function yR(part){
+	return Math.cos(part*rad);
 };

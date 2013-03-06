@@ -4,15 +4,7 @@
 
 var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
-var importAsset = require('js/importAsset');
 var utils = require('js/utils');
-
-var assetBody = importAsset.bodyAsset();
-var assetHead = importAsset.headAsset();
-var assetLH = importAsset.leftHandAsset();
-var assetRH = importAsset.rightHandAsset();
-var assetLL = importAsset.leftLegAsset();
-var assetRL = importAsset.rightLegAsset();
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
@@ -25,7 +17,7 @@ var placeToCenter = function(sO, tG, tS){
 var drawModel = function(toGame, toScene){
 //=========================================
 	var res = utils.setResolution(toGame);
-	var bodySprInner = qtg.createSprite({image:'images/body_'+res+'.png'});
+	var bodySpr = qtg.createSprite({image:'images/body_'+res+'.png'});
 	
 	var heart = qtg.createSprite({image:'images/heart.png'});
 	Ti.App.heart = heart;
@@ -74,20 +66,13 @@ var drawModel = function(toGame, toScene){
 		toScene.add(bodySpr);
 		Ti.App.bodyX = bodySpr.center.x;
 		Ti.App.bodyY = bodySpr.center.y;
-		Ti.App.body = bodySpr;
 		Ti.App.D = Math.sqrt(Math.pow(bodySpr.width/2, 2) + Math.pow(bodySpr.height/2, 2));
 		Ti.App.a = Math.asin( (bodySpr.width/2)/Ti.App.D) * 180/Math.PI;
 		Ti.App.D *= 0.9;
-		Ti.API.info(Ti.App.a)
-	};
-	
-	var drawHeart = function(){
-		toScene.add(Ti.App.heart);
-		Ti.App.heart.z = 150;
 	};
 	
 	var drawPart = function(childSpr, parentSpr, attachPoint, zIndex){
-		bodySpr.addTransformChildWithRelativePosition(childSpr);
+		//bodySpr.addTransformChildWithRelativePosition(childSpr);
 		childSpr.move(parentSpr.x+attachPoint.x, parentSpr.y+attachPoint.y);
 		childSpr.z = zIndex;
 		toScene.add(childSpr);	
@@ -114,16 +99,17 @@ var drawModel = function(toGame, toScene){
 	drawPart(rightForearmSpr, rightShoulderSpr, rightForearmPoint, 80);
 	drawPart(rightPalmSpr, rightForearmSpr, rightPalmPoint, 90);
 	
-	//drawHeart();
-	
 	
 //=========================================
-	myAnimatedModel.animateBody(bodySpr, assetBody);
-	myAnimatedModel.animateHead(neckSpr, headSpr, assetHead);
-	myAnimatedModel.animateLimb(leftShoulderSpr, leftForearmSpr, leftPalmSpr, assetLH, 'LT');
-	myAnimatedModel.animateLimb(rightShoulderSpr, rightForearmSpr, rightPalmSpr, assetRH, 'RT');
-	myAnimatedModel.animateLimb(leftThighSpr, leftShinSpr, leftFootSpr, assetLL, 'LB');
-	myAnimatedModel.animateLimb(rightThighSpr, rightShinSpr, rightFootSpr, assetRL, 'RB');
+setTimeout(function(){
+	myAnimatedModel.setLimbParts('leftHand', leftShoulderSpr, leftForearmSpr, leftPalmSpr);
+	myAnimatedModel.setLimbParts('rightHand', rightShoulderSpr, rightForearmSpr, rightPalmSpr);
+	myAnimatedModel.setLimbParts('leftLeg', leftThighSpr, leftShinSpr, leftFootSpr);
+	myAnimatedModel.setLimbParts('rightLeg', rightThighSpr, rightShinSpr, rightFootSpr);
+	myAnimatedModel.setLimbParts('head', neckSpr, headSpr);
+	
+	myAnimatedModel.animateBody(bodySpr);
+}, 1000)
 //=========================================	
 };
 
