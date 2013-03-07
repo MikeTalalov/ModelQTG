@@ -37,7 +37,6 @@ var head={neck:null, head:null};
 // EXPORTS
 
 exports.setLimbParts = function(type, p1, p2, p3){
-	Ti.API.info(type);
 	switch(type){
 		case LEFT_HAND:
 			leftHand.p1 = p1;
@@ -82,7 +81,6 @@ exports.animateBody = function(_body){
 		bodyRot = assetBody[frame].rotation;
 		deltaX = assetBody[frame].deltaX;
 		deltaY = assetBody[frame].deltaY;
-		
 		body.setCenter({'x':Ti.App.bodyX+deltaX, 'y':Ti.App.bodyY+deltaY});
 		body.rotateFrom(bodyRot, body.width*0.5, body.height*0.5);
 		
@@ -95,6 +93,22 @@ exports.animateBody = function(_body){
 	
 	setInterval(movement, speed);
 };
+
+exports.changeAsset = function(_part){
+	if(_part === 'body'){
+		Ti.API.info('body')
+		assetBody = importAsset.bodyAsset();
+		assetLL = importAsset.leftLegAsset();
+		assetRL = importAsset.rightLegAsset();
+	}else if(_part ==='head'){
+		Ti.API.info('head')
+		assetHead = importAsset.headAsset();
+	}else{
+		Ti.API.info('hands')
+		assetLH = importAsset.leftHandAsset();
+		assetRH = importAsset.rightHandAsset();
+	}
+}
 
 // FUNCTIONS
 
@@ -132,6 +146,7 @@ function animateLimb(type, frame){
 			limb = leftHand;
 			asset = assetLH;
 			angle = 270+(body.angle+Ti.App.a);
+			
 		break;
 		case RIGHT_LEG:
 			limb = rightLeg;
@@ -164,6 +179,7 @@ function animateLimb(type, frame){
 		break;
 		case RIGHT_LEG:
 			determ = 0;
+			//Ti.API.info(p1Rot);
 		break;
 		case LEFT_LEG:
 			determ = -p1.width;	

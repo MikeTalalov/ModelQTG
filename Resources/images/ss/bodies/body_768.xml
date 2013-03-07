@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:c1dabcdbc80ea0674cf6ed4b0c48f080$ -->
+<Imageset Name="body_768" Imagefile="images/ss/bodies/body_768.png" NativeHorzRes="154" NativeVertRes="1006" AutoScaled="false">
+    <Image Name="body2_768" XPos="2" YPos="2" Width="150" Height="500"/>
+    <Image Name="body_768" XPos="2" YPos="504" Width="150" Height="500"/>
+</Imageset>

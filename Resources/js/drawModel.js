@@ -14,31 +14,33 @@ var placeToCenter = function(sO, tG, tS){
 	
 	sO.move(gameCenterX-sCenterX, gameCenterY-sCenterY);
 };
+
+var body;
+var head;
+
 var drawModel = function(toGame, toScene){
 //=========================================
-	var res = utils.setResolution(toGame);
-	var bodySpr = qtg.createSprite({image:'images/body_'+res+'.png'});
-	
-	var heart = qtg.createSprite({image:'images/heart.png'});
-	Ti.App.heart = heart;
-	var neckSpr = qtg.createSprite({image:'images/neck_'+res+'.png'});
-	var headSpr = qtg.createSpriteSheet({image:'images/headsheet_'+res+'.xml'});
+	var bodySpr = qtg.createSpriteSheet({image:'images/ss/bodies/body_'+Ti.App.res+'.xml'});
+	body = bodySpr;
+	var neckSpr = qtg.createSprite({image:'images/parts/neck_'+Ti.App.res+'.png'});
+	var headSpr = qtg.createSpriteSheet({image:'images/ss/heads/headsheet_'+Ti.App.res+'.xml'});
+	head = headSpr;
 	//left leg
-	var leftThighSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var leftShinSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var leftFootSpr = qtg.createSprite({image:'images/foot_'+res+'.png'});
+	var leftThighSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var leftShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var leftFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
 	//right leg
-	var rightThighSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var rightShinSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var rightFootSpr = qtg.createSprite({image:'images/foot_'+res+'.png'});
+	var rightThighSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var rightShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var rightFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
 	//left hand
-	var leftShoulderSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var leftForearmSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var leftPalmSpr = qtg.createSprite({image:'images/palm_'+res+'.png'});
+	var leftShoulderSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var leftForearmSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var leftPalmSpr = qtg.createSprite({image:'images/parts/palm_'+Ti.App.res+'.png'});
 	//right hand
-	var rightShoulderSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var rightForearmSpr = qtg.createSprite({image:'images/limb_'+res+'.png'});
-	var rightPalmSpr = qtg.createSprite({image:'images/palm_'+res+'.png'});
+	var rightShoulderSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var rightForearmSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var rightPalmSpr = qtg.createSprite({image:'images/parts/palm_'+Ti.App.res+'.png'});
 	
 	//attach points
 	var neckPoint = {x: (bodySpr.width/2)-(neckSpr.width/2), y: -neckSpr.height*0.8};
@@ -112,5 +114,17 @@ setTimeout(function(){
 }, 1000)
 //=========================================	
 };
+
+exports.changeBody = function(e){
+	var target;
+	if(e.source.name === 'image0' || e.source.name === 'image1') target = body;
+	else target = head;
+	
+	var frame = target.frame;
+	frame++;
+	if(frame>=target.frameCount) frame = 0;
+
+	target.frame = frame;
+}
 
 exports.drawModel = drawModel;

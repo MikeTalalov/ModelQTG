@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Imageset Name="head" Imagefile="images/headSheet_768.png" NativeHorzRes="400" NativeVertRes="400" AutoScaled="false">
+<Imageset Name="head" Imagefile="images/ss/heads/headSheet_768.png" NativeHorzRes="400" NativeVertRes="400" AutoScaled="false">
     <Image Name="face1" XPos="0" YPos="0" Width="200" Height="200"/>
     <Image Name="face2" XPos="200" YPos="0" Width="200" Height="200"/>
     <Image Name="face3" XPos="0" YPos="200" Width="200" Height="200"/>
