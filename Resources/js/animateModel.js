@@ -76,7 +76,7 @@ exports.animateBody = function(_body){
 	var bodyRot = 0;
 	var frame = 0;
 	body = _body;
-	
+	// test
 	var movement = function(){
 		
 		totalFrame++;
