@@ -163,12 +163,12 @@ function animateLimb(type, frame){
 		case RIGHT_LEG:
 			limb = rightLeg;
 			asset = assetRL;
-			angle = 90+(body.angle+Ti.App.a);
+			angle = 90+(body.angle+Ti.App.b);
 		break;
 		case LEFT_LEG:
 			limb = leftLeg;
 			asset = assetLL;
-			angle = 90+(body.angle-Ti.App.a);	
+			angle = 90+(body.angle-Ti.App.b);	
 		break;
 	}
 	var p1Rot = asset[frame%asset.length].p1+body.angle;
