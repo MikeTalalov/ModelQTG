@@ -1,0 +1,361 @@
+[{ 
+	"rightHand":{
+		"shoulder":{"x":243.35,"y":540.35,"rotation":36},
+		"forearm":{"x":204,"y":668.6,"rotation":-11},
+		"palm":{"x":215.45,"y":744.35,"rotation":13}
+	},
+	"leftHand":{
+		"shoulder":{"x":480.5,"y":537.55,"rotation":-37},
+		"forearm":{"x":520.35,"y":668.9,"rotation":10},
+		"palm":{"x":504.95,"y":745.65,"rotation":12}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":234.35,"y":534.35,"rotation":43},
+		"forearm":{"x":182.8,"y":656,"rotation":-7},
+		"palm":{"x":190,"y":732.2,"rotation":16}
+	},
+	"leftHand":{
+		"shoulder":{"x":486.3,"y":532.1,"rotation":-43},
+		"forearm":{"x":533.45,"y":657.85,"rotation":10},
+		"palm":{"x":517.9,"y":734.6,"rotation":13}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":226.3,"y":527.3,"rotation":51},
+		"forearm":{"x":163.4,"y":641.05,"rotation":-4},
+		"palm":{"x":166.2,"y":717.6,"rotation":18}
+	},
+	"leftHand":{
+		"shoulder":{"x":491.3,"y":526,"rotation":-49},
+		"forearm":{"x":545.15,"y":645.35,"rotation":9},
+		"palm":{"x":529.65,"y":722.1,"rotation":15}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":219.25,"y":519.4,"rotation":58},
+		"forearm":{"x":146.2,"y":624.15,"rotation":0},
+		"palm":{"x":144.7,"y":700.7,"rotation":21}
+	},
+	"leftHand":{
+		"shoulder":{"x":495.65,"y":519.3,"rotation":-55},
+		"forearm":{"x":555.45,"y":631.55,"rotation":9},
+		"palm":{"x":539.8,"y":708.35,"rotation":17}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":213.35,"y":510.8,"rotation":65},
+		"forearm":{"x":131.25,"y":605.55,"rotation":4},
+		"palm":{"x":125.4,"y":682,"rotation":24}
+	},
+	"leftHand":{
+		"shoulder":{"x":499.15,"y":512,"rotation":-61},
+		"forearm":{"x":564.15,"y":616.65,"rotation":9},
+		"palm":{"x":548.5,"y":693.5,"rotation":19}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":208.55,"y":501.6,"rotation":72},
+		"forearm":{"x":118.95,"y":585.55,"rotation":7},
+		"palm":{"x":108.75,"y":661.5,"rotation":27}
+	},
+	"leftHand":{
+		"shoulder":{"x":501.8,"y":504.35,"rotation":-67},
+		"forearm":{"x":571.2,"y":600.8,"rotation":9},
+		"palm":{"x":555.5,"y":677.7,"rotation":21}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":205,"y":492,"rotation":80},
+		"forearm":{"x":109.25,"y":564.45,"rotation":11},
+		"palm":{"x":94.8,"y":639.75,"rotation":30}
+	},
+	"leftHand":{
+		"shoulder":{"x":503.7,"y":496.35,"rotation":-74},
+		"forearm":{"x":576.45,"y":584.25,"rotation":9},
+		"palm":{"x":560.65,"y":661.1,"rotation":23}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202.9,"y":482.25,"rotation":87},
+		"forearm":{"x":102.3,"y":542.65,"rotation":14},
+		"palm":{"x":83.65,"y":617,"rotation":32}
+	},
+	"leftHand":{
+		"shoulder":{"x":504.6,"y":488.1,"rotation":-80},
+		"forearm":{"x":579.8,"y":567.15,"rotation":9},
+		"palm":{"x":564,"y":643.95,"rotation":24}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202,"y":472.25,"rotation":94},
+		"forearm":{"x":98.25,"y":520.5,"rotation":18},
+		"palm":{"x":75.4,"y":593.7,"rotation":35}
+	},
+	"leftHand":{
+		"shoulder":{"x":504.6,"y":479.75,"rotation":-86},
+		"forearm":{"x":581.3,"y":549.6,"rotation":9},
+		"palm":{"x":565.45,"y":626.5,"rotation":26}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202.4,"y":462.45,"rotation":102},
+		"forearm":{"x":97.05,"y":498.3,"rotation":21},
+		"palm":{"x":70.05,"y":570.05,"rotation":38}
+	},
+	"leftHand":{
+		"shoulder":{"x":503.55,"y":471.3,"rotation":-92},
+		"forearm":{"x":580.85,"y":532.05,"rotation":9},
+		"palm":{"x":565,"y":608.9,"rotation":28}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":204.1,"y":452.75,"rotation":109},
+		"forearm":{"x":98.55,"y":476.55,"rotation":25},
+		"palm":{"x":67.55,"y":546.7,"rotation":41}
+	},
+	"leftHand":{
+		"shoulder":{"x":501.7,"y":462.9,"rotation":-98},
+		"forearm":{"x":578.5,"y":514.5,"rotation":9},
+		"palm":{"x":562.55,"y":591.25,"rotation":30}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":207.1,"y":443.65,"rotation":116},
+		"forearm":{"x":102.9,"y":455.4,"rotation":29},
+		"palm":{"x":67.95,"y":523.75,"rotation":44}
+	},
+	"leftHand":{
+		"shoulder":{"x":498.9,"y":454.7,"rotation":-104},
+		"forearm":{"x":574.2,"y":497.15,"rotation":9},
+		"palm":{"x":558.3,"y":573.9,"rotation":32}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":211.25,"y":435,"rotation":123},
+		"forearm":{"x":109.75,"y":435.45,"rotation":32},
+		"palm":{"x":71,"y":501.65,"rotation":46}
+	},
+	"leftHand":{
+		"shoulder":{"x":495.15,"y":446.75,"rotation":-110},
+		"forearm":{"x":568,"y":480.4,"rotation":9},
+		"palm":{"x":552.05,"y":557.1,"rotation":33}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":216.45,"y":427.1,"rotation":131},
+		"forearm":{"x":119,"y":416.75,"rotation":36},
+		"palm":{"x":76.65,"y":480.65,"rotation":49}
+	},
+	"leftHand":{
+		"shoulder":{"x":490.55,"y":439.15,"rotation":-117},
+		"forearm":{"x":560.1,"y":464.3,"rotation":8},
+		"palm":{"x":544.1,"y":540.85,"rotation":35}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":222.8,"y":420.05,"rotation":138},
+		"forearm":{"x":130.6,"y":399.75,"rotation":39},
+		"palm":{"x":84.6,"y":461.15,"rotation":52}
+	},
+	"leftHand":{
+		"shoulder":{"x":485.05,"y":432,"rotation":-123},
+		"forearm":{"x":550.4,"y":449.05,"rotation":8},
+		"palm":{"x":534.35,"y":525.55,"rotation":37}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":216.45,"y":427.1,"rotation":131},
+		"forearm":{"x":119,"y":416.75,"rotation":36},
+		"palm":{"x":76.65,"y":480.65,"rotation":49}
+	},
+	"leftHand":{
+		"shoulder":{"x":490.55,"y":439.15,"rotation":-117},
+		"forearm":{"x":560.1,"y":464.3,"rotation":8},
+		"palm":{"x":544.1,"y":540.85,"rotation":35}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":211.25,"y":435,"rotation":123},
+		"forearm":{"x":109.75,"y":435.45,"rotation":32},
+		"palm":{"x":71,"y":501.65,"rotation":46}
+	},
+	"leftHand":{
+		"shoulder":{"x":495.15,"y":446.75,"rotation":-110},
+		"forearm":{"x":568,"y":480.4,"rotation":9},
+		"palm":{"x":552.05,"y":557.1,"rotation":33}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":207.1,"y":443.65,"rotation":116},
+		"forearm":{"x":102.9,"y":455.4,"rotation":29},
+		"palm":{"x":67.95,"y":523.75,"rotation":44}
+	},
+	"leftHand":{
+		"shoulder":{"x":498.9,"y":454.7,"rotation":-104},
+		"forearm":{"x":574.2,"y":497.15,"rotation":9},
+		"palm":{"x":558.3,"y":573.9,"rotation":32}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":204.1,"y":452.75,"rotation":109},
+		"forearm":{"x":98.55,"y":476.55,"rotation":25},
+		"palm":{"x":67.55,"y":546.7,"rotation":41}
+	},
+	"leftHand":{
+		"shoulder":{"x":501.7,"y":462.9,"rotation":-98},
+		"forearm":{"x":578.5,"y":514.5,"rotation":9},
+		"palm":{"x":562.55,"y":591.25,"rotation":30}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202.4,"y":462.45,"rotation":102},
+		"forearm":{"x":97.05,"y":498.3,"rotation":21},
+		"palm":{"x":70.05,"y":570.05,"rotation":38}
+	},
+	"leftHand":{
+		"shoulder":{"x":503.55,"y":471.3,"rotation":-92},
+		"forearm":{"x":580.85,"y":532.05,"rotation":9},
+		"palm":{"x":565,"y":608.9,"rotation":28}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202,"y":472.25,"rotation":94},
+		"forearm":{"x":98.25,"y":520.5,"rotation":18},
+		"palm":{"x":75.4,"y":593.7,"rotation":35}
+	},
+	"leftHand":{
+		"shoulder":{"x":504.6,"y":479.75,"rotation":-86},
+		"forearm":{"x":581.3,"y":549.6,"rotation":9},
+		"palm":{"x":565.45,"y":626.5,"rotation":26}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":202.9,"y":482.25,"rotation":87},
+		"forearm":{"x":102.3,"y":542.65,"rotation":14},
+		"palm":{"x":83.65,"y":617,"rotation":32}
+	},
+	"leftHand":{
+		"shoulder":{"x":504.6,"y":488.1,"rotation":-80},
+		"forearm":{"x":579.8,"y":567.15,"rotation":9},
+		"palm":{"x":564,"y":643.95,"rotation":24}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":205,"y":492,"rotation":80},
+		"forearm":{"x":109.25,"y":564.45,"rotation":11},
+		"palm":{"x":94.8,"y":639.75,"rotation":30}
+	},
+	"leftHand":{
+		"shoulder":{"x":503.7,"y":496.35,"rotation":-74},
+		"forearm":{"x":576.45,"y":584.25,"rotation":9},
+		"palm":{"x":560.65,"y":661.1,"rotation":23}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":208.55,"y":501.6,"rotation":72},
+		"forearm":{"x":118.95,"y":585.55,"rotation":7},
+		"palm":{"x":108.75,"y":661.5,"rotation":27}
+	},
+	"leftHand":{
+		"shoulder":{"x":501.8,"y":504.35,"rotation":-67},
+		"forearm":{"x":571.2,"y":600.8,"rotation":9},
+		"palm":{"x":555.5,"y":677.7,"rotation":21}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":213.35,"y":510.8,"rotation":65},
+		"forearm":{"x":131.25,"y":605.55,"rotation":4},
+		"palm":{"x":125.4,"y":682,"rotation":24}
+	},
+	"leftHand":{
+		"shoulder":{"x":499.15,"y":512,"rotation":-61},
+		"forearm":{"x":564.15,"y":616.65,"rotation":9},
+		"palm":{"x":548.5,"y":693.5,"rotation":19}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":219.25,"y":519.4,"rotation":58},
+		"forearm":{"x":146.2,"y":624.15,"rotation":0},
+		"palm":{"x":144.7,"y":700.7,"rotation":21}
+	},
+	"leftHand":{
+		"shoulder":{"x":495.65,"y":519.3,"rotation":-55},
+		"forearm":{"x":555.45,"y":631.55,"rotation":9},
+		"palm":{"x":539.8,"y":708.35,"rotation":17}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":226.3,"y":527.3,"rotation":51},
+		"forearm":{"x":163.4,"y":641.05,"rotation":-4},
+		"palm":{"x":166.2,"y":717.6,"rotation":18}
+	},
+	"leftHand":{
+		"shoulder":{"x":491.3,"y":526,"rotation":-49},
+		"forearm":{"x":545.15,"y":645.35,"rotation":9},
+		"palm":{"x":529.65,"y":722.1,"rotation":15}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":234.35,"y":534.35,"rotation":43},
+		"forearm":{"x":182.8,"y":656,"rotation":-7},
+		"palm":{"x":190,"y":732.2,"rotation":16}
+	},
+	"leftHand":{
+		"shoulder":{"x":486.3,"y":532.1,"rotation":-43},
+		"forearm":{"x":533.45,"y":657.85,"rotation":10},
+		"palm":{"x":517.9,"y":734.6,"rotation":13}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":243.35,"y":540.35,"rotation":36},
+		"forearm":{"x":204,"y":668.6,"rotation":-11},
+		"palm":{"x":215.45,"y":744.35,"rotation":13}
+	},
+	"leftHand":{
+		"shoulder":{"x":480.5,"y":537.55,"rotation":-37},
+		"forearm":{"x":520.35,"y":668.9,"rotation":10},
+		"palm":{"x":504.95,"y":745.65,"rotation":12}
+	}
+},
+{ 
+	"rightHand":{
+		"shoulder":{"x":253.05,"y":545.4,"rotation":29},
+		"forearm":{"x":226.75,"y":678.75,"rotation":-14},
+		"palm":{"x":242.5,"y":753.7,"rotation":10}
+	},
+	"leftHand":{
+		"shoulder":{"x":474.2,"y":542.3,"rotation":-31},
+		"forearm":{"x":506.1,"y":678.4,"rotation":10},
+		"palm":{"x":490.8,"y":755.15,"rotation":10}
+	}
+},
+]
