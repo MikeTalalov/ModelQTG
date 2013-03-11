@@ -3,21 +3,26 @@
  */
 
 const ASSETS_LENGTH = 2;
-var assetsPaths=[];
+var assetsNames=['body', 'head', 'hand'];
 
-var assets=[];
+var assets={bodyassets:[], handassets:[], headassets:[]};
 
 var curHeadIndex;
 var curBodyIndex;
 var curHandsIndex;
 
-for(var i = 0; i< ASSETS_LENGTH; i++){
-	Ti.include('js/asset'+(i+1)+'.json');
-	var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(),'js/asset'+(i+1)+'.json'); 
-	var contents = f.read().text;
-	var json = JSON.parse(contents);
-	assets.push(json);
+for(var j = 0; j<assetsNames.length; j++){
+	var asset = assets[ assetsNames[j] + 'assets' ];
+	
+	for(var i = 0; i< ASSETS_LENGTH; i++){
+		Ti.include('assets/'+assetsNames[j]+'asset'+(i+1)+'.json');
+		var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(), 'assets/'+ assetsNames[j]+'asset'+(i+1)+'.json'); 
+		var contents = f.read().text;
+		var json = JSON.parse(contents);
+		asset.push(json);
+	}
 }
+
 
 var changeCurrentAsset = function(_type, _dir){
 	var curIndex;
@@ -30,12 +35,11 @@ var changeCurrentAsset = function(_type, _dir){
 		curIndex = 0;
 	}else if(_dir>=0){
 		curIndex++;
-		if( curIndex >= assets.length ) curIndex=0;
+		if( curIndex >= ASSETS_LENGTH ) curIndex=0;
 	}else{
 		curIndex--;
-		if( curIndex < 0) curIndex=assets.length-1;
+		if( curIndex < 0) curIndex=ASSETS_LENGTH-1;
 	}
-	
 	
 	if(_type==='body') curBodyIndex = curIndex;
 	else if(_type==='head') curHeadIndex = curIndex;
@@ -50,7 +54,7 @@ changeCurrentAsset('hands');
 
 exports.leftHandAsset = function(){
 	var asset = [];
-	var json = assets[curHandsIndex];
+	var json = assets.handassets[curHandsIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({p1: json[i].leftHand.shoulder.rotation, p2: json[i].leftHand.forearm.rotation, p3: json[i].leftHand.palm.rotation});
 	};
@@ -58,7 +62,7 @@ exports.leftHandAsset = function(){
 };
 exports.rightHandAsset = function(){
 	var asset = [];
-	var json = assets[curHandsIndex];
+	var json = assets.handassets[curHandsIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({p1: json[i].rightHand.shoulder.rotation, p2: json[i].rightHand.forearm.rotation, p3: json[i].rightHand.palm.rotation});
 	};
@@ -67,7 +71,7 @@ exports.rightHandAsset = function(){
 
 exports.headAsset = function(){
 	var asset = [];
-	var json = assets[curHeadIndex];
+	var json = assets.headassets[curHeadIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({headRotation: json[i].head.rotation, neckRotation: json[i].neck.rotation});
 	};
@@ -76,16 +80,15 @@ exports.headAsset = function(){
 
 exports.leftLegAsset = function(){
 	var asset = [];
-	var json = assets[curBodyIndex];
+	var json = assets.bodyassets[curBodyIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({p1: json[i].leftLeg.thigh.rotation, p2: json[i].leftLeg.shin.rotation, p3: json[i].leftLeg.foot.rotation});
 	};
-	Ti.API.info(curBodyIndex+' '+asset[6].p1)
 	return asset;
 };
 exports.rightLegAsset = function(){
 	var asset = [];
-	var json = assets[curBodyIndex];
+	var json = assets.bodyassets[curBodyIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({p1: json[i].rightLeg.thigh.rotation, p2: json[i].rightLeg.shin.rotation, p3: json[i].rightLeg.foot.rotation});
 	};
@@ -93,7 +96,7 @@ exports.rightLegAsset = function(){
 };
 exports.bodyAsset = function(){
 	var asset = [];
-	var json = assets[curBodyIndex];
+	var json = assets.bodyassets[curBodyIndex];
 	for (var i = 0; i < (json.length-1); i++){
 		asset.push({rotation: json[i].body.rotation, deltaX: json[i].body.x, deltaY: json[i].body.y});
 	};
