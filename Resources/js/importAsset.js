@@ -2,7 +2,7 @@
  * @author bonovisio
  */
 
-const ASSETS_LENGTH = 2;
+const ASSETS_LENGTH = 3;
 var assetsNames=['body', 'head', 'hand'];
 
 var assets={bodyassets:[], handassets:[], headassets:[]};
@@ -55,7 +55,7 @@ changeCurrentAsset('hands');
 exports.leftHandAsset = function(){
 	var asset = [];
 	var json = assets.handassets[curHandsIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({p1: json[i].leftHand.shoulder.rotation, p2: json[i].leftHand.forearm.rotation, p3: json[i].leftHand.palm.rotation});
 	};
 	return asset;
@@ -63,7 +63,7 @@ exports.leftHandAsset = function(){
 exports.rightHandAsset = function(){
 	var asset = [];
 	var json = assets.handassets[curHandsIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({p1: json[i].rightHand.shoulder.rotation, p2: json[i].rightHand.forearm.rotation, p3: json[i].rightHand.palm.rotation});
 	};
 	return asset;
@@ -72,7 +72,7 @@ exports.rightHandAsset = function(){
 exports.headAsset = function(){
 	var asset = [];
 	var json = assets.headassets[curHeadIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({headRotation: json[i].head.rotation, neckRotation: json[i].neck.rotation});
 	};
 	return asset;
@@ -81,7 +81,7 @@ exports.headAsset = function(){
 exports.leftLegAsset = function(){
 	var asset = [];
 	var json = assets.bodyassets[curBodyIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({p1: json[i].leftLeg.thigh.rotation, p2: json[i].leftLeg.shin.rotation, p3: json[i].leftLeg.foot.rotation});
 	};
 	return asset;
@@ -89,7 +89,7 @@ exports.leftLegAsset = function(){
 exports.rightLegAsset = function(){
 	var asset = [];
 	var json = assets.bodyassets[curBodyIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({p1: json[i].rightLeg.thigh.rotation, p2: json[i].rightLeg.shin.rotation, p3: json[i].rightLeg.foot.rotation});
 	};
 	return asset;
@@ -97,7 +97,7 @@ exports.rightLegAsset = function(){
 exports.bodyAsset = function(){
 	var asset = [];
 	var json = assets.bodyassets[curBodyIndex];
-	for (var i = 0; i < (json.length-1); i++){
+	for (var i = 0; i < json.length; i++){
 		asset.push({rotation: json[i].body.rotation, deltaX: json[i].body.x, deltaY: json[i].body.y});
 	};
 	return asset;

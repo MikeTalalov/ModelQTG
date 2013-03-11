@@ -1,240 +1,180 @@
 [{ 
-	"neck":{"x":359.3,"y":446.25,"rotation":-1},
-	"head":{"x":359.3,"y":373.55,"rotation":-3}
+	"neck":{"x":359.4,"y":445.15,"rotation":0},
+	"head":{"x":361.1,"y":372.45,"rotation":0}
 },
 { 
-	"neck":{"x":359.25,"y":447.3,"rotation":-3},
-	"head":{"x":357.45,"y":374.65,"rotation":-6}
+	"neck":{"x":358.9,"y":445.5,"rotation":-1},
+	"head":{"x":359.75,"y":372.75,"rotation":0}
 },
 { 
-	"neck":{"x":359.15,"y":448.45,"rotation":-4},
-	"head":{"x":355.65,"y":375.9,"rotation":-9}
+	"neck":{"x":358.5,"y":445.7,"rotation":-2},
+	"head":{"x":358.35,"y":373.05,"rotation":0}
 },
 { 
-	"neck":{"x":359.1,"y":449.5,"rotation":-6},
-	"head":{"x":353.95,"y":377.15,"rotation":-12}
+	"neck":{"x":358,"y":446,"rotation":-2},
+	"head":{"x":357.05,"y":373.35,"rotation":0}
 },
 { 
-	"neck":{"x":359,"y":450.5,"rotation":-7},
-	"head":{"x":352.1,"y":378.35,"rotation":-15}
+	"neck":{"x":357.5,"y":446.35,"rotation":-3},
+	"head":{"x":355.55,"y":373.7,"rotation":1}
 },
 { 
-	"neck":{"x":358.95,"y":451.6,"rotation":-9},
-	"head":{"x":350.4,"y":379.6,"rotation":-18}
+	"neck":{"x":357.1,"y":446.65,"rotation":-4},
+	"head":{"x":354.2,"y":374.05,"rotation":1}
 },
 { 
-	"neck":{"x":358.85,"y":452.65,"rotation":-10},
-	"head":{"x":348.65,"y":380.95,"rotation":-21}
+	"neck":{"x":356.65,"y":446.95,"rotation":-5},
+	"head":{"x":352.95,"y":374.35,"rotation":1}
 },
 { 
-	"neck":{"x":358.8,"y":453.7,"rotation":-11},
-	"head":{"x":346.85,"y":382.35,"rotation":-24}
+	"neck":{"x":356.15,"y":447.25,"rotation":-6},
+	"head":{"x":351.5,"y":374.7,"rotation":1}
 },
 { 
-	"neck":{"x":358.7,"y":454.8,"rotation":-13},
-	"head":{"x":345.15,"y":383.75,"rotation":-27}
+	"neck":{"x":355.75,"y":447.55,"rotation":-6},
+	"head":{"x":350.1,"y":375.1,"rotation":1}
 },
 { 
-	"neck":{"x":358.7,"y":455.85,"rotation":-14},
-	"head":{"x":343.4,"y":385.2,"rotation":-30}
+	"neck":{"x":355.3,"y":447.85,"rotation":-7},
+	"head":{"x":348.8,"y":375.5,"rotation":1}
 },
 { 
-	"neck":{"x":358.6,"y":456.95,"rotation":-16},
-	"head":{"x":341.7,"y":386.75,"rotation":-34}
+	"neck":{"x":354.8,"y":448.15,"rotation":-8},
+	"head":{"x":347.45,"y":375.85,"rotation":1}
 },
 { 
-	"neck":{"x":358.5,"y":458.05,"rotation":-17},
-	"head":{"x":339.95,"y":388.3,"rotation":-37}
+	"neck":{"x":354.35,"y":448.5,"rotation":-9},
+	"head":{"x":346.05,"y":376.25,"rotation":2}
 },
 { 
-	"neck":{"x":358.5,"y":459.1,"rotation":-19},
-	"head":{"x":338.3,"y":389.8,"rotation":-40}
+	"neck":{"x":353.9,"y":448.75,"rotation":-10},
+	"head":{"x":344.7,"y":376.7,"rotation":2}
 },
 { 
-	"neck":{"x":358.4,"y":460.15,"rotation":-20},
-	"head":{"x":336.6,"y":391.35,"rotation":-43}
+	"neck":{"x":353.45,"y":449,"rotation":-10},
+	"head":{"x":343.35,"y":377.1,"rotation":2}
 },
 { 
-	"neck":{"x":358.35,"y":461.2,"rotation":-21},
-	"head":{"x":334.95,"y":393.1,"rotation":-46}
+	"neck":{"x":353,"y":449.3,"rotation":-11},
+	"head":{"x":342,"y":377.55,"rotation":2}
 },
 { 
-	"neck":{"x":358.3,"y":462.3,"rotation":-23},
-	"head":{"x":333.25,"y":394.75,"rotation":-49}
+	"neck":{"x":352.55,"y":449.65,"rotation":-12},
+	"head":{"x":340.7,"y":377.95,"rotation":2}
 },
 { 
-	"neck":{"x":358.1,"y":463.4,"rotation":-24},
-	"head":{"x":331.7,"y":396.45,"rotation":-52}
+	"neck":{"x":352.1,"y":449.9,"rotation":-13},
+	"head":{"x":339.3,"y":378.4,"rotation":2}
 },
 { 
-	"neck":{"x":358.1,"y":464.4,"rotation":-26},
-	"head":{"x":330,"y":398.2,"rotation":-55}
+	"neck":{"x":351.6,"y":450.25,"rotation":-14},
+	"head":{"x":338,"y":378.9,"rotation":3}
 },
 { 
-	"neck":{"x":358.1,"y":465.45,"rotation":-27},
-	"head":{"x":328.4,"y":400,"rotation":-58}
+	"neck":{"x":351.25,"y":450.55,"rotation":-14},
+	"head":{"x":336.6,"y":379.45,"rotation":3}
 },
 { 
-	"neck":{"x":357.95,"y":466.5,"rotation":-29},
-	"head":{"x":326.8,"y":401.8,"rotation":-61}
+	"neck":{"x":350.75,"y":450.8,"rotation":-15},
+	"head":{"x":335.2,"y":379.95,"rotation":3}
 },
 { 
-	"neck":{"x":357.9,"y":467.6,"rotation":-30},
-	"head":{"x":325.25,"y":403.65,"rotation":-64}
+	"neck":{"x":350.3,"y":451.1,"rotation":-16},
+	"head":{"x":333.9,"y":380.4,"rotation":3}
 },
 { 
-	"neck":{"x":357.8,"y":468.65,"rotation":-31},
-	"head":{"x":323.65,"y":405.55,"rotation":-67}
+	"neck":{"x":349.85,"y":451.45,"rotation":-17},
+	"head":{"x":332.6,"y":380.9,"rotation":3}
 },
 { 
-	"neck":{"x":357.8,"y":469.75,"rotation":-33},
-	"head":{"x":322.15,"y":407.55,"rotation":-70}
+	"neck":{"x":349.35,"y":451.65,"rotation":-18},
+	"head":{"x":331.25,"y":381.4,"rotation":3}
 },
 { 
-	"neck":{"x":357.7,"y":470.8,"rotation":-34},
-	"head":{"x":320.65,"y":409.45,"rotation":-73}
+	"neck":{"x":348.9,"y":452,"rotation":-18},
+	"head":{"x":329.9,"y":381.95,"rotation":3}
 },
 { 
-	"neck":{"x":357.6,"y":471.85,"rotation":-36},
-	"head":{"x":319.15,"y":411.45,"rotation":-76}
+	"neck":{"x":348.45,"y":452.35,"rotation":-19},
+	"head":{"x":328.6,"y":382.45,"rotation":4}
 },
 { 
-	"neck":{"x":357.55,"y":472.85,"rotation":-37},
-	"head":{"x":317.75,"y":413.45,"rotation":-79}
+	"neck":{"x":348,"y":452.65,"rotation":-20},
+	"head":{"x":327.25,"y":383.05,"rotation":4}
 },
 { 
-	"neck":{"x":357.55,"y":474.05,"rotation":-39},
-	"head":{"x":316.3,"y":415.45,"rotation":-82}
+	"neck":{"x":347.6,"y":452.85,"rotation":-21},
+	"head":{"x":326,"y":383.65,"rotation":4}
 },
 { 
-	"neck":{"x":357.4,"y":475.05,"rotation":-40},
-	"head":{"x":314.85,"y":417.6,"rotation":-85}
+	"neck":{"x":347.1,"y":453.2,"rotation":-22},
+	"head":{"x":324.6,"y":384.25,"rotation":4}
 },
 { 
-	"neck":{"x":357.3,"y":476.05,"rotation":-41},
-	"head":{"x":313.5,"y":419.75,"rotation":-88}
+	"neck":{"x":346.7,"y":453.5,"rotation":-22},
+	"head":{"x":323.35,"y":384.8,"rotation":4}
 },
 { 
-	"neck":{"x":357.2,"y":477.15,"rotation":-43},
-	"head":{"x":312.15,"y":421.85,"rotation":-91}
+	"neck":{"x":346.25,"y":453.8,"rotation":-23},
+	"head":{"x":322,"y":385.45,"rotation":4}
 },
 { 
-	"neck":{"x":357.3,"y":476.05,"rotation":-41},
-	"head":{"x":313.5,"y":419.75,"rotation":-88}
+	"neck":{"x":345.75,"y":454.1,"rotation":-24},
+	"head":{"x":320.6,"y":386,"rotation":4}
 },
 { 
-	"neck":{"x":357.4,"y":475.05,"rotation":-40},
-	"head":{"x":314.85,"y":417.6,"rotation":-85}
+	"neck":{"x":346.75,"y":453.45,"rotation":-22},
+	"head":{"x":323.5,"y":384.65,"rotation":4}
 },
 { 
-	"neck":{"x":357.55,"y":474.05,"rotation":-39},
-	"head":{"x":316.3,"y":415.45,"rotation":-82}
+	"neck":{"x":347.65,"y":452.8,"rotation":-21},
+	"head":{"x":326.35,"y":383.4,"rotation":4}
 },
 { 
-	"neck":{"x":357.55,"y":472.85,"rotation":-37},
-	"head":{"x":317.75,"y":413.45,"rotation":-79}
+	"neck":{"x":348.6,"y":452.2,"rotation":-19},
+	"head":{"x":329.1,"y":382.3,"rotation":3}
 },
 { 
-	"neck":{"x":357.6,"y":471.85,"rotation":-36},
-	"head":{"x":319.15,"y":411.45,"rotation":-76}
+	"neck":{"x":349.6,"y":451.5,"rotation":-17},
+	"head":{"x":332.05,"y":381.1,"rotation":3}
 },
 { 
-	"neck":{"x":357.7,"y":470.8,"rotation":-34},
-	"head":{"x":320.65,"y":409.45,"rotation":-73}
+	"neck":{"x":350.6,"y":450.9,"rotation":-15},
+	"head":{"x":334.9,"y":380.1,"rotation":3}
 },
 { 
-	"neck":{"x":357.8,"y":469.75,"rotation":-33},
-	"head":{"x":322.15,"y":407.55,"rotation":-70}
+	"neck":{"x":351.55,"y":450.25,"rotation":-14},
+	"head":{"x":337.75,"y":379,"rotation":3}
 },
 { 
-	"neck":{"x":357.8,"y":468.65,"rotation":-31},
-	"head":{"x":323.65,"y":405.55,"rotation":-67}
+	"neck":{"x":352.55,"y":449.65,"rotation":-12},
+	"head":{"x":340.7,"y":377.95,"rotation":2}
 },
 { 
-	"neck":{"x":357.9,"y":467.6,"rotation":-30},
-	"head":{"x":325.25,"y":403.65,"rotation":-64}
+	"neck":{"x":353.45,"y":449,"rotation":-10},
+	"head":{"x":343.55,"y":377.05,"rotation":2}
 },
 { 
-	"neck":{"x":357.95,"y":466.5,"rotation":-29},
-	"head":{"x":326.8,"y":401.8,"rotation":-61}
+	"neck":{"x":354.5,"y":448.35,"rotation":-9},
+	"head":{"x":346.4,"y":376.15,"rotation":2}
 },
 { 
-	"neck":{"x":358.1,"y":465.45,"rotation":-27},
-	"head":{"x":328.4,"y":400,"rotation":-58}
+	"neck":{"x":355.45,"y":447.75,"rotation":-7},
+	"head":{"x":349.3,"y":375.3,"rotation":1}
 },
 { 
-	"neck":{"x":358.1,"y":464.4,"rotation":-26},
-	"head":{"x":330,"y":398.2,"rotation":-55}
+	"neck":{"x":356.45,"y":447.05,"rotation":-5},
+	"head":{"x":352.35,"y":374.5,"rotation":1}
 },
 { 
-	"neck":{"x":358.1,"y":463.4,"rotation":-24},
-	"head":{"x":331.7,"y":396.45,"rotation":-52}
+	"neck":{"x":357.4,"y":446.5,"rotation":-3},
+	"head":{"x":355.15,"y":373.8,"rotation":1}
 },
 { 
-	"neck":{"x":358.3,"y":462.3,"rotation":-23},
-	"head":{"x":333.25,"y":394.75,"rotation":-49}
+	"neck":{"x":358.35,"y":445.75,"rotation":-2},
+	"head":{"x":358.2,"y":373.1,"rotation":0}
 },
 { 
-	"neck":{"x":358.35,"y":461.2,"rotation":-21},
-	"head":{"x":334.95,"y":393.1,"rotation":-46}
-},
-{ 
-	"neck":{"x":358.4,"y":460.15,"rotation":-20},
-	"head":{"x":336.6,"y":391.35,"rotation":-43}
-},
-{ 
-	"neck":{"x":358.5,"y":459.1,"rotation":-19},
-	"head":{"x":338.3,"y":389.8,"rotation":-40}
-},
-{ 
-	"neck":{"x":358.5,"y":458.05,"rotation":-17},
-	"head":{"x":339.95,"y":388.3,"rotation":-37}
-},
-{ 
-	"neck":{"x":358.6,"y":456.95,"rotation":-16},
-	"head":{"x":341.7,"y":386.75,"rotation":-34}
-},
-{ 
-	"neck":{"x":358.7,"y":455.85,"rotation":-14},
-	"head":{"x":343.4,"y":385.2,"rotation":-30}
-},
-{ 
-	"neck":{"x":358.7,"y":454.8,"rotation":-13},
-	"head":{"x":345.15,"y":383.75,"rotation":-27}
-},
-{ 
-	"neck":{"x":358.8,"y":453.7,"rotation":-11},
-	"head":{"x":346.85,"y":382.35,"rotation":-24}
-},
-{ 
-	"neck":{"x":358.85,"y":452.65,"rotation":-10},
-	"head":{"x":348.65,"y":380.95,"rotation":-21}
-},
-{ 
-	"neck":{"x":358.95,"y":451.6,"rotation":-9},
-	"head":{"x":350.4,"y":379.6,"rotation":-18}
-},
-{ 
-	"neck":{"x":359,"y":450.5,"rotation":-7},
-	"head":{"x":352.1,"y":378.35,"rotation":-15}
-},
-{ 
-	"neck":{"x":359.1,"y":449.5,"rotation":-6},
-	"head":{"x":353.95,"y":377.15,"rotation":-12}
-},
-{ 
-	"neck":{"x":359.15,"y":448.45,"rotation":-4},
-	"head":{"x":355.65,"y":375.9,"rotation":-9}
-},
-{ 
-	"neck":{"x":359.25,"y":447.3,"rotation":-3},
-	"head":{"x":357.45,"y":374.65,"rotation":-6}
-},
-{ 
-	"neck":{"x":359.3,"y":446.25,"rotation":-1},
-	"head":{"x":359.3,"y":373.55,"rotation":-3}
-},
-{ 
-	"neck":{"x":359.4,"y":445.1,"rotation":0},
-	"head":{"x":361.85,"y":373,"rotation":0}
+	"neck":{"x":359.4,"y":445.15,"rotation":0},
+	"head":{"x":361.1,"y":372.45,"rotation":0}
 }]
