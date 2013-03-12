@@ -34,6 +34,8 @@ var drawModel = function(toGame, toScene){
 	var rightThighSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
 	var rightShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
 	var rightFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
+	// pants
+	var pantsSpr = qtg.createSprite({image:'images/parts/pants1_'+Ti.App.res+'.png'});
 	//left hand
 	var leftShoulderSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
 	var leftForearmSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
@@ -62,6 +64,8 @@ var drawModel = function(toGame, toScene){
 	var rightShoulderPoint = {x: (bodySpr.width/2)-(bodySpr.width*0.6), y: bodySpr.height*0.02};
 	var rightForearmPoint = {x: (rightShoulderSpr.width/2)-(rightForearmSpr.width/2), y: rightShoulderSpr.height*0.92};
 	var rightPalmPoint = {x: (rightForearmSpr.width/2)-(rightPalmSpr.width/2), y: rightForearmSpr.height*0.92};
+	
+	var pantsPoint = {x: 0, y: bodySpr.height-pantsSpr.height};
 	//===
 	var drawBody = function(){
 		placeToCenter(bodySpr, toGame, toScene);
@@ -94,6 +98,8 @@ var drawModel = function(toGame, toScene){
 	drawPart(rightThighSpr, bodySpr, rightThighPoint, 70);
 	drawPart(rightShinSpr, rightThighSpr, rightShinPoint, 60);
 	drawPart(rightFootSpr, rightShinSpr, rightFootPoint, 70);
+	// PANTS
+	drawPart(pantsSpr, bodySpr, pantsPoint, 90);
 	//===draw left hand
 	drawPart(leftShoulderSpr, bodySpr, leftShoulderPoint, 90);
 	drawPart(leftForearmSpr, leftShoulderSpr, leftForearmPoint, 80);
@@ -111,9 +117,10 @@ setTimeout(function(){
 	myAnimatedModel.setLimbParts('leftLeg', leftThighSpr, leftShinSpr, leftFootSpr);
 	myAnimatedModel.setLimbParts('rightLeg', rightThighSpr, rightShinSpr, rightFootSpr);
 	myAnimatedModel.setLimbParts('head', neckSpr, headSpr);
+	myAnimatedModel.setPants(pantsSpr);
 	
 	myAnimatedModel.animateBody(bodySpr);
-}, 1000)
+}, 3000)
 //=========================================	
 };
 

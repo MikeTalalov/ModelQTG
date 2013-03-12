@@ -33,6 +33,7 @@ var rightHand={p1:null, p2:null, p3:null};
 var leftLeg={p1:null, p2:null, p3:null};
 var rightLeg={p1:null, p2:null, p3:null};
 var head={neck:null, head:null};
+var pants;
 
 var totalFrame=0;
 
@@ -71,6 +72,10 @@ exports.setLimbParts = function(type, p1, p2, p3){
 	}
 }
 
+exports.setPants = function(_pants){
+	pants=_pants;
+}
+
 exports.animateBody = function(_body){
 	
 	var bodyRot = 0;
@@ -93,12 +98,10 @@ exports.animateBody = function(_body){
 		var f3 = animateLimb(LEFT_HAND, totalFrame);
 		var f4 = animateLimb(RIGHT_LEG, totalFrame);
 		var f5 = animateLimb(LEFT_LEG, totalFrame);
-		
-		
+		animatePants(totalFrame);
 		
 		if(f0===0 && f1===0 && f2===0 && f3===0 && f4===0 && f5===0){
 			totalFrame=0;
-			Ti.API.info(totalFrame);
 		}
 	};
 	
@@ -140,6 +143,14 @@ function animateHead(frame){
 	});
 	
 	return frame%assetHead.length;
+};
+
+function animatePants(frame){
+	pants.setCenter({
+		x:body.center.x + xR(body.angle)*(body.height*0.5-pants.height/2),
+		y:body.center.y + yR(body.angle)*(body.height*0.5-pants.height/2)
+	})
+	pants.rotateFrom(body.angle, pants.width*0.5, pants.height*0.5);
 };
 
 function animateLimb(type, frame){
@@ -191,7 +202,6 @@ function animateLimb(type, frame){
 		break;
 		case RIGHT_LEG:
 			determ = 0;
-			//Ti.API.info(p1Rot);
 		break;
 		case LEFT_LEG:
 			determ = -p1.width;	
