@@ -201,10 +201,10 @@ function animateLimb(type, frame){
 			determ = -p1.width/2;
 		break;
 		case RIGHT_LEG:
-			determ = 0;
+			{determ = 0; dX = body.center.x+Ti.App.Dmod*yR(angle)}
 		break;
 		case LEFT_LEG:
-			determ = -p1.width;	
+			{determ = -p1.width; dX = body.center.x+Ti.App.Dmod*yR(angle)}	
 		break;
 	}
 	p1.move(dX+determ, dY);

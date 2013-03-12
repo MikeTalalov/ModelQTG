@@ -133,7 +133,8 @@ var label = Ti.UI.createLabel({
 
 slider.addEventListener('change', function(e) {
     label.text = String.format("%3.1f", e.value);
-    Ti.App.b = Math.asin( (Ti.App.bodyGlobal.width*e.value/100)/Ti.App.D) * 180/Math.PI;
+    Ti.App.Dmod = Math.sqrt(Math.pow(Ti.App.bodyGlobal.width*e.value/2, 2) + Math.pow(Ti.App.bodyGlobal.height/2, 2))*0.9;
+    Ti.App.b = Math.asin( (Ti.App.bodyGlobal.width*e.value/100)/Ti.App.Dmod) * 180/Math.PI;
     Ti.API.info(e.value/100);
 });
 
