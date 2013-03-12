@@ -22,7 +22,7 @@ var drawModel = function(toGame, toScene){
 //=========================================
 	var bodySpr = qtg.createSpriteSheet({image:'images/ss/bodies/body_'+Ti.App.res+'.xml'});
 	body = bodySpr;
-	Ti.App.bodyWidth = bodySpr.width;
+	Ti.App.bodyGlobal = bodySpr;
 	var neckSpr = qtg.createSprite({image:'images/parts/neck_'+Ti.App.res+'.png'});
 	var headSpr = qtg.createSpriteSheet({image:'images/ss/heads/headsheet_'+Ti.App.res+'.xml'});
 	head = headSpr;
@@ -71,7 +71,7 @@ var drawModel = function(toGame, toScene){
 		Ti.App.bodyY = bodySpr.center.y;
 		Ti.App.D = Math.sqrt(Math.pow(bodySpr.width/2, 2) + Math.pow(bodySpr.height/2, 2));
 		Ti.App.a = Math.asin( (bodySpr.width/2)/Ti.App.D) * 180/Math.PI;
-		Ti.App.b = Math.asin( (bodySpr.width/2)/Ti.App.D) * 180/Math.PI;
+		Ti.App.b = Math.acos( (bodySpr.height/2)/Ti.App.D) * 180/Math.PI;
 		Ti.App.D *= 0.9;
 	};
 	

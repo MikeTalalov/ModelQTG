@@ -7,7 +7,6 @@ var utils = require('js/utils');
 var myModel = require('js/drawModel');
 var gameMenu = require('js/drawGameMenu');
 var myAnimatedModel = require('js/animateModel');
-var drawSlider = require('js/setLegsDistance');
 
 //init section
 var fpsLabel = utils.createLabel();
@@ -34,10 +33,10 @@ winMain.addEventListener('open', function(e) {
 
 game.addEventListener('onload', function(e){
 	Ti.App.res = utils.setResolution(game);
-	drawSlider.drawLegSlider(winMain, game);
-	myModel.drawModel(game, scene);
+	gameMenu.drawLegSlider(winMain, game);
 	gameMenu.drawGameMenu(winMain, game);
 	gameMenu.drawArrows(winMain, game);
+	myModel.drawModel(game, scene);
 	game.pushScene(scene);
 	game.start();
 });
