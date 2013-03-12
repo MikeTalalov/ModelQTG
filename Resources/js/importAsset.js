@@ -23,7 +23,6 @@ for(var j = 0; j<assetsNames.length; j++){
 	}
 }
 
-
 var changeCurrentAsset = function(_type, _dir){
 	var curIndex;
 	
