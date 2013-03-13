@@ -23,7 +23,7 @@ var makeMenuProps = function(typeOfMenu, res, zI) {
 		height: '100%',
 		width: '100%'
 	};
-	props.image = 'images/menu/'+typeOfMenu+'/'+typeOfMenu+'_on_'+res+'.png';
+	props.image = 'images/menu/'+typeOfMenu+'/'+typeOfMenu+'_off_'+res+'.png';
 	return props;
 };
 
@@ -32,32 +32,26 @@ var makeScrollProps = function() {
 		contentWidth: 'auto',
 		contentHeight: 'auto',
 		showVerticalScrollIndicator: false,
-		showHorizontalScrollIndicator: true,
-		height: '100%',
+		showHorizontalScrollIndicator: false,
+		height: '60%',
 		width: '100%'
 	};
 	return props;
 };
 
-var fillItemList = function(scrollV) {
-	
-};
-
-/*
-+var name = null;
-+var leftMargin = 2;
-+
-+for (var i = 1; i < 8*10; i++){
-+  name = 'image'+i;
-+  var name = Ti.UI.createImageView({
-+    image:'/images/items/item'+(1+i%8)+'.png',
-+    top: 10,
-+    left: leftMargin
-+  });
-+  scrollView.add(name);
-+  leftMargin+=32;
-+};
-*/
+var fillItemList = function(o, typeOfMenu) {
+	var leftMargin = 2;
+	for (var i = 0; i < 8*10; i++){
+		name = 'image'+i;
+		var name = Ti.UI.createImageView({
+			image:'/images/items/item'+(0+i%8)+'.png',
+			top: headList.height/4,
+			left: leftMargin
+		});
+		o.add(name);
+		leftMargin+=32;
+	};
+};	
 
 exports.drawGameMenu = function(toWin, toGame){
 	var scrW = toGame.screen.width;
@@ -74,12 +68,16 @@ exports.drawGameMenu = function(toWin, toGame){
 	handsMenu = Ti.UI.createImageView(makeMenuProps('hands', Ti.App.res, 0));
 	legsMenu = Ti.UI.createImageView(makeMenuProps('legs', Ti.App.res, 0));
 
-	//headList = Ti.UI.createScrollView(makeScrollProps);
+	headList = Ti.UI.createScrollView(makeScrollProps());
+	fillItemList(headList, 'head');
 	
-	//headMenu.add(headList);
-	//headMenu.add(bodyList);
-	//headMenu.add(handsList);
-	//headMenu.add(legsList);
+	bodyList = Ti.UI.createScrollView(makeScrollProps());
+	fillItemList(bodyList, 'body');
+	
+	headMenu.add(headList);
+	bodyMenu.add(bodyList);
+	//handsMenu.add(handsList);
+	//legsMenu.add(legsList);
 	
 	partsMenuView.add(headMenu);
 	partsMenuView.add(bodyMenu);
@@ -92,37 +90,37 @@ exports.drawGameMenu = function(toWin, toGame){
 partsMenuView.addEventListener('click', function(e){
 	var w = partsMenuView.width, h = partsMenuView.height;
 	if ( (e.x>w-w) && (e.x<w/4) && (e.y<h/5) ) {
-		partsMenuView.children[0].zIndex = 1;
-		partsMenuView.children[1].zIndex = 0;
-		partsMenuView.children[2].zIndex = 0;
-		partsMenuView.children[3].zIndex = 0;
+		partsMenuView.children[0].zIndex = 1; partsMenuView.children[0].setImage('images/menu/head/head_on_'+Ti.App.res+'.png');
+		partsMenuView.children[1].zIndex = 0; partsMenuView.children[1].setImage('images/menu/body/body_off_'+Ti.App.res+'.png');
+		partsMenuView.children[2].zIndex = 0; partsMenuView.children[2].setImage('images/menu/hands/hands_off_'+Ti.App.res+'.png');
+		partsMenuView.children[3].zIndex = 0; partsMenuView.children[3].setImage('images/menu/legs/legs_off_'+Ti.App.res+'.png');
 	};
 	if ( (e.x>w/4) && (e.x<w/4*2) && (e.y<h/5) ) {
-		partsMenuView.children[0].zIndex = 0;
-		partsMenuView.children[1].zIndex = 1;
-		partsMenuView.children[2].zIndex = 0;
-		partsMenuView.children[3].zIndex = 0;
+		partsMenuView.children[0].zIndex = 0; partsMenuView.children[0].setImage('images/menu/head/head_off_'+Ti.App.res+'.png');
+		partsMenuView.children[1].zIndex = 1; partsMenuView.children[1].setImage('images/menu/body/body_on_'+Ti.App.res+'.png');
+		partsMenuView.children[2].zIndex = 0; partsMenuView.children[2].setImage('images/menu/hands/hands_off_'+Ti.App.res+'.png');
+		partsMenuView.children[3].zIndex = 0; partsMenuView.children[3].setImage('images/menu/legs/legs_off_'+Ti.App.res+'.png');
 	};
 	if ( (e.x>w/4*2) && (e.x<w/4*3) && (e.y<h/5) ) {
-		partsMenuView.children[0].zIndex = 0;
-		partsMenuView.children[1].zIndex = 0;
-		partsMenuView.children[2].zIndex = 1;
-		partsMenuView.children[3].zIndex = 0;
+		partsMenuView.children[0].zIndex = 0; partsMenuView.children[0].setImage('images/menu/head/head_off_'+Ti.App.res+'.png');
+		partsMenuView.children[1].zIndex = 0; partsMenuView.children[1].setImage('images/menu/body/body_off_'+Ti.App.res+'.png');
+		partsMenuView.children[2].zIndex = 1; partsMenuView.children[2].setImage('images/menu/hands/hands_on_'+Ti.App.res+'.png');
+		partsMenuView.children[3].zIndex = 0; partsMenuView.children[3].setImage('images/menu/legs/legs_off_'+Ti.App.res+'.png');
 	};
 	if ( (e.x>w/4*3) && (e.x<w) && (e.y<h/5) ) {
-		partsMenuView.children[0].zIndex = 0;
-		partsMenuView.children[1].zIndex = 0;
-		partsMenuView.children[2].zIndex = 0;
-		partsMenuView.children[3].zIndex = 1;
+		partsMenuView.children[0].zIndex = 0; partsMenuView.children[0].setImage('images/menu/head/head_off_'+Ti.App.res+'.png');
+		partsMenuView.children[1].zIndex = 0; partsMenuView.children[1].setImage('images/menu/body/body_off_'+Ti.App.res+'.png');
+		partsMenuView.children[2].zIndex = 0; partsMenuView.children[2].setImage('images/menu/hands/hands_off_'+Ti.App.res+'.png');
+		partsMenuView.children[3].zIndex = 1; partsMenuView.children[3].setImage('images/menu/legs/legs_on_'+Ti.App.res+'.png');
 	};
 });
 
 exports.moveUp = function(){
 	var menuMoveUp = Titanium.UI.createAnimation({
 		duration: 500,
-		top: game.size.height*0.8
+		top: game.size.height*0.75
 	});
-	partsMenuView.animate(menuMoveUp)
+	partsMenuView.animate(menuMoveUp);
 };
 
 exports.moveDown = function(){
@@ -130,7 +128,7 @@ exports.moveDown = function(){
 		duration: 500,
 		top: game.size.height*0.95
 	});
-	partsMenuView.animate(menuMoveDown)
+	partsMenuView.animate(menuMoveDown);
 };
 
 var leftBodyArr;
