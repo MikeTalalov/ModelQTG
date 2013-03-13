@@ -3,28 +3,145 @@ var myDrawModel = require('js/drawModel');
 var myAnimatedModel = require('js/animateModel');
 var importAsset = require('js/importAsset');
 
-var scrollView = Ti.UI.createScrollView({
-  contentWidth: 'auto',
-  contentHeight: 'auto',
-  showVerticalScrollIndicator: false,
-  showHorizontalScrollIndicator: true,
-  height: '100%',
-  width: '100%'
+//monster creation menu
+
+var partsMenuView = Ti.UI.createView({
+	backgroundColor:'red',
+	borderRadius:0,
+	opacity: 0.9,
+	left: 0
 });
 
-var menuView = Titanium.UI.createView({
+function itemMenu() {
+	var menu = Titanium.UI.createImageView({
+		image: null,
 		borderRadius:0,
-		backgroundColor:'red',
-		opacity: 0.5,
-		left: 0
+		opacity: 0.9,
+		left: 0,
+		height: '100%',
+		width: '100%'
 	});
+	return menu;
+};
+itemMenu.prototype.setImage = function(){this.image = 'images/menu/hands_on.png'};
+
+var headMenuView = new itemMenu();
+headMenuView.setImage;
+var addItemsMenues = function(toView) {
+	toView.add(headMenuView);
+};
+
+/*
+ 
+var scrollView = Ti.UI.createScrollView({
+	contentWidth: 'auto',
+	contentHeight: 'auto',
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: true,
+	height: '100%',
+	width: '100%'
+});
+
+var itemsView = Ti.UI.createImageView({
+	borderRadius:0,
+	opacity: 0.9,
+	left: 0
+});
+
+function itemsMenu() {
+	
+};
+itemsMenu.prototype = {
+	
+};
+
+
+
+
+//===============
+// Конструктор.
+function NewClass(){
+  this.property = 123; // открытое свойство (this)
+  var name  = "somebody"; // закрытое свойство (var)
+  
+  // Создаем методы класса прямо в конструкторе.
+  this.method1 = function(x) {
+    alert("Вызван method1("+x+")");
+  }
+  
+  // То же самое.
+  this.method2 = function(x) {
+    alert("Вызван method2("+x+")");
+    this.method1();
+  }
+  
+  // Метод для установки значения закрытого свойства.
+  this.setName = function(n) {
+    name = n;
+  }
+}
+
+// Создаем объект и проверяем работу.
+var obj = new NewClass();
+obj.method1(10);
+
+
+
+/*
+ * пример наследования
+ * 
+ // Базовый "класс".
+function Base() {}
+Base.prototype.f1 = function() { alert(1) }
+
+// Производный "класс".
+function Derive() {}
+Derive.prototype = new Base(); // без new нельзя!
+Derive.prototype.f2 = function() { alert(2) }
+
+var obj = new Derive();
+obj.f1(); // вызывается функция базового объекта
+
+
+
+//===============
+var headMenuView = Titanium.UI.createImageView({
+	image: 'images/menu/head_on.png',
+	borderRadius:0,
+	//backgroundColor:'red',
+	opacity: 0.9,
+	left: 0
+});
+
+var bodyMenuView = Titanium.UI.createImageView({
+	image: 'images/menu/body_on.png',
+	borderRadius:0,
+	//backgroundColor:'red',
+	opacity: 0.9,
+	left: 0
+});
+
+var handsMenuView = Titanium.UI.createImageView({
+	image: 'images/menu/hands_on.png',
+	borderRadius:0,
+	//backgroundColor:'red',
+	opacity: 0.9,
+	left: 0
+});
+
+var legssMenuView = Titanium.UI.createImageView({
+	image: 'images/menu/legs_on.png',
+	borderRadius:0,
+	//backgroundColor:'red',
+	opacity: 0.9,
+	left: 0
+});
 
 var leftMargin = 2;
-
 for (var i = 0; i < 8*10; i++){
 	var item = Ti.UI.createImageView({
 		image:'/images/items/item'+(i%8)+'.png',
-		top: 10,
+		top: headMenuView.height*0.2,
 		left: leftMargin
 	});
 	item.name = 'image'+i;
@@ -32,13 +149,20 @@ for (var i = 0; i < 8*10; i++){
 	leftMargin+=32;
 	item.addEventListener('click', myDrawModel.changeBody);
 };
-	
+*/
+
 exports.drawGameMenu = function(toWin, toGame){
-	menuView.setWidth(toGame.screen.width);
-	menuView.setHeight(toGame.screen.height*0.25);
-	menuView.setTop(toGame.screen.height*0.98);
-	menuView.add(scrollView);
-	toWin.add(menuView);
+	var scrW = toGame.screen.width;
+	var scrH = toGame.screen.height*0.25;
+	var scrT = toGame.screen.height*0.95;
+	
+	partsMenuView.setWidth(scrW);
+	partsMenuView.setHeight(scrH);
+	partsMenuView.setTop(scrT);
+	addItemsMenues(partsMenuView);
+	//partsMenuView.add(scrollView);
+	toWin.add(partsMenuView);
+	alert(headMenuView.opacity);
 }
 
 exports.moveUp = function(){
@@ -46,15 +170,15 @@ exports.moveUp = function(){
 		duration: 500,
 		top: game.size.height*0.8
 	});
-	menuView.animate(menuMoveUp)
+	partsMenuView.animate(menuMoveUp)
 };
 
 exports.moveDown = function(){
 	var menuMoveDown = Titanium.UI.createAnimation({
 		duration: 500,
-		top: game.size.height*0.98
+		top: game.size.height*0.95
 	});
-	menuView.animate(menuMoveDown)
+	partsMenuView.animate(menuMoveDown)
 };
 
 var leftBodyArr;
