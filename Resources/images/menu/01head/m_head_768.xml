@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="images/menu/01head/m_head_768.png">
+    <SubTexture name="Copy of head_off" x="2" y="2" width="768" height="350"/>
+    <SubTexture name="Copy of head_on" x="772" y="2" width="768" height="350"/>
+</TextureAtlas>
