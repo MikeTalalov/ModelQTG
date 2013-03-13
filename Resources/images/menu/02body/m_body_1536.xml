@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextureAtlas imagePath="images/menu/02body/m_body_1536.png">
-    <SubTexture name="body_off" x="2" y="2" width="1536" height="700"/>
-    <SubTexture name="body_on" x="2" y="704" width="1536" height="700"/>
-</TextureAtlas>

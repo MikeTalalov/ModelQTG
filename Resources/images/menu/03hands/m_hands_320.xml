@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextureAtlas imagePath="images/menu/03hands/m_hands_320.png">
-    <SubTexture name="hands_off" x="2" y="2" width="320" height="146"/>
-    <SubTexture name="hands_on" x="324" y="2" width="320" height="146"/>
-</TextureAtlas>

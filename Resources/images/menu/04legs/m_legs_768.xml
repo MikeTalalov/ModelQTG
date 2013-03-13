@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextureAtlas imagePath="images/menu/04legs/m_legs_768.png">
-    <SubTexture name="legs_off" x="2" y="2" width="768" height="350"/>
-    <SubTexture name="legs_on" x="772" y="2" width="768" height="350"/>
-</TextureAtlas>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextureAtlas imagePath="images/menu/01head/m_head_480.png">
-    <SubTexture name="head_off" x="2" y="2" width="480" height="219"/>
-    <SubTexture name="head_on" x="484" y="2" width="480" height="219"/>
-</TextureAtlas>
