@@ -9,123 +9,54 @@ var importAsset = require('js/importAsset');
 
 //partsMenuView - the main view for all menu views
 var partsMenuView = Ti.UI.createView({
-	backgroundColor:'red',
 	borderRadius:0,
-	opacity: 0.9,
+	opacity: 1,
 	left: 0
 });
 
-var headMenu = Ti.UI.createImageView({
-	image: 'images/menu/head/head_on_320.png',
-	borderRadius:0,
-	opacity: 0.9,
-	left: 0,
-	height: '100%',
-	width: '100%'
-});
-
-/*
- 
-var scrollView = Ti.UI.createScrollView({
-	contentWidth: 'auto',
-	contentHeight: 'auto',
-	showVerticalScrollIndicator: false,
-	showHorizontalScrollIndicator: true,
-	height: '100%',
-	width: '100%'
-});
-
-//===============
-// Конструктор.
-function NewClass(){
-  this.property = 123; // открытое свойство (this)
-  var name  = "somebody"; // закрытое свойство (var)
-  
-  // Создаем методы класса прямо в конструкторе.
-  this.method1 = function(x) {
-    alert("Вызван method1("+x+")");
-  }
-  
-  // То же самое.
-  this.method2 = function(x) {
-    alert("Вызван method2("+x+")");
-    this.method1();
-  }
-  
-  // Метод для установки значения закрытого свойства.
-  this.setName = function(n) {
-    name = n;
-  }
-}
-
-// Создаем объект и проверяем работу.
-var obj = new NewClass();
-obj.method1(10);
-
-
-
-/*
- * пример наследования
- * 
- // Базовый "класс".
-function Base() {}
-Base.prototype.f1 = function() { alert(1) }
-
-// Производный "класс".
-function Derive() {}
-Derive.prototype = new Base(); // без new нельзя!
-Derive.prototype.f2 = function() { alert(2) }
-
-var obj = new Derive();
-obj.f1(); // вызывается функция базового объекта
-
-
-
-//===============
-var headMenuView = Titanium.UI.createImageView({
-	image: 'images/menu/head_on.png',
-	borderRadius:0,
-	//backgroundColor:'red',
-	opacity: 0.9,
-	left: 0
-});
-
-var bodyMenuView = Titanium.UI.createImageView({
-	image: 'images/menu/body_on.png',
-	borderRadius:0,
-	//backgroundColor:'red',
-	opacity: 0.9,
-	left: 0
-});
-
-var handsMenuView = Titanium.UI.createImageView({
-	image: 'images/menu/hands_on.png',
-	borderRadius:0,
-	//backgroundColor:'red',
-	opacity: 0.9,
-	left: 0
-});
-
-var legssMenuView = Titanium.UI.createImageView({
-	image: 'images/menu/legs_on.png',
-	borderRadius:0,
-	//backgroundColor:'red',
-	opacity: 0.9,
-	left: 0
-});
-
-var leftMargin = 2;
-for (var i = 0; i < 8*10; i++){
-	var item = Ti.UI.createImageView({
-		image:'/images/items/item'+(i%8)+'.png',
-		top: headMenuView.height*0.2,
-		left: leftMargin
-	});
-	item.name = 'image'+i;
-	scrollView.add(item);
-	leftMargin+=32;
-	item.addEventListener('click', myDrawModel.changeBody);
+var makeMenuProps = function(typeOfMenu, res, zI) {
+	var props = {
+		zIndex: zI,
+		borderRadius: 0,
+		opacity: 1,
+		left: 0,
+		height: '100%',
+		width: '100%'
+	};
+	props.image = 'images/menu/'+typeOfMenu+'/'+typeOfMenu+'_on_'+res+'.png';
+	return props;
 };
+
+var makeScrollProps = function() {
+	var props = {
+		contentWidth: 'auto',
+		contentHeight: 'auto',
+		showVerticalScrollIndicator: false,
+		showHorizontalScrollIndicator: true,
+		height: '100%',
+		width: '100%'
+	};
+	return props;
+};
+
+var fillItemList = function(scrollV) {
+	
+};
+
+/*
++var name = null;
++var leftMargin = 2;
++
++for (var i = 1; i < 8*10; i++){
++  name = 'image'+i;
++  var name = Ti.UI.createImageView({
++    image:'/images/items/item'+(1+i%8)+'.png',
++    top: 10,
++    left: leftMargin
++  });
++  scrollView.add(name);
++  leftMargin+=32;
++};
 */
 
 exports.drawGameMenu = function(toWin, toGame){
@@ -137,9 +68,54 @@ exports.drawGameMenu = function(toWin, toGame){
 	partsMenuView.width = scrW;
 	partsMenuView.height = scrH;
 	partsMenuView.top = scrT;
+	
+	headMenu = Ti.UI.createImageView(makeMenuProps('head', Ti.App.res, 1));
+	bodyMenu = Ti.UI.createImageView(makeMenuProps('body', Ti.App.res, 0));
+	handsMenu = Ti.UI.createImageView(makeMenuProps('hands', Ti.App.res, 0));
+	legsMenu = Ti.UI.createImageView(makeMenuProps('legs', Ti.App.res, 0));
+
+	//headList = Ti.UI.createScrollView(makeScrollProps);
+	
+	//headMenu.add(headList);
+	//headMenu.add(bodyList);
+	//headMenu.add(handsList);
+	//headMenu.add(legsList);
+	
 	partsMenuView.add(headMenu);
+	partsMenuView.add(bodyMenu);
+	partsMenuView.add(handsMenu);
+	partsMenuView.add(legsMenu);
+	
 	toWin.add(partsMenuView);
 }
+
+partsMenuView.addEventListener('click', function(e){
+	var w = partsMenuView.width, h = partsMenuView.height;
+	if ( (e.x>w-w) && (e.x<w/4) && (e.y<h/5) ) {
+		partsMenuView.children[0].zIndex = 1;
+		partsMenuView.children[1].zIndex = 0;
+		partsMenuView.children[2].zIndex = 0;
+		partsMenuView.children[3].zIndex = 0;
+	};
+	if ( (e.x>w/4) && (e.x<w/4*2) && (e.y<h/5) ) {
+		partsMenuView.children[0].zIndex = 0;
+		partsMenuView.children[1].zIndex = 1;
+		partsMenuView.children[2].zIndex = 0;
+		partsMenuView.children[3].zIndex = 0;
+	};
+	if ( (e.x>w/4*2) && (e.x<w/4*3) && (e.y<h/5) ) {
+		partsMenuView.children[0].zIndex = 0;
+		partsMenuView.children[1].zIndex = 0;
+		partsMenuView.children[2].zIndex = 1;
+		partsMenuView.children[3].zIndex = 0;
+	};
+	if ( (e.x>w/4*3) && (e.x<w) && (e.y<h/5) ) {
+		partsMenuView.children[0].zIndex = 0;
+		partsMenuView.children[1].zIndex = 0;
+		partsMenuView.children[2].zIndex = 0;
+		partsMenuView.children[3].zIndex = 1;
+	};
+});
 
 exports.moveUp = function(){
 	var menuMoveUp = Titanium.UI.createAnimation({
