@@ -3,8 +3,11 @@ var myDrawModel = require('js/drawModel');
 var myAnimatedModel = require('js/animateModel');
 var importAsset = require('js/importAsset');
 
-//monster creation menu
+/**
+ * monster creation menu with part items
+ */
 
+//partsMenuView - the main view for all menu views
 var partsMenuView = Ti.UI.createView({
 	backgroundColor:'red',
 	borderRadius:0,
@@ -12,24 +15,14 @@ var partsMenuView = Ti.UI.createView({
 	left: 0
 });
 
-function itemMenu() {
-	var menu = Titanium.UI.createImageView({
-		image: null,
-		borderRadius:0,
-		opacity: 0.9,
-		left: 0,
-		height: '100%',
-		width: '100%'
-	});
-	return menu;
-};
-itemMenu.prototype.setImage = function(){this.image = 'images/menu/hands_on.png'};
-
-var headMenuView = new itemMenu();
-headMenuView.setImage;
-var addItemsMenues = function(toView) {
-	toView.add(headMenuView);
-};
+var headMenu = Ti.UI.createImageView({
+	image: 'images/menu/head/head_on_320.png',
+	borderRadius:0,
+	opacity: 0.9,
+	left: 0,
+	height: '100%',
+	width: '100%'
+});
 
 /*
  
@@ -41,22 +34,6 @@ var scrollView = Ti.UI.createScrollView({
 	height: '100%',
 	width: '100%'
 });
-
-var itemsView = Ti.UI.createImageView({
-	borderRadius:0,
-	opacity: 0.9,
-	left: 0
-});
-
-function itemsMenu() {
-	
-};
-itemsMenu.prototype = {
-	
-};
-
-
-
 
 //===============
 // Конструктор.
@@ -156,13 +133,12 @@ exports.drawGameMenu = function(toWin, toGame){
 	var scrH = toGame.screen.height*0.25;
 	var scrT = toGame.screen.height*0.95;
 	
-	partsMenuView.setWidth(scrW);
-	partsMenuView.setHeight(scrH);
-	partsMenuView.setTop(scrT);
-	addItemsMenues(partsMenuView);
 	//partsMenuView.add(scrollView);
+	partsMenuView.width = scrW;
+	partsMenuView.height = scrH;
+	partsMenuView.top = scrT;
+	partsMenuView.add(headMenu);
 	toWin.add(partsMenuView);
-	alert(headMenuView.opacity);
 }
 
 exports.moveUp = function(){
