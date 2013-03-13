@@ -56,7 +56,7 @@ var fillItemList = function(o, typeOfMenu) {
 exports.drawGameMenu = function(toWin, toGame){
 	var scrW = toGame.screen.width;
 	var scrH = toGame.screen.height*0.25;
-	var scrT = toGame.screen.height*0.8;
+	var scrT = toGame.screen.height*0.95;
 	
 	//partsMenuView.add(scrollView);
 	partsMenuView.width = scrW;
@@ -118,11 +118,8 @@ partsMenuView.addEventListener('click', function(e){
 exports.moveUp = function(){
 	var menuMoveUp = Titanium.UI.createAnimation({
 		duration: 500,
-<<<<<<< HEAD
-		top: game.size.height*0.6
-=======
 		top: game.size.height*0.75
->>>>>>> tmp_menu
+
 	});
 	partsMenuView.animate(menuMoveUp);
 };
