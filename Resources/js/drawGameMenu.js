@@ -62,7 +62,7 @@ var fillItemList = function(scrollV) {
 exports.drawGameMenu = function(toWin, toGame){
 	var scrW = toGame.screen.width;
 	var scrH = toGame.screen.height*0.25;
-	var scrT = toGame.screen.height*0.95;
+	var scrT = toGame.screen.height*0.8;
 	
 	//partsMenuView.add(scrollView);
 	partsMenuView.width = scrW;
@@ -120,7 +120,7 @@ partsMenuView.addEventListener('click', function(e){
 exports.moveUp = function(){
 	var menuMoveUp = Titanium.UI.createAnimation({
 		duration: 500,
-		top: game.size.height*0.8
+		top: game.size.height*0.6
 	});
 	partsMenuView.animate(menuMoveUp)
 };
