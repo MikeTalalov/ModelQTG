@@ -8,9 +8,6 @@ var myModel = require('js/drawModel');
 var gameMenu = require('js/drawGameMenu');
 var myAnimatedModel = require('js/animateModel');
 
-//init section
-var fpsLabel = utils.createLabel();
-
 Ti.UI.orientation = Ti.UI.PORTRAIT; 
 var winMain = Ti.UI.createWindow({
 	title: 'Super Game',

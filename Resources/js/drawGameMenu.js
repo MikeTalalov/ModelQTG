@@ -7,7 +7,6 @@ var importAsset = require('js/importAsset');
  * monster creation menu with part items
  */
 
-//partsMenuView - the main view for all menu views
 var partsMenuView = Ti.UI.createView({
 	borderRadius:0,
 	opacity: 1,
@@ -43,28 +42,11 @@ var fillItemList = function(scrollV) {
 	
 };
 
-/*
-+var name = null;
-+var leftMargin = 2;
-+
-+for (var i = 1; i < 8*10; i++){
-+  name = 'image'+i;
-+  var name = Ti.UI.createImageView({
-+    image:'/images/items/item'+(1+i%8)+'.png',
-+    top: 10,
-+    left: leftMargin
-+  });
-+  scrollView.add(name);
-+  leftMargin+=32;
-+};
-*/
-
 exports.drawGameMenu = function(toWin, toGame){
 	var scrW = toGame.screen.width;
 	var scrH = toGame.screen.height*0.25;
 	var scrT = toGame.screen.height*0.95;
 	
-	//partsMenuView.add(scrollView);
 	partsMenuView.width = scrW;
 	partsMenuView.height = scrH;
 	partsMenuView.top = scrT;
@@ -73,13 +55,6 @@ exports.drawGameMenu = function(toWin, toGame){
 	bodyMenu = Ti.UI.createImageView(makeMenuProps('body', Ti.App.res, 0));
 	handsMenu = Ti.UI.createImageView(makeMenuProps('hands', Ti.App.res, 0));
 	legsMenu = Ti.UI.createImageView(makeMenuProps('legs', Ti.App.res, 0));
-
-	//headList = Ti.UI.createScrollView(makeScrollProps);
-	
-	//headMenu.add(headList);
-	//headMenu.add(bodyList);
-	//headMenu.add(handsList);
-	//headMenu.add(legsList);
 	
 	partsMenuView.add(headMenu);
 	partsMenuView.add(bodyMenu);

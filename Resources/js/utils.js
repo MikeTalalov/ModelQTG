@@ -40,3 +40,10 @@ exports.setResolution = function(game){
 	if(game.screen.width>1500){resolution = '1536'};
 	return resolution;
 }
+
+exports.getResourcesJSON(){
+	Ti.include('json/resources.json');
+	var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(), 'json/resources.json'); 
+	var contents = f.read().text;
+	return JSON.parse(contents);
+}

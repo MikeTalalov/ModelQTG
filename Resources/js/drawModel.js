@@ -6,6 +6,10 @@ var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
 var utils = require('js/utils');
 
+var res = utils.getResourcesJSON();
+var paths = res.paths;
+
+
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
 	var gameCenterY = tG.screen.height*0.56;
@@ -20,14 +24,14 @@ var head;
 
 var drawModel = function(toGame, toScene){
 //=========================================
-	var bodySpr = qtg.createSpriteSheet({image:'images/ss/bodies/body_'+Ti.App.res+'.xml'});
+	var bodySpr = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
 	body = bodySpr;
 	Ti.App.bodyGlobal = bodySpr;
-	var neckSpr = qtg.createSprite({image:'images/parts/neck_'+Ti.App.res+'.png'});
-	var headSpr = qtg.createSpriteSheet({image:'images/ss/heads/headsheet_'+Ti.App.res+'.xml'});
+	var neckSpr = qtg.createSprite({image:paths.neck+'neck_'+Ti.App.res+'.png'});
+	var headSpr = qtg.createSpriteSheet({image:paths.head+'headsheet_'+Ti.App.res+'.xml'});
 	head = headSpr;
 	//left leg
-	var leftThighSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
+	var leftThighSpr = qtg.createSprite({image:paths.thigh+'limb_'+Ti.App.res+'.png'});
 	var leftShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
 	var leftFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
 	//right leg
@@ -65,7 +69,7 @@ var drawModel = function(toGame, toScene){
 	var rightForearmPoint = {x: (rightShoulderSpr.width/2)-(rightForearmSpr.width/2), y: rightShoulderSpr.height*0.92};
 	var rightPalmPoint = {x: (rightForearmSpr.width/2)-(rightPalmSpr.width/2), y: rightForearmSpr.height*0.92};
 	
-	var pantsPoint = {x: 0, y: bodySpr.height-pantsSpr.height};
+	var pantsPoint = {x: (bodySpr.width-pantsSpr.width)/2, y: bodySpr.height-pantsSpr.height};
 	//===
 	var drawBody = function(){
 		placeToCenter(bodySpr, toGame, toScene);
