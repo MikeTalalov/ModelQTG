@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:083d106e03444c9dacecc094d30d2a47$ -->
+<TextureAtlas imagePath="images/ss/pants/pants_640.png">
+    <SubTexture name="pants_640_1" x="14" y="2" width="309" height="131"/>
+    <SubTexture name="empty2" x="2" y="2" width="10" height="10"/>
+    <SubTexture name="empty3" x="2" y="2" width="10" height="10"/>
+</TextureAtlas>

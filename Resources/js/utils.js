@@ -41,9 +41,9 @@ exports.setResolution = function(game){
 	return resolution;
 }
 
-exports.getResourcesJSON(){
+exports.getResourcesJSON = function(){
 	Ti.include('json/resources.json');
 	var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(), 'json/resources.json'); 
 	var contents = f.read().text;
-	return JSON.parse(contents);
+	return JSON.parse(contents)[0];
 }

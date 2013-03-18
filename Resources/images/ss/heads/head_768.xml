@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:55697f9f299cd170fde9d4d4aa423661$ -->
+<TextureAtlas imagePath="images/ss/heads/head_768.png">
+    <SubTexture name="head_768_1" x="2" y="2" width="144" height="169"/>
+    <SubTexture name="head_768_2" x="148" y="2" width="124" height="119"/>
+    <SubTexture name="head_768_3" x="274" y="2" width="79" height="109"/>
+</TextureAtlas>

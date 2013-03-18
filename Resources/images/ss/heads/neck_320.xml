@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:746df8d0bc7a5c4e7c85182b80a0ce7c$ -->
+<TextureAtlas imagePath="images/ss/heads/neck_320.png">
+    <SubTexture name="empty1" x="2" y="2" width="10" height="10"/>
+    <SubTexture name="empty2" x="2" y="2" width="10" height="10"/>
+    <SubTexture name="neck_320_3" x="2" y="14" width="19" height="32"/>
+</TextureAtlas>

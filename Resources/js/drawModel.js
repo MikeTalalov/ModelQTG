@@ -7,7 +7,7 @@ var myAnimatedModel = require('js/animateModel');
 var utils = require('js/utils');
 
 var res = utils.getResourcesJSON();
-var paths = res.paths;
+var paths = res.bodypartPaths;
 
 
 var placeToCenter = function(sO, tG, tS){
@@ -27,27 +27,27 @@ var drawModel = function(toGame, toScene){
 	var bodySpr = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
 	body = bodySpr;
 	Ti.App.bodyGlobal = bodySpr;
-	var neckSpr = qtg.createSprite({image:paths.neck+'neck_'+Ti.App.res+'.png'});
-	var headSpr = qtg.createSpriteSheet({image:paths.head+'headsheet_'+Ti.App.res+'.xml'});
+	var neckSpr = qtg.createSpriteSheet({image:paths.neck+'neck_'+Ti.App.res+'.xml'});
+	var headSpr = qtg.createSpriteSheet({image:paths.head+'head_'+Ti.App.res+'.xml'});
 	head = headSpr;
 	//left leg
-	var leftThighSpr = qtg.createSprite({image:paths.thigh+'limb_'+Ti.App.res+'.png'});
-	var leftShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var leftFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
+	var leftThighSpr = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml'});
+	var leftShinSpr = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml'});
+	var leftFootSpr = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml'});
 	//right leg
-	var rightThighSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var rightShinSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var rightFootSpr = qtg.createSprite({image:'images/parts/foot_'+Ti.App.res+'.png'});
+	var rightThighSpr = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml', scaleX:-1});
+	var rightShinSpr = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml', scaleX:-1});
+	var rightFootSpr = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml', scaleX:-1});
 	// pants
-	var pantsSpr = qtg.createSprite({image:'images/parts/pants1_'+Ti.App.res+'.png'});
+	var pantsSpr = qtg.createSpriteSheet({image:paths.pants+'pants_'+Ti.App.res+'.xml'});
 	//left hand
-	var leftShoulderSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var leftForearmSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var leftPalmSpr = qtg.createSprite({image:'images/parts/palm_'+Ti.App.res+'.png'});
+	var leftShoulderSpr = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml'});
+	var leftForearmSpr = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml'});
+	var leftPalmSpr = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml'});
 	//right hand
-	var rightShoulderSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var rightForearmSpr = qtg.createSprite({image:'images/parts/limb_'+Ti.App.res+'.png'});
-	var rightPalmSpr = qtg.createSprite({image:'images/parts/palm_'+Ti.App.res+'.png'});
+	var rightShoulderSpr = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml', scaleX:-1});
+	var rightForearmSpr = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml', scaleX:-1});
+	var rightPalmSpr = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml', scaleX:-1});
 	
 	//attach points
 	var neckPoint = {x: (bodySpr.width/2)-(neckSpr.width/2), y: -neckSpr.height*0.8};

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker http://www.texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:ee9ea1a70c67cffb60a8b2ac307e965f$ -->
-<Imageset Name="body_320" Imagefile="images/ss/bodies/body_320.png" NativeHorzRes="67" NativeVertRes="426" AutoScaled="false">
-    <Image Name="body2_320" XPos="2" YPos="2" Width="63" Height="210"/>
-    <Image Name="body_320" XPos="2" YPos="214" Width="63" Height="210"/>
-</Imageset>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:aa00070c51f65753f9fd8dc9c22da6cc$ -->
+<TextureAtlas imagePath="images/ss/bodies/body_320.png">
+    <SubTexture name="body_320_1" x="2" y="2" width="171" height="193"/>
+    <SubTexture name="body_320_2" x="175" y="2" width="63" height="111"/>
+    <SubTexture name="body_320_3" x="240" y="2" width="88" height="89"/>
+</TextureAtlas>

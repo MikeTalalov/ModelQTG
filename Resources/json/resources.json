@@ -1,14 +1,20 @@
-{
-	'paths':{
-		'head':'images/ss/heads/',
-		'neck':'images/ss/necks/',
-		'body': 'images/ss/bodies/',
-		'shoulder':'images/ss/shoulders/',
-		'forearm':'images/ss/forearms/',
-		'palm':'images/ss/palms/',
-		'thigh':'images/ss/thighs/',
-		'shin':'images/ss/shins/',
-		'foot':'images/ss/foots/',
-		'pants': 'images/ss/pants'
-	}
-}
+[{
+	"bodypartPaths":{
+		"head":"images/ss/heads/",
+		"neck":"images/ss/heads/",
+		"body":"images/ss/bodies/",
+		"shoulder":"images/ss/shoulders/",
+		"forearm":"images/ss/forearms/",
+		"palm":"images/ss/palms/",
+		"thigh":"images/ss/thighs/",
+		"shin":"images/ss/shins/",
+		"foot":"images/ss/foots/",
+		"pants":"images/ss/pants/"
+   },
+   "itemsPaths":{
+		"head":"images/items/head/",
+		"body":"images/items/body/",
+		"hands":"images/items/hands/",
+		"legs":"images/items/legs/"
+   }
+}]

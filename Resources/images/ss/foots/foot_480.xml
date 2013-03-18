@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:1645e684b2e1a3dc6a2b45394450b42a$ -->
+<TextureAtlas imagePath="images/ss/foots/foot_480.png">
+    <SubTexture name="empty1" x="2" y="2" width="10" height="10"/>
+    <SubTexture name="foot_480_2" x="2" y="14" width="42" height="48"/>
+    <SubTexture name="empty3" x="2" y="2" width="10" height="10"/>
+</TextureAtlas>
