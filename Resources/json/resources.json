@@ -1,4 +1,4 @@
-[{
+{
 	"bodypartPaths":{
 		"head":"images/ss/heads/",
 		"neck":"images/ss/heads/",
@@ -17,4 +17,4 @@
 		"hands":"images/items/hands/",
 		"legs":"images/items/legs/"
    }
-}]
+}

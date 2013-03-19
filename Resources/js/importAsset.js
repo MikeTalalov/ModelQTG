@@ -10,12 +10,13 @@ var assets={bodyassets:[], handassets:[], headassets:[]};
 var curHeadIndex;
 var curBodyIndex;
 var curHandsIndex;
+exports.getCurrentInedex = function(){return curBodyIndex};
 
 for(var j = 0; j<assetsNames.length; j++){
 	var asset = assets[ assetsNames[j] + 'assets' ];
 	
 	for(var i = 0; i< ASSETS_LENGTH; i++){
-		Ti.include('assets/'+assetsNames[j]+'asset'+(i+1)+'.json');
+		//Ti.include('assets/'+assetsNames[j]+'asset'+(i+1)+'.json');
 		var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(), 'assets/'+ assetsNames[j]+'asset'+(i+1)+'.json'); 
 		var contents = f.read().text;
 		var json = JSON.parse(contents);

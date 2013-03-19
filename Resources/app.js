@@ -9,6 +9,8 @@ var gameMenu = require('js/drawGameMenu');
 var myAnimatedModel = require('js/animateModel');
 var globals = require('js/globals');
 
+globals.menulisteners = [];
+
 var gameView;
 var menuScene;
 var gameScene;
@@ -39,6 +41,7 @@ function createGameView(){
 // MENU FN's
 function createMenuScene(){
 	menuScene = qtg.createScene();
+	Ti.API.info('images/menu/mainmenu/menubg_'+Ti.App.res+'.png');
 	var bg = qtg.createSprite({image:'images/menu/mainmenu/menubg_'+Ti.App.res+'.png'});
 	menuScene.add(bg);
 	
@@ -68,8 +71,8 @@ function createGameScene(){
 
 // EVENTS
 function onSwipe(e){
-	(e.y>gameView.size.height*0.8)&&(e.direction == 'up')? gameMenu.moveUp(gameView) : 
-	(e.y>gameView.size.height*0.7)&&(e.direction == 'down')? gameMenu.moveDown(gameView) : Ti.API.info(e.direction);
+	(e.y>gameView.screen.height*0.8)&&(e.direction == 'up')? gameMenu.move(gameView, 'up') : 
+	(e.y>gameView.screen.height*0.7)&&(e.direction == 'down')? gameMenu.move(gameView, 'down') : Ti.API.info(e.direction);
 }
 
 function onLongpress(e){
@@ -81,6 +84,14 @@ function onGameLoad(e){
 	createMenuScene();
 	gameView.pushScene(menuScene);
 	gameView.start();
+	
+	var screenScale = gameView.screen.height / 480;
+	var screenW = gameView.screen.width * screenScale;
+    var screenH = gameView.screen.height * screenScale;
+    
+	Ti.App.scalex = screenW / gameView.screen.width;
+    Ti.App.scaley = screenH / gameView.screen.height;
+    
 	Ti.App.state = 'mainMenu';
 }
 
@@ -105,6 +116,7 @@ function onTap(e){
 		break;
 	}
 	
+	if(!target) return;
 	switch(target.tag){	
 		case 'startBtn':
 			createGameScene()

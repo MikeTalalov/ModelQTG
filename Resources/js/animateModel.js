@@ -13,6 +13,7 @@ const HEAD = 'head';
 // VARS
 
 var qtg = require('com.googlecode.quicktigame2d');
+var utils = require('js/utils');
 var importAsset = require('js/importAsset');
 var rad = Math.PI/180;
 var speed = Math.round(1000/30);
@@ -36,6 +37,7 @@ var head={neck:null, head:null};
 var pants;
 
 var totalFrame=0;
+var layouts = utils.getLayoutsJSON();
 
 // EXPORTS
 

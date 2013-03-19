@@ -20,124 +20,157 @@ var placeToCenter = function(sO, tG, tS){
 };
 
 var body;
+
 var head;
+var neck;
+
+var rightShoulder;
+var rightForearm;
+var rightPalm;
+var leftShoulder;
+var leftForearm;
+var leftPalm;
+
+var pants;
+var rightThigh;
+var rightShin;
+var rightFoot;
+var leftThigh
+var leftShin;
+var leftFoot;
 
 var drawModel = function(toGame, toScene){
 //=========================================
-	var bodySpr = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
-	body = bodySpr;
-	Ti.App.bodyGlobal = bodySpr;
-	var neckSpr = qtg.createSpriteSheet({image:paths.neck+'neck_'+Ti.App.res+'.xml'});
-	var headSpr = qtg.createSpriteSheet({image:paths.head+'head_'+Ti.App.res+'.xml'});
-	head = headSpr;
+	body = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
+	Ti.App.bodyGlobal = body;
+	neck = qtg.createSpriteSheet({image:paths.neck+'neck_'+Ti.App.res+'.xml'});
+	head = qtg.createSpriteSheet({image:paths.head+'head_'+Ti.App.res+'.xml'});
+	
 	//left leg
-	var leftThighSpr = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml'});
-	var leftShinSpr = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml'});
-	var leftFootSpr = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml'});
+	leftThigh = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml'});
+	leftShin = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml'});
+	leftFoot = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml'});
 	//right leg
-	var rightThighSpr = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml', scaleX:-1});
-	var rightShinSpr = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml', scaleX:-1});
-	var rightFootSpr = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml', scaleX:-1});
+	rightThigh = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml', scaleX:-1});
+	rightShin = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml', scaleX:-1});
+	rightFoot = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml', scaleX:-1});
 	// pants
-	var pantsSpr = qtg.createSpriteSheet({image:paths.pants+'pants_'+Ti.App.res+'.xml'});
+	pants = qtg.createSpriteSheet({image:paths.pants+'pants_'+Ti.App.res+'.xml'});
+	
 	//left hand
-	var leftShoulderSpr = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml'});
-	var leftForearmSpr = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml'});
-	var leftPalmSpr = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml'});
+	leftShoulder = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml'});
+	leftForearm = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml'});
+	leftPalm = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml'});
 	//right hand
-	var rightShoulderSpr = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml', scaleX:-1});
-	var rightForearmSpr = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml', scaleX:-1});
-	var rightPalmSpr = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml', scaleX:-1});
+	rightShoulder = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml', scaleX:-1});
+	rightForearm = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml', scaleX:-1});
+	rightPalm = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml', scaleX:-1});
 	
 	//attach points
-	var neckPoint = {x: (bodySpr.width/2)-(neckSpr.width/2), y: -neckSpr.height*0.8};
-	var headPoint = {x: (neckSpr.width/2)-(headSpr.width/2), y: -headSpr.height*0.9};
+	var neckPoint = {x: (body.width/2)-(neck.width/2), y: -neck.height*0.8};
+	var headPoint = {x: (neck.width/2)-(head.width/2), y: -head.height*0.9};
 	
-	var leftThighPoint = {x: (bodySpr.width/2)+(bodySpr.width*0.14), y: bodySpr.height*0.92};
-	var leftShinPoint = {x: (leftThighSpr.width/2)-(leftShinSpr.width/2), y: leftThighSpr.height*0.92};
-	var leftFootPoint = {x: (leftShinSpr.width/2)-(leftFootSpr.width/2), y: leftShinSpr.height*0.92};
+	var leftThighPoint = {x: (body.width/2)+(body.width*0.14), y: body.height*0.92};
+	var leftShinPoint = {x: (leftThigh.width/2)-(leftShin.width/2), y: leftThigh.height*0.92};
+	var leftFootPoint = {x: (leftShin.width/2)-(leftFoot.width/2), y: leftShin.height*0.92};
 	
-	var rightThighPoint = {x: (bodySpr.width/2)-(bodySpr.width*0.5), y: bodySpr.height*0.92};
-	var rightShinPoint = {x: (rightThighSpr.width/2)-(rightShinSpr.width/2), y: rightThighSpr.height*0.92};
-	var rightFootPoint = {x: (rightShinSpr.width/2)-(rightFootSpr.width/2), y: rightShinSpr.height*0.92};
+	var rightThighPoint = {x: (body.width/2)-(body.width*0.5), y: body.height*0.92};
+	var rightShinPoint = {x: (rightThigh.width/2)-(rightShin.width/2), y: rightThigh.height*0.92};
+	var rightFootPoint = {x: (rightShin.width/2)-(rightFoot.width/2), y: rightShin.height*0.92};
 	
-	var leftShoulderPoint = {x: (bodySpr.width/2)+(bodySpr.width*0.2), y: bodySpr.height*0.02};
-	var leftForearmPoint = {x: (leftShoulderSpr.width/2)-(leftForearmSpr.width/2), y: leftShoulderSpr.height*0.92};
-	var leftPalmPoint = {x: (leftForearmSpr.width/2)-(leftPalmSpr.width/2), y: leftForearmSpr.height*0.92};
+	var leftShoulderPoint = {x: (body.width/2)+(body.width*0.2), y: body.height*0.02};
+	var leftForearmPoint = {x: (leftShoulder.width/2)-(leftForearm.width/2), y: leftShoulder.height*0.92};
+	var leftPalmPoint = {x: (leftForearm.width/2)-(leftPalm.width/2), y: leftForearm.height*0.92};
 	
-	var rightShoulderPoint = {x: (bodySpr.width/2)-(bodySpr.width*0.6), y: bodySpr.height*0.02};
-	var rightForearmPoint = {x: (rightShoulderSpr.width/2)-(rightForearmSpr.width/2), y: rightShoulderSpr.height*0.92};
-	var rightPalmPoint = {x: (rightForearmSpr.width/2)-(rightPalmSpr.width/2), y: rightForearmSpr.height*0.92};
+	var rightShoulderPoint = {x: (body.width/2)-(body.width*0.6), y: body.height*0.02};
+	var rightForearmPoint = {x: (rightShoulder.width/2)-(rightForearm.width/2), y: rightShoulder.height*0.92};
+	var rightPalmPoint = {x: (rightForearm.width/2)-(rightPalm.width/2), y: rightForearm.height*0.92};
 	
-	var pantsPoint = {x: (bodySpr.width-pantsSpr.width)/2, y: bodySpr.height-pantsSpr.height};
+	var pantsPoint = {x: (body.width-pants.width)/2, y: body.height-pants.height};
 	//===
 	var drawBody = function(){
-		placeToCenter(bodySpr, toGame, toScene);
-		bodySpr.z = 80;
-		toScene.add(bodySpr);
-		Ti.App.bodyX = bodySpr.center.x;
-		Ti.App.bodyY = bodySpr.center.y;
-		Ti.App.D = Math.sqrt(Math.pow(bodySpr.width/2, 2) + Math.pow(bodySpr.height/2, 2));
-		Ti.App.a = Math.asin( (bodySpr.width/2)/Ti.App.D) * 180/Math.PI;
-		Ti.App.b = Math.acos( (bodySpr.height/2)/Ti.App.D) * 180/Math.PI;
+		placeToCenter(body, toGame, toScene);
+		body.z = 80;
+		toScene.add(body);
+		Ti.App.bodyX = body.center.x;
+		Ti.App.bodyY = body.center.y;
+		Ti.App.D = Math.sqrt(Math.pow(body.width/2, 2) + Math.pow(body.height/2, 2));
+		Ti.App.a = Math.asin( (body.width/2)/Ti.App.D) * 180/Math.PI;
+		Ti.App.b = Math.acos( (body.height/2)/Ti.App.D) * 180/Math.PI;
 		Ti.App.D *= 0.9;
 	};
 	
-	var drawPart = function(childSpr, parentSpr, attachPoint, zIndex){
-		//bodySpr.addTransformChildWithRelativePosition(childSpr);
-		childSpr.move(parentSpr.x+attachPoint.x, parentSpr.y+attachPoint.y);
-		childSpr.z = zIndex;
-		toScene.add(childSpr);	
+	var drawPart = function(child, parent, attachPoint, zIndex){
+		child.move(parent.x+attachPoint.x, parent.y+attachPoint.y);
+		child.z = zIndex;
+		toScene.add(child);	
 	};
 	
 	//draw section
 	drawBody();
-	drawPart(neckSpr, bodySpr, neckPoint, 70);
-	drawPart(headSpr, neckSpr, headPoint, 80);
+	drawPart(neck, body, neckPoint, 70);
+	drawPart(head, neck, headPoint, 80);
 	//===draw left leg
-	drawPart(leftThighSpr, bodySpr, leftThighPoint, 70);
-	drawPart(leftShinSpr, leftThighSpr, leftShinPoint, 60);
-	drawPart(leftFootSpr, leftShinSpr, leftFootPoint, 70);
+	drawPart(leftThigh, body, leftThighPoint, 70);
+	drawPart(leftShin, leftThigh, leftShinPoint, 60);
+	drawPart(leftFoot, leftShin, leftFootPoint, 70);
 	//===draw right leg
-	drawPart(rightThighSpr, bodySpr, rightThighPoint, 70);
-	drawPart(rightShinSpr, rightThighSpr, rightShinPoint, 60);
-	drawPart(rightFootSpr, rightShinSpr, rightFootPoint, 70);
+	drawPart(rightThigh, body, rightThighPoint, 70);
+	drawPart(rightShin, rightThigh, rightShinPoint, 60);
+	drawPart(rightFoot, rightShin, rightFootPoint, 70);
 	// PANTS
-	drawPart(pantsSpr, bodySpr, pantsPoint, 90);
+	drawPart(pants, body, pantsPoint, 90);
 	//===draw left hand
-	drawPart(leftShoulderSpr, bodySpr, leftShoulderPoint, 90);
-	drawPart(leftForearmSpr, leftShoulderSpr, leftForearmPoint, 80);
-	drawPart(leftPalmSpr, leftForearmSpr, leftPalmPoint, 90);
+	drawPart(leftShoulder, body, leftShoulderPoint, 90);
+	drawPart(leftForearm, leftShoulder, leftForearmPoint, 80);
+	drawPart(leftPalm, leftForearm, leftPalmPoint, 90);
 	//===draw right hand
-	drawPart(rightShoulderSpr, bodySpr, rightShoulderPoint, 90);
-	drawPart(rightForearmSpr, rightShoulderSpr, rightForearmPoint, 80);
-	drawPart(rightPalmSpr, rightForearmSpr, rightPalmPoint, 90);
+	drawPart(rightShoulder, body, rightShoulderPoint, 90);
+	drawPart(rightForearm, rightShoulder, rightForearmPoint, 80);
+	drawPart(rightPalm, rightForearm, rightPalmPoint, 90);
 	
 	
 //=========================================
 setTimeout(function(){
-	myAnimatedModel.setLimbParts('leftHand', leftShoulderSpr, leftForearmSpr, leftPalmSpr);
-	myAnimatedModel.setLimbParts('rightHand', rightShoulderSpr, rightForearmSpr, rightPalmSpr);
-	myAnimatedModel.setLimbParts('leftLeg', leftThighSpr, leftShinSpr, leftFootSpr);
-	myAnimatedModel.setLimbParts('rightLeg', rightThighSpr, rightShinSpr, rightFootSpr);
-	myAnimatedModel.setLimbParts('head', neckSpr, headSpr);
-	myAnimatedModel.setPants(pantsSpr);
+	myAnimatedModel.setLimbParts('leftHand', leftShoulder, leftForearm, leftPalm);
+	myAnimatedModel.setLimbParts('rightHand', rightShoulder, rightForearm, rightPalm);
+	myAnimatedModel.setLimbParts('leftLeg', leftThigh, leftShin, leftFoot);
+	myAnimatedModel.setLimbParts('rightLeg', rightThigh, rightShin, rightFoot);
+	myAnimatedModel.setLimbParts('head', neck, head);
+	myAnimatedModel.setPants(pants);
 	
-	myAnimatedModel.animateBody(bodySpr);
+	myAnimatedModel.animateBody(body);
 }, 3000)
 //=========================================	
 };
 
-exports.changeBody = function(e){
-	var target;
-	if(e.source.name === 'image0' || e.source.name === 'image1') target = body;
-	else target = head;
+exports.changeBody = function(_type, _num){
+	var target=[];
+	if(_type === 'body'){
+		target.push(body);
+	}else if(_type === 'head'){
+		target.push(neck);
+		target.push(head);
+	}else if(_type === 'legs'){
+		target.push(pants);
+		target.push(rightThigh);
+		target.push(rightShin);
+		target.push(rightFoot);
+		target.push(leftThigh);
+		target.push(leftShin);
+		target.push(leftFoot);
+	}else{
+		target.push(rightShoulder);
+		target.push(rightForearm);
+		target.push(rightPalm);
+		target.push(leftShoulder);
+		target.push(leftForearm);
+		target.push(leftPalm);
+	}
 	
-	var frame = target.frame;
-	frame++;
-	if(frame>=target.frameCount) frame = 0;
-
-	target.frame = frame;
+	for(var i =0; i< target.length; i++){
+		target[i].frame = _num;
+	}
 }
 
 exports.drawModel = drawModel;

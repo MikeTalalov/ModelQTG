@@ -38,12 +38,20 @@ exports.setResolution = function(game){
 	if(game.screen.width>500){resolution = '640'};
 	if(game.screen.width>660){resolution = '768'};
 	if(game.screen.width>1500){resolution = '1536'};
+	
 	return resolution;
 }
 
 exports.getResourcesJSON = function(){
-	Ti.include('json/resources.json');
 	var f = Ti.Filesystem.getFile(Ti.Filesystem.getResourcesDirectory(), 'json/resources.json'); 
 	var contents = f.read().text;
-	return JSON.parse(contents)[0];
+	f = null;
+	return JSON.parse(contents);
+}
+
+exports.getLayoutsJSON = function(){
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/bodyLayouts.json');
+    var txt = file.read().text;
+    file = null;
+    return JSON.parse(txt);
 }
