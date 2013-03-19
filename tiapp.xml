@@ -22,16 +22,13 @@
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
     <guid>d3b7e097-db62-4f86-adfb-27022c990669</guid>
-    <property name="ti.ui.defaultunit" type="string">dip</property>
+    <property name="ti.ui.defaultunit" type="string">px</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
         </orientations>
         <orientations device="ipad">
             <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>

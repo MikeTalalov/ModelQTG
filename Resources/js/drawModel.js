@@ -5,6 +5,7 @@
 var qtg = require('com.googlecode.quicktigame2d');
 var myAnimatedModel = require('js/animateModel');
 var utils = require('js/utils');
+var globals = require('js/globals');
 
 var res = utils.getResourcesJSON();
 var paths = res.bodypartPaths;
@@ -43,28 +44,29 @@ var drawModel = function(toGame, toScene){
 //=========================================
 	body = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
 	Ti.App.bodyGlobal = body;
+	Ti.App.bodyOffset=0;
 	neck = qtg.createSpriteSheet({image:paths.neck+'neck_'+Ti.App.res+'.xml'});
 	head = qtg.createSpriteSheet({image:paths.head+'head_'+Ti.App.res+'.xml'});
 	
 	//left leg
-	leftThigh = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml'});
-	leftShin = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml'});
-	leftFoot = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml'});
+	leftThigh = qtg.createSpriteSheet({image:paths.thigh+'lthigh_'+Ti.App.res+'.xml'});
+	leftShin = qtg.createSpriteSheet({image:paths.shin+'lshin_'+Ti.App.res+'.xml'});
+	leftFoot = qtg.createSpriteSheet({image:paths.foot+'lfoot_'+Ti.App.res+'.xml'});
 	//right leg
-	rightThigh = qtg.createSpriteSheet({image:paths.thigh+'thigh_'+Ti.App.res+'.xml', scaleX:-1});
-	rightShin = qtg.createSpriteSheet({image:paths.shin+'shin_'+Ti.App.res+'.xml', scaleX:-1});
-	rightFoot = qtg.createSpriteSheet({image:paths.foot+'foot_'+Ti.App.res+'.xml', scaleX:-1});
+	rightThigh = qtg.createSpriteSheet({image:paths.thigh+'rthigh_'+Ti.App.res+'.xml'});
+	rightShin = qtg.createSpriteSheet({image:paths.shin+'rshin_'+Ti.App.res+'.xml'});
+	rightFoot = qtg.createSpriteSheet({image:paths.foot+'rfoot_'+Ti.App.res+'.xml'});
 	// pants
 	pants = qtg.createSpriteSheet({image:paths.pants+'pants_'+Ti.App.res+'.xml'});
 	
 	//left hand
-	leftShoulder = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml'});
-	leftForearm = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml'});
-	leftPalm = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml'});
+	leftShoulder = qtg.createSpriteSheet({image:paths.shoulder+'lshoulder_'+Ti.App.res+'.xml'});
+	leftForearm = qtg.createSpriteSheet({image:paths.forearm+'lforearm_'+Ti.App.res+'.xml'});
+	leftPalm = qtg.createSpriteSheet({image:paths.palm+'lpalm_'+Ti.App.res+'.xml'});
 	//right hand
-	rightShoulder = qtg.createSpriteSheet({image:paths.shoulder+'shoulder_'+Ti.App.res+'.xml', scaleX:-1});
-	rightForearm = qtg.createSpriteSheet({image:paths.forearm+'forearm_'+Ti.App.res+'.xml', scaleX:-1});
-	rightPalm = qtg.createSpriteSheet({image:paths.palm+'palm_'+Ti.App.res+'.xml', scaleX:-1});
+	rightShoulder = qtg.createSpriteSheet({image:paths.shoulder+'rshoulder_'+Ti.App.res+'.xml'});
+	rightForearm = qtg.createSpriteSheet({image:paths.forearm+'rforearm_'+Ti.App.res+'.xml'});
+	rightPalm = qtg.createSpriteSheet({image:paths.palm+'rpalm_'+Ti.App.res+'.xml'});
 	
 	//attach points
 	var neckPoint = {x: (body.width/2)-(neck.width/2), y: -neck.height*0.8};
@@ -96,8 +98,6 @@ var drawModel = function(toGame, toScene){
 		Ti.App.bodyY = body.center.y;
 		Ti.App.D = Math.sqrt(Math.pow(body.width/2, 2) + Math.pow(body.height/2, 2));
 		Ti.App.a = Math.asin( (body.width/2)/Ti.App.D) * 180/Math.PI;
-		Ti.App.b = Math.acos( (body.height/2)/Ti.App.D) * 180/Math.PI;
-		Ti.App.D *= 0.9;
 	};
 	
 	var drawPart = function(child, parent, attachPoint, zIndex){
@@ -140,7 +140,10 @@ setTimeout(function(){
 	myAnimatedModel.setPants(pants);
 	
 	myAnimatedModel.animateBody(body);
-}, 3000)
+	
+	var player = Ti.Media.createSound({url:"sounds/dance.mp3"});
+	player.play();
+}, 50)
 //=========================================	
 };
 
@@ -148,6 +151,7 @@ exports.changeBody = function(_type, _num){
 	var target=[];
 	if(_type === 'body'){
 		target.push(body);
+		globals.currentBody = _num;
 	}else if(_type === 'head'){
 		target.push(neck);
 		target.push(head);
@@ -171,6 +175,9 @@ exports.changeBody = function(_type, _num){
 	for(var i =0; i< target.length; i++){
 		target[i].frame = _num;
 	}
+	
+	Ti.App.D = Math.sqrt(Math.pow(body.width/2, 2) + Math.pow(body.height/2, 2));
+	Ti.App.a = Math.asin( (body.width/2)/Ti.App.D) * 180/Math.PI;
 }
 
 exports.drawModel = drawModel;

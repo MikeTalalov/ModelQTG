@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:93f6f03419244834b3874a15cdc90a27$ -->
-<TextureAtlas imagePath="images/ss/shins/shin_1536.png">
-    <SubTexture name="foot_1536_1" x="2" y="2" width="112" height="166"/>
-    <SubTexture name="foot_1536_3" x="2" y="247" width="233" height="413"/>
-    <SubTexture name="shin_1536_2" x="116" y="2" width="68" height="243"/>
-</TextureAtlas>

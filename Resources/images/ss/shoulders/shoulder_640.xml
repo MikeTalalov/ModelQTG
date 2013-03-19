@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:9394eb062b14c927b383ac6005436f01$ -->
-<TextureAtlas imagePath="images/ss/shoulders/shoulder_640.png">
-    <SubTexture name="shoulder_640_1" x="2" y="2" width="45" height="112"/>
-    <SubTexture name="shoulder_640_2" x="2" y="116" width="21" height="103"/>
-    <SubTexture name="shoulder_640_3" x="25" y="116" width="37" height="99"/>
-</TextureAtlas>

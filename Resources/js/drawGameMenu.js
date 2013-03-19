@@ -108,6 +108,12 @@ partsMenuView.addEventListener('singletap', selectorClickHandler);
 
 function selectorClickHandler(e){
 	var w = partsMenuView.width, h = partsMenuView.height;
+	
+	if(Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad'){
+		e.x*=Ti.App.scalex;
+		e.y*=Ti.App.scaley;
+	} 
+	
 	if ( (e.x>0) && (e.x<w/4) && (e.y<h/5) ) {
 		partsMenuView.children[0].zIndex = 1; partsMenuView.children[0].setImage('images/menu/head/head_on_'+Ti.App.res+'.png');
 		partsMenuView.children[1].zIndex = 0; partsMenuView.children[1].setImage('images/menu/body/body_off_'+Ti.App.res+'.png');
@@ -135,13 +141,22 @@ function selectorClickHandler(e){
 };
 
 exports.move = function(_gameView, _dir){
-	var pos = (_dir === 'up')?0.75:0.95;
+	var pos;
+	if(_dir === 'up'){ 
+		pos = 0.75;
+		Ti.App.bodyOffset = 50*Ti.App.scalex;;
+	}else{
+		pos = 0.95;
+		Ti.App.bodyOffset = 0;
+	}
 	
 	var menuMoveUp = Titanium.UI.createAnimation({
 		duration: 500,
 		top: _gameView.size.height*pos
 	});
 	partsMenuView.animate(menuMoveUp);
+	
+	
 };
 
 var leftBodyArr;
@@ -236,10 +251,10 @@ exports.setArrowsVisible=function(){
 //leg slider
 var slider = Titanium.UI.createSlider({
 	top: 50,
-    min: 0,
-    max: 100,
+    min: -5,
+    max: 5,
     width: '100%',
-    value: 50
+    value: 0
 });
 
 var label = Ti.UI.createLabel({
@@ -253,13 +268,10 @@ var label = Ti.UI.createLabel({
 
 slider.addEventListener('change', function(e) {
     label.text = String.format("%3.1f", e.value);
-    Ti.App.Dmod = Math.sqrt(Math.pow(Ti.App.bodyGlobal.width*e.value/2, 2) + Math.pow(Ti.App.bodyGlobal.height/2, 2))*0.9;
-    Ti.App.b = Math.asin( (Ti.App.bodyGlobal.width*e.value/100)/Ti.App.Dmod) * 180/Math.PI;
-    Ti.API.info(e.value/100);
+    Ti.App.b = e.value;
 });
 
 exports.drawLegSlider = function(toWin, toGame){
 	toWin.add(label);
 	toWin.add(slider);
-	Ti.App.legDistance = slider.value/100;
 };

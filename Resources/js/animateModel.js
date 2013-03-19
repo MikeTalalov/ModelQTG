@@ -15,6 +15,8 @@ const HEAD = 'head';
 var qtg = require('com.googlecode.quicktigame2d');
 var utils = require('js/utils');
 var importAsset = require('js/importAsset');
+var globals = require('js/globals');
+
 var rad = Math.PI/180;
 var speed = Math.round(1000/30);
 
@@ -91,7 +93,7 @@ exports.animateBody = function(_body){
 		bodyRot = assetBody[totalFrame%assetBody.length].rotation;
 		deltaX = assetBody[totalFrame%assetBody.length].deltaX;
 		deltaY = assetBody[totalFrame%assetBody.length].deltaY;
-		body.setCenter({'x':Ti.App.bodyX+deltaX, 'y':Ti.App.bodyY+deltaY});
+		body.setCenter({'x':Ti.App.bodyX+deltaX, 'y':Ti.App.bodyY+deltaY-Ti.App.bodyOffset});
 		body.rotateFrom(bodyRot, body.width*0.5, body.height*0.5);
 		
 		var f0 = totalFrame%assetBody.length;
@@ -112,15 +114,12 @@ exports.animateBody = function(_body){
 
 exports.changeAsset = function(_part){
 	if(_part === 'body'){
-		//Ti.API.info('body')
 		assetBody = importAsset.bodyAsset();
 		assetLL = importAsset.leftLegAsset();
 		assetRL = importAsset.rightLegAsset();
 	}else if(_part ==='head'){
-		//Ti.API.info('head')
 		assetHead = importAsset.headAsset();
 	}else{
-		//Ti.API.info('hands')
 		assetLH = importAsset.leftHandAsset();
 		assetRH = importAsset.rightHandAsset();
 	}
@@ -158,30 +157,33 @@ function animatePants(frame){
 function animateLimb(type, frame){
 	var limb;
 	var asset;
-	
 	var angle;
+	var D = Ti.App.D;
 	
 	switch(type){
 		case RIGHT_HAND:
 			limb = rightHand;
 			asset = assetRH;
-			angle = 270+(body.angle-Ti.App.a);
+			angle = 270+(body.angle-Ti.App.a)-layouts[globals.currentBody].hands.angle;
+			D*=layouts[globals.currentBody].hands.length;
 		break;
 		case LEFT_HAND:
 			limb = leftHand;
 			asset = assetLH;
-			angle = 270+(body.angle+Ti.App.a);
-			
+			angle = 270+(body.angle+Ti.App.a)+layouts[globals.currentBody].hands.angle;
+			D*=layouts[globals.currentBody].hands.length;
 		break;
 		case RIGHT_LEG:
 			limb = rightLeg;
 			asset = assetRL;
-			angle = 90+(body.angle+Ti.App.b);
+			angle = 90+(body.angle)+layouts[globals.currentBody].legs.angle;
+			D*=layouts[globals.currentBody].legs.length;
 		break;
 		case LEFT_LEG:
 			limb = leftLeg;
 			asset = assetLL;
-			angle = 90+(body.angle-Ti.App.b);	
+			angle = 90+(body.angle)-layouts[globals.currentBody].legs.angle;	
+			D*=layouts[globals.currentBody].legs.length;
 		break;
 	}
 	var p1Rot = asset[frame%asset.length].p1+body.angle;
@@ -191,24 +193,12 @@ function animateLimb(type, frame){
 	var p1 = limb.p1;
 	var p2 = limb.p2;
 	var p3 = limb.p3;
-	
 	p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
 	
-	var dX = body.center.x+Ti.App.D*yR(angle);
-	var dY = body.center.y+Ti.App.D*xR(angle);
+	var dX = body.center.x+D*yR(angle);
+	var dY = body.center.y+D*xR(angle);
 	
-	var determ;
-	switch(type){
-		case RIGHT_HAND: case LEFT_HAND:
-			determ = -p1.width/2;
-		break;
-		case RIGHT_LEG:
-			{determ = 0; dX = body.center.x+Ti.App.Dmod*yR(angle)}
-		break;
-		case LEFT_LEG:
-			{determ = -p1.width; dX = body.center.x+Ti.App.Dmod*yR(angle)}	
-		break;
-	}
+	var determ = -p1.width/2;
 	p1.move(dX+determ, dY);
 	
 	p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);

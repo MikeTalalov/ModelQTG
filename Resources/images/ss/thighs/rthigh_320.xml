@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:0ff4516541ace0ef1ceef68e3cc0468a$ -->
+<TextureAtlas imagePath="images/ss/thighs/rthigh_320.png">
+    <SubTexture name="thigh_320_1" x="2" y="2" width="25" height="35"/>
+    <SubTexture name="thigh_320_2" x="11" y="39" width="16" height="51"/>
+    <SubTexture name="thigh_320_3" x="3" y="92" width="24" height="54"/>
+</TextureAtlas>
