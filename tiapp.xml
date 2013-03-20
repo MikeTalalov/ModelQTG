@@ -31,7 +31,13 @@
             <orientation>Ti.UI.PORTRAIT</orientation>
         </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <application>
+                    <activity android:screenOrientation="portrait"></activity>
+            </application>
+        </manifest>
+	</android>
     <mobileweb>
         <precache/>
         <splash>
@@ -51,5 +57,5 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.0.0.GA</sdk-version>
+    <sdk-version>3.0.2.GA</sdk-version>
 </ti:app>

@@ -8,8 +8,8 @@ var utils = require('js/utils');
 var globals = require('js/globals');
 
 var res = utils.getResourcesJSON();
+var layouts = utils.getLayoutsJSON();
 var paths = res.bodypartPaths;
-
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
@@ -174,6 +174,7 @@ exports.changeBody = function(_type, _num){
 	
 	for(var i =0; i< target.length; i++){
 		target[i].frame = _num;
+		pants.width = body.width*layouts[globals.currentBody].pantsModifier;
 	}
 	
 	Ti.App.D = Math.sqrt(Math.pow(body.width/2, 2) + Math.pow(body.height/2, 2));
