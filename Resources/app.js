@@ -34,6 +34,7 @@ function createGameView(){
 	gameView.color(0.8, 1, 0.7);
 	gameView.fps = 33;
 	gameView.debug = true;
+	globals.gameView = gameView;
 	
 //	winMain.addEventListener('swipe', onSwipe);
 //	winMain.addEventListener('longpress', onLongpress);
@@ -43,8 +44,7 @@ function createGameView(){
 
 // EmptyView
 function createEmptyView(){
-	Ti.API.info(gameView.screen.width+'  '+gameView.screen.height)
-	emptyView = Ti.UI.createView({width:gameView.screen.width, height:gameView.screen.height, image:'images/empty.png'})
+	emptyView = Ti.UI.createView({width:Ti.UI.FILL, height:Ti.UI.FILL, image:'images/empty.png'})
 	emptyView.addEventListener('swipe', onSwipe);
 	emptyView.addEventListener('longpress', onLongpress);
 	emptyView.addEventListener('singletap', onTap);
@@ -87,8 +87,9 @@ function onSwipe(e){
 		e.x*=Ti.App.scalex;
 		e.y*=Ti.App.scaley;
 	} 
-	(e.y>gameView.screen.height*0.8)&&(e.direction == 'up')? gameMenu.move(gameView, 'up') : 
-	(e.y>gameView.screen.height*0.7)&&(e.direction == 'down')? gameMenu.move(gameView, 'down') : Ti.API.info(e.direction);
+	//alert('... '+e.y+'  '+e.direction);
+	(e.y>gameView.screen.height*0.7)&&(e.direction == 'up')? gameMenu.move(gameView, 'up') : 
+	(e.y>gameView.screen.height*0.5)&&(e.direction == 'down')? gameMenu.move(gameView, 'down') : Ti.API.info(e.direction);
 }
 
 function onLongpress(e){
@@ -119,7 +120,8 @@ function onGameSceneLoad(e){
 
 function onTap(e){
 	var target;
-	if(Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad'){
+	//alert(e.x+' '+e.y+' '+e.source.toImage().width+' '+e.source.toImage().height);
+	if( (Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad') ){
 		e.x*=Ti.App.scalex;
 		e.y*=Ti.App.scaley;
 	} 

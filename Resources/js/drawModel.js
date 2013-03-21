@@ -14,6 +14,7 @@ var paths = res.bodypartPaths;
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
 	var gameCenterY = tG.screen.height*0.56;
+
 	var sCenterX = sO.width/2;
 	var sCenterY = sO.height/2;
 	

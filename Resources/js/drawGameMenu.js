@@ -45,6 +45,8 @@ var fillItemList = function(_target, typeOfMenu) {
 			image:'/images/items/' + typeOfMenu + '/' + (i+1) + '/i_' + typeOfMenu + '_' + Ti.App.res + '.png',
 			name:typeOfMenu+''+i
 		});
+		item.width = item.toImage().width;
+		item.heigth = item.toImage().height;
 		var offset = (prevItem === null) ? 0 : 10*(Ti.App.res/320) + prevItem.getCenter().x+prevItem.toImage().width/2;
 		item.center={x:10*( Number(Ti.App.res)/320 )+item.toImage().width/2 + offset, y:10*(Number(Ti.App.res)/320)+item.toImage().height/2};
 		prevItem = item;
@@ -138,9 +140,11 @@ function selectorClickHandler(e){
 		partsMenuView.children[2].zIndex = 0; partsMenuView.children[2].setImage('images/menu/hands/hands_off_'+Ti.App.res+'.png');
 		partsMenuView.children[3].zIndex = 1; partsMenuView.children[3].setImage('images/menu/legs/legs_on_'+Ti.App.res+'.png');
 	};
+	
+	gameMenu.move(globals.gameView, 'up')
 };
 
-exports.move = function(_gameView, _dir){
+function move (_gameView, _dir){
 	var pos;
 	if(_dir === 'up'){ 
 		pos = 0.75;
@@ -158,6 +162,7 @@ exports.move = function(_gameView, _dir){
 	
 	
 };
+exports.move = move;
 
 var leftBodyArr;
 
