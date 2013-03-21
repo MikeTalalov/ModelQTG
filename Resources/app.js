@@ -133,7 +133,7 @@ function onTap(e){
 			}
 		break;
 		case 'game':
-
+			
 		break;
 	}
 	
