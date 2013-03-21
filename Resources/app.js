@@ -77,7 +77,7 @@ function createGameScene(){
 		gameMenu.drawArrows(winMain, gameView);
 	}, 150);
 	myModel.drawModel(gameView, gameScene);
-	
+
 	Ti.App.state = 'game';
 }
 
