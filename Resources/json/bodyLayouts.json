@@ -1,5 +1,5 @@
 [
-	{"hands":{"angle":14, "length":0.65}, "legs":{"angle":18, "length":0.73}},
-	{"hands":{"angle":2, "length":0.84}, "legs":{"angle":15, "length":0.84}},
-	{"hands":{"angle":5, "length":0.78}, "legs":{"angle":21, "length":0.69}}
+	{"hands":{"angle":14, "length":0.65}, "legs":{"angle":18, "length":0.73}, "pantsPos": 0.5, "pantsModifier": 0},
+	{"hands":{"angle":2, "length":0.84}, "legs":{"angle":15, "length":0.84}, "pantsPos": 0.65, "pantsModifier": 0.7},
+	{"hands":{"angle":5, "length":0.78}, "legs":{"angle":21, "length":0.69}, "pantsPos": 0.6, "pantsModifier": 0.82}
 ]

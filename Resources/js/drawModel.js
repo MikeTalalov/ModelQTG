@@ -8,8 +8,8 @@ var utils = require('js/utils');
 var globals = require('js/globals');
 
 var res = utils.getResourcesJSON();
+var layouts = utils.getLayoutsJSON();
 var paths = res.bodypartPaths;
-
 
 var placeToCenter = function(sO, tG, tS){
 	var gameCenterX = tG.screen.width/2;
@@ -142,7 +142,7 @@ setTimeout(function(){
 	myAnimatedModel.animateBody(body);
 	
 	var player = Ti.Media.createSound({url:"sounds/dance.mp3"});
-	player.play();
+	//player.play();
 }, 50)
 //=========================================	
 };
@@ -174,6 +174,11 @@ exports.changeBody = function(_type, _num){
 	
 	for(var i =0; i< target.length; i++){
 		target[i].frame = _num;
+
+		var t  = qtg.createTransform();
+		var k = body.width*layouts[globals.currentBody].pantsModifier/pants.width;
+		t.scale(k, k*2.2);
+		pants.transform(t);
 	}
 	
 	Ti.App.D = Math.sqrt(Math.pow(body.width/2, 2) + Math.pow(body.height/2, 2));

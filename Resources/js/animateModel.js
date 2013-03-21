@@ -148,8 +148,8 @@ function animateHead(frame){
 
 function animatePants(frame){
 	pants.setCenter({
-		x:body.center.x + xR(body.angle)*(body.height*0.5-pants.height/2),
-		y:body.center.y + yR(body.angle)*(body.height*0.5-pants.height/2)
+		x:body.center.x + xR(body.angle)*(body.height*layouts[globals.currentBody].pantsPos-pants.height/2),
+		y:body.center.y + yR(body.angle)*(body.height*layouts[globals.currentBody].pantsPos-pants.height/2)
 	})
 	pants.rotateFrom(body.angle, pants.width*0.5, pants.height*0.5);
 };
