@@ -40,6 +40,7 @@ var pants;
 
 var totalFrame=0;
 var layouts = utils.getLayoutsJSON();
+var limbsSpecs = utils.getLimbsSpecsJSON();
 
 // EXPORTS
 
@@ -186,6 +187,9 @@ function animateLimb(type, frame){
 			D*=layouts[globals.currentBody].legs.length;
 		break;
 	}
+	
+	var limbID = (type[type.length-1] === "d") ? 0 : 1;
+	
 	var p1Rot = asset[frame%asset.length].p1+body.angle;
 	var p2Rot = asset[frame%asset.length].p2+body.angle;
 	var p3Rot = asset[frame%asset.length].p2+body.angle;
@@ -193,20 +197,20 @@ function animateLimb(type, frame){
 	var p1 = limb.p1;
 	var p2 = limb.p2;
 	var p3 = limb.p3;
-	p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
-	
+	p1.rotateFrom(p1Rot, p1.width*limbsSpecs[globals.currentBody][limbID][0].w, p1.height*limbsSpecs[globals.currentBody][limbID][0].h);
+
 	var dX = body.center.x+D*yR(angle);
 	var dY = body.center.y+D*xR(angle);
 	
 	var determ = -p1.width/2;
 	p1.move(dX+determ, dY);
 	
-	p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
+	p2.rotateFrom(p2Rot, p2.width*limbsSpecs[globals.currentBody][limbID][1].w, p2.height*limbsSpecs[globals.currentBody][limbID][1].h);
 	var x1 = Math.round( p1.x- p1.height*0.8*xR(p1Rot) );
 	var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot));
 	p2.move(x1, y1);
 	
-	p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.5);
+	p3.rotateFrom(p3Rot, p3.width*limbsSpecs[globals.currentBody][limbID][2].w, p3.height*limbsSpecs[globals.currentBody][limbID][2].h);
 	var x2 = Math.round(x1 - p2.height*0.9*xR(p2Rot));
 	var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot))
 	p3.move(x2,y2);

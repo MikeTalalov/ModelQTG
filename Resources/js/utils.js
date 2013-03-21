@@ -56,8 +56,8 @@ exports.getLayoutsJSON = function(){
     return JSON.parse(txt);
 }
 
-exports.getLimbSpecsJSON = function(){
-	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/bodyLayouts.json');
+exports.getLimbsSpecsJSON = function(){
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/limbsSpecs.json');
     var txt = file.read().text;
     file = null;
     return JSON.parse(txt);
