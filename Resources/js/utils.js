@@ -63,3 +63,10 @@ exports.getLimbsSpecsJSON = function(){
     file = null;
     return JSON.parse(txt);
 }
+
+exports.getLimbsOffsetsJSON = function(){
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/limbsOffsets.json');
+    var txt = file.read().text;
+    file = null;
+    return JSON.parse(txt);
+}

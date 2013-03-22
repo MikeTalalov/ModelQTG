@@ -41,6 +41,9 @@ var leftThigh
 var leftShin;
 var leftFoot;
 
+Ti.App.handsIndex = 0;
+Ti.App.legsIndex = 0;
+
 var drawModel = function(toGame, toScene){
 //=========================================
 	body = qtg.createSpriteSheet({image:paths.body+'body_'+Ti.App.res+'.xml'});
@@ -166,6 +169,7 @@ exports.changeBody = function(_type, _num){
 		target.push(leftThigh);
 		target.push(leftShin);
 		target.push(leftFoot);
+		Ti.App.legsIndex = _num;
 	}else{
 		target.push(rightShoulder);
 		target.push(rightForearm);
@@ -173,6 +177,7 @@ exports.changeBody = function(_type, _num){
 		target.push(leftShoulder);
 		target.push(leftForearm);
 		target.push(leftPalm);
+		Ti.App.handsIndex = _num;
 	}
 	
 	for(var i =0; i< target.length; i++){

@@ -41,7 +41,7 @@ var pants;
 var totalFrame=0;
 var layouts = utils.getLayoutsJSON();
 var limbsSpecs = utils.getLimbsSpecsJSON();
-
+var limbOffsets = utils.getLimbsOffsetsJSON();
 // EXPORTS
 
 exports.setLimbParts = function(type, p1, p2, p3){
@@ -94,6 +94,28 @@ exports.animateBody = function(_body){
 		bodyRot = assetBody[totalFrame%assetBody.length].rotation;
 		deltaX = assetBody[totalFrame%assetBody.length].deltaX;
 		deltaY = assetBody[totalFrame%assetBody.length].deltaY;
+		
+		if(globals.currentBody===0 && Ti.App.legsIndex === 0){
+			//deltaY-=50*Ti.App.scaley;
+		}else if(globals.currentBody===0 && Ti.App.legsIndex === 1){
+			deltaY-=40*Ti.App.scaley;
+		}else if(globals.currentBody===0 && Ti.App.legsIndex === 2){
+			deltaY-=40*Ti.App.scaley;
+		}else if(globals.currentBody===1 && Ti.App.legsIndex === 0){
+			deltaY+=40*Ti.App.scaley;
+		}else if(globals.currentBody===1 && Ti.App.legsIndex === 1){
+			//deltaY+=50*Ti.App.scaley;
+		}else if(globals.currentBody===1 && Ti.App.legsIndex === 2){
+			//deltaY+=50*Ti.App.scaley;
+		}else if(globals.currentBody===2 && Ti.App.legsIndex === 0){
+			deltaY+=35*Ti.App.scaley;
+		}else if(globals.currentBody===2 && Ti.App.legsIndex === 1){
+			deltaY-=20*Ti.App.scaley;
+		}else if(globals.currentBody===2 && Ti.App.legsIndex === 2){
+			deltaY-=20*Ti.App.scaley;
+		}
+		
+		
 		body.setCenter({'x':Ti.App.bodyX+deltaX, 'y':Ti.App.bodyY+deltaY-Ti.App.bodyOffset});
 		body.rotateFrom(bodyRot, body.width*0.5, body.height*0.5);
 		
@@ -160,31 +182,35 @@ function animateLimb(type, frame){
 	var asset;
 	var angle;
 	var D = Ti.App.D;
-	
+	var offset
 	switch(type){
 		case RIGHT_HAND:
 			limb = rightHand;
 			asset = assetRH;
 			angle = 270+(body.angle-Ti.App.a)-layouts[globals.currentBody].hands.angle;
 			D*=layouts[globals.currentBody].hands.length;
+			offset = limbOffsets[Ti.App.handsIndex];
 		break;
 		case LEFT_HAND:
 			limb = leftHand;
 			asset = assetLH;
 			angle = 270+(body.angle+Ti.App.a)+layouts[globals.currentBody].hands.angle;
 			D*=layouts[globals.currentBody].hands.length;
+			offset = limbOffsets[Ti.App.handsIndex];
 		break;
 		case RIGHT_LEG:
 			limb = rightLeg;
 			asset = assetRL;
 			angle = 90+(body.angle)+layouts[globals.currentBody].legs.angle;
 			D*=layouts[globals.currentBody].legs.length;
+			offset = limbOffsets[Ti.App.legsIndex];
 		break;
 		case LEFT_LEG:
 			limb = leftLeg;
 			asset = assetLL;
 			angle = 90+(body.angle)-layouts[globals.currentBody].legs.angle;	
 			D*=layouts[globals.currentBody].legs.length;
+			offset = limbOffsets[Ti.App.legsIndex];
 		break;
 	}
 	
@@ -213,9 +239,10 @@ function animateLimb(type, frame){
 	
 	p3.rotateFrom(p3Rot, p3.width*limbsSpecs[globals.currentBody][limbID][2].w, p3.height*limbsSpecs[globals.currentBody][limbID][2].h);
 	var x2 = Math.round(x1 - p2.height*0.9*xR(p2Rot));
-	var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot))
-	p3.move(x2,y2);
+	var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot));
 	
+	p3.move(x2, y2);
+	//Ti.API.info(offset.x+' '+offset.y+' '+p3.width)
 	return frame%asset.length;
 };
 
