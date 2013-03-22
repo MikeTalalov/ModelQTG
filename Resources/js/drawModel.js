@@ -96,7 +96,7 @@ var drawModel = function(toGame, toScene){
 	//===
 	var drawBody = function(){
 		placeToCenter(body, toGame, toScene);
-		body.z = 80;
+		body.z = 40;
 		toScene.add(body);
 		Ti.App.bodyX = body.center.x;
 		Ti.App.bodyY = body.center.y;
@@ -112,26 +112,26 @@ var drawModel = function(toGame, toScene){
 	
 	//draw section
 	drawBody();
-	drawPart(neck, body, neckPoint, 70);
-	drawPart(head, neck, headPoint, 80);
+	drawPart(neck, body, neckPoint, 30);
+	drawPart(head, neck, headPoint, 70);
 	//===draw left leg
-	drawPart(leftThigh, body, leftThighPoint, 70);
+	drawPart(leftThigh, body, leftThighPoint, 50);
 	drawPart(leftShin, leftThigh, leftShinPoint, 60);
 	drawPart(leftFoot, leftShin, leftFootPoint, 70);
 	//===draw right leg
-	drawPart(rightThigh, body, rightThighPoint, 70);
+	drawPart(rightThigh, body, rightThighPoint, 50);
 	drawPart(rightShin, rightThigh, rightShinPoint, 60);
 	drawPart(rightFoot, rightShin, rightFootPoint, 70);
 	// PANTS
 	drawPart(pants, body, pantsPoint, 90);
 	//===draw left hand
-	drawPart(leftShoulder, body, leftShoulderPoint, 90);
-	drawPart(leftForearm, leftShoulder, leftForearmPoint, 80);
-	drawPart(leftPalm, leftForearm, leftPalmPoint, 90);
+	drawPart(leftShoulder, body, leftShoulderPoint, 50);
+	drawPart(leftForearm, leftShoulder, leftForearmPoint, 60);
+	drawPart(leftPalm, leftForearm, leftPalmPoint, 70);
 	//===draw right hand
-	drawPart(rightShoulder, body, rightShoulderPoint, 90);
-	drawPart(rightForearm, rightShoulder, rightForearmPoint, 80);
-	drawPart(rightPalm, rightForearm, rightPalmPoint, 90);
+	drawPart(rightShoulder, body, rightShoulderPoint, 50);
+	drawPart(rightForearm, rightShoulder, rightForearmPoint, 60);
+	drawPart(rightPalm, rightForearm, rightPalmPoint, 70);
 	
 	
 //=========================================
