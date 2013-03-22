@@ -210,10 +210,13 @@ function animateLimb(type, frame){
 	var p2 = limb.p2;
 	var p3 = limb.p3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	p1.rotateFrom(p1Rot, p1.width*0.5, p1.height*0.1);
 	
 >>>>>>> 21-03
+=======
+>>>>>>> 1
 	p1.rotateFrom(p1Rot, p1.width*limbsSpecs[globals.currentBody][limbID][0].w, p1.height*limbsSpecs[globals.currentBody][limbID][0].h);
 
 	var dX = body.center.x+D*yR(angle);
@@ -223,18 +226,24 @@ function animateLimb(type, frame){
 	p1.move(dX+determ, dY);
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	p2.rotateFrom(p2Rot, p2.width*0.5, p2.height*0.1);
 >>>>>>> 21-03
+=======
+>>>>>>> 1
 	p2.rotateFrom(p2Rot, p2.width*limbsSpecs[globals.currentBody][limbID][1].w, p2.height*limbsSpecs[globals.currentBody][limbID][1].h);
 	var x1 = Math.round( p1.x- p1.height*0.8*xR(p1Rot) );
 	var y1 = Math.round( p1.y + p1.height*0.8*yR(p1Rot));
 	p2.move(x1, y1);
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	p3.rotateFrom(p3Rot, p3.width*0.5, p3.height*0.5);
 >>>>>>> 21-03
+=======
+>>>>>>> 1
 	p3.rotateFrom(p3Rot, p3.width*limbsSpecs[globals.currentBody][limbID][2].w, p3.height*limbsSpecs[globals.currentBody][limbID][2].h);
 	var x2 = Math.round(x1 - p2.height*0.9*xR(p2Rot));
 	var y2 = Math.round(y1 + p2.height*0.9*yR(p2Rot))

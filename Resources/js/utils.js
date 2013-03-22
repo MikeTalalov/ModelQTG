@@ -63,12 +63,18 @@ exports.getLimbsSpecsJSON = function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 exports.getLimbSpecsJSON = function(){
-	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/bodyLayouts.json');
 =======
 exports.getLimbsSpecsJSON = function(){
 >>>>>>> branch 'master' of https://github.com/MikeTalalov/ModelQTG.git
+<<<<<<< HEAD
 >>>>>>> 21-03
+=======
+=======
+exports.getLimbsSpecsJSON = function(){
+>>>>>>> branch 'master' of https://github.com/MikeTalalov/ModelQTG.git
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'json/limbsSpecs.json');
+>>>>>>> 1
     var txt = file.read().text;
     file = null;
     return JSON.parse(txt);
-}}
+}
