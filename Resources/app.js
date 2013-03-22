@@ -83,11 +83,10 @@ function createGameScene(){
 
 // EVENTS
 function onSwipe(e){
-	if(Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad'){
+	if( Ti.Platform.displayCaps.dpi > 160 ){
 		e.x*=Ti.App.scalex;
 		e.y*=Ti.App.scaley;
-	} 
-	//alert('... '+e.y+'  '+e.direction);
+	}
 	(e.y>gameView.screen.height*0.7)&&(e.direction == 'up')? gameMenu.move(gameView, 'up') : 
 	(e.y>gameView.screen.height*0.5)&&(e.direction == 'down')? gameMenu.move(gameView, 'down') : Ti.API.info(e.direction);
 }
@@ -120,8 +119,7 @@ function onGameSceneLoad(e){
 
 function onTap(e){
 	var target;
-	//alert(e.x+' '+e.y+' '+e.source.toImage().width+' '+e.source.toImage().height);
-	if( (Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad') ){
+	if( Ti.Platform.displayCaps.dpi > 160 ){
 		e.x*=Ti.App.scalex;
 		e.y*=Ti.App.scaley;
 	} 

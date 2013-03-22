@@ -112,7 +112,7 @@ partsMenuView.addEventListener('singletap', selectorClickHandler);
 function selectorClickHandler(e){
 	var w = partsMenuView.width, h = partsMenuView.height;
 	
-	if(Ti.Platform.osname==='iphone' || Ti.Platform.osname==='ipad'){
+	if(Ti.Platform.displayCaps.dpi > 160){
 		e.x*=Ti.App.scalex;
 		e.y*=Ti.App.scaley;
 	} 

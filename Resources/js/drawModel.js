@@ -132,7 +132,7 @@ var drawModel = function(toGame, toScene){
 	
 	
 //=========================================
-setTimeout(function(){
+function init(){
 	myAnimatedModel.setLimbParts('leftHand', leftShoulder, leftForearm, leftPalm);
 	myAnimatedModel.setLimbParts('rightHand', rightShoulder, rightForearm, rightPalm);
 	myAnimatedModel.setLimbParts('leftLeg', leftThigh, leftShin, leftFoot);
@@ -143,8 +143,10 @@ setTimeout(function(){
 	myAnimatedModel.animateBody(body);
 	
 	var player = Ti.Media.createSound({url:"sounds/dance.mp3"});
-	//player.play();
-}, 50)
+//	player.play();
+}
+
+init();
 //=========================================	
 };
 
