@@ -47,6 +47,7 @@ var fillItemList = function(_target, typeOfMenu) {
 		});
 		item.width = item.toImage().width;
 		item.heigth = item.toImage().height;
+		//comment
 		var offset = (prevItem === null) ? 0 : 10*(Ti.App.res/320) + prevItem.getCenter().x+prevItem.toImage().width/2;
 		item.center={x:10*( Number(Ti.App.res)/320 )+item.toImage().width/2 + offset, y:10*(Number(Ti.App.res)/320)+item.toImage().height/2};
 		prevItem = item;
